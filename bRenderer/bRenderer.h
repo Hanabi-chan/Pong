@@ -9,6 +9,9 @@
 #include "headers/Renderer.h"
 #include "headers/IRenderProject.h"
 
+#include "Box2D.h"
+
+
 /* vmmlib includes */
 #include "vmmlib/util.hpp"
 
