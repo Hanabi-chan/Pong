@@ -35,14 +35,14 @@ void RenderProject::initFunction()
     bRenderer().getObjects()->setShaderVersionES("#version 100");
     
     // load materials and shaders before loading the model
-    ShaderPtr guyShader = bRenderer().getObjects()->loadShaderFile("guy", 0, false, false, false, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
+    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile("hockeypuck", 0, false, false, false, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
     
     // create additional properties for a model
-    PropertiesPtr guyProperties = bRenderer().getObjects()->createProperties("guyProperties");
+    PropertiesPtr hockeypuckProperties = bRenderer().getObjects()->createProperties("hockeypuckProperties");
     
     // load model
     //bRenderer().getObjects()->loadObjModel("guy.obj", true, true, true, 0, false, false, guyProperties);
-    bRenderer().getObjects()->loadObjModel("guy.obj", false, true, guyShader, guyProperties);
+    bRenderer().getObjects()->loadObjModel("hockeypuck.obj", false, true, hockeypuckShader, hockeypuckProperties);
     // automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
     
     // create camera
@@ -99,7 +99,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.6f));
     vmml::Matrix4f viewMatrix = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
     
-    ShaderPtr shader = bRenderer().getObjects()->getShader("guy");
+    ShaderPtr shader = bRenderer().getObjects()->getShader("hockeypuck");
     
     if (shader.get())
     {
@@ -125,7 +125,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     }
     
     //shader->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrix));
-    bRenderer().getModelRenderer()->drawModel("guy", "camera", modelMatrix, std::vector<std::string>({ }));
+    bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrix, std::vector<std::string>({ }));
 }
 
 /* Camera movement */

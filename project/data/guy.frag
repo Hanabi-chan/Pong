@@ -77,6 +77,7 @@ void main()
     mediump vec3 pixelNormal = tbn * normalize((texture2D( NormalMap, texCoordVarying.st ).xyz * 2.0 - 1.0) * texture2D(DiffuseMap, texCoordVarying.st).xyz);
     lowp vec4 color = normalize(texture2D(DiffuseMap, texCoordVarying.st));
 
-    gl_FragColor = diffuseResult * color + ambientResult * vec4(vec3(0.5) + pixelNormal * 0.5, 1.0) + specularResult*specularTex;
+    //gl_FragColor = diffuseResult * color + ambientResult * vec4(vec3(0.5) + pixelNormal * 0.5, 1.0) + specularResult*specularTex;
+    gl_FragColor = vec4(vec3(0.5) + pixelNormal * 0.5, 1.0);
     
 }
