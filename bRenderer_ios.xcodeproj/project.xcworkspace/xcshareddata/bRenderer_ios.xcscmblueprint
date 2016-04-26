@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "72284A962B96BF1FCCEF4E05A3A4AD3919A391A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "72284A962B96BF1FCCEF4E05A3A4AD3919A391A0" : 0,
+    "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E7D517C8-8EDD-40B2-B9E2-05A81D5331A6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "72284A962B96BF1FCCEF4E05A3A4AD3919A391A0" : "Pong\/",
+    "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE" : "Pong\/externalLibraries\/box2d\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "bRenderer_ios",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "bRenderer_ios.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:erincatto\/Box2D.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "32BC8F1EBE6195751A3AF787748A5E3CF9A9BEDE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Hanabi-chan\/Pong.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72284A962B96BF1FCCEF4E05A3A4AD3919A391A0"
+    }
+  ]
+}
