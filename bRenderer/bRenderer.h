@@ -12,4 +12,7 @@
 /* vmmlib includes */
 #include "vmmlib/util.hpp"
 
+/* Box2D includes */
+#include "Box2D/Box2D.h"
+
 #endif /* defined(B_BRENDERER_H) */
