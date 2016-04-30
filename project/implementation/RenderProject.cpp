@@ -1,4 +1,11 @@
 #include "RenderProject.h"
+#include <math.h>
+
+/* angle for the rotation of the planets */
+float angle;
+float x,y,z;
+float constant = 0;
+bool endOfScreenReached = false;
 
 /* Initialize the Project */
 void RenderProject::init()
@@ -9,7 +16,7 @@ void RenderProject::init()
     if(Input::isTouchDevice())
         bRenderer().initRenderer(true);										// full screen on iOS
     else
-        bRenderer().initRenderer(1920, 1080, false, "Assignment 6");		// windowed mode on desktop
+        bRenderer().initRenderer(1920, 1080, false, "Assignment 4");		// windowed mode on desktop
     //bRenderer().initRenderer(View::getScreenWidth(), View::getScreenHeight(), true);		// full screen using full width and height of the screen
     
     // start main loop
@@ -35,15 +42,13 @@ void RenderProject::initFunction()
     bRenderer().getObjects()->setShaderVersionES("#version 100");
     
     // load materials and shaders before loading the model
-    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile("hockeypuck", 0, false, false, false, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
+    ShaderPtr sphereShader = bRenderer().getObjects()->loadShaderFile("sphere", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
     
     // create additional properties for a model
-    PropertiesPtr hockeypuckProperties = bRenderer().getObjects()->createProperties("hockeypuckProperties");
+    PropertiesPtr sphereProperties = bRenderer().getObjects()->createProperties("sphereProperties");
     
     // load model
-    //bRenderer().getObjects()->loadObjModel("guy.obj", true, true, true, 0, false, false, guyProperties);
-    bRenderer().getObjects()->loadObjModel("hockeypuck.obj", false, true, hockeypuckShader, hockeypuckProperties);
-    // automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
+    bRenderer().getObjects()->loadObjModel("sphere.obj", true, true, true, 4, true, false, sphereProperties);								// automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
     
     // create camera
     bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
@@ -94,38 +99,32 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
 {
     /*** solar system ***/
     
-    // TODO: implement solar system here
+    angle += deltaTime;
+    x += sin(angle + 3.14/2);
+    z += cos(angle + 3.14/2);
     
-    vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.6f));
-    vmml::Matrix4f viewMatrix = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
-    
-    ShaderPtr shader = bRenderer().getObjects()->getShader("hockeypuck");
-    
-    if (shader.get())
-    {
-        shader->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
-        shader->setUniform("ViewMatrix", viewMatrix);
-        shader->setUniform("ModelMatrix", modelMatrix);
-        
-        vmml::Matrix3f normalMatrix;
-        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(modelMatrix)), normalMatrix);
-        shader->setUniform("NormalMatrix", normalMatrix);
-        
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
-        shader->setUniform("EyePos", eyePos);
-        
-        shader->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-        shader->setUniform("Ia", vmml::Vector3f(1.f));
-        shader->setUniform("Id", vmml::Vector3f(1.f));
-        shader->setUniform("Is", vmml::Vector3f(1.f));
-    }
-    else
-    {
-        bRenderer::log("No shader available.");
+    //calculate the constant for the movement. When the Object reaches the end of the Screen, then move it to the other side.
+    if(constant > 0) {
+        endOfScreenReached = false;
     }
     
-    //shader->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrix));
-    bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrix, std::vector<std::string>({ }));
+    if(constant > -9.5f and endOfScreenReached == false){
+        constant -= 0.1f;
+    }
+    else {
+        endOfScreenReached = true;
+    }
+    if (endOfScreenReached == true and constant <= 0.1) {
+        constant += 0.1f;
+    }
+    
+    /* Sun */
+    vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(6.5f+constant,.5f,6.9f));
+    
+    ShaderPtr shader = bRenderer().getObjects()->getShader("sphere");
+    shader->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrix));
+    bRenderer().getModelRenderer()->drawModel("sphere", "camera", modelMatrix, std::vector<std::string>({ }));
+    
 }
 
 /* Camera movement */

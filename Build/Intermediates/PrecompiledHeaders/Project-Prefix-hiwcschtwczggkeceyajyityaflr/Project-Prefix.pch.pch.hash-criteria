@@ -1,0 +1,33 @@
+-x
+objective-c
+-arch
+i386
+-fobjc-arc
+-gmodules
+-fpascal-strings
+-O0
+-DFT2_BUILD_LIBRARY=1
+-DDARWIN_NO_CARBON
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk
+-fasm-blocks
+-mios-simulator-version-min=8.0
+-g
+-fvisibility=hidden
+-fobjc-abi-version=2
+-fobjc-legacy-dispatch
+-iquote
+-iquote
+-iquote/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer
+-I/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Products/Debug-iphonesimulator/include
+-I/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/bRenderer
+-I/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/externalLibraries/boost-library
+-I/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/externalLibraries/vmmlib-library
+-I/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/externalLibraries/freetype-2.6/include
+-F/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Products/Debug-iphonesimulator
+-F/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer
+-F/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+i386-apple-darwin15.0.0
+"4.2.1 Compatible Apple LLVM 7.3.0 (clang-703.0.29)"
+SDK_PRODUCT_BUILD_VERSION=13E230
+13E230

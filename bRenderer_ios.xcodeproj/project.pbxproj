@@ -7,17 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2631B5CF1CC4E42C0064231F /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5CC1CC4E42C0064231F /* hockeypuck.frag */; };
-		2631B5D11CC4E42C0064231F /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5CE1CC4E42C0064231F /* hockeypuck.vert */; };
-		2631B5D31CC51F7D0064231F /* hockeypuck.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5D21CC51F7D0064231F /* hockeypuck.obj */; };
-		2631B5D81CC520860064231F /* guy.frag in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5D41CC520860064231F /* guy.frag */; };
-		2631B5D91CC520860064231F /* guy.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5D51CC520860064231F /* guy.mtl */; };
-		2631B5DA1CC520860064231F /* guy.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5D61CC520860064231F /* guy.obj */; };
-		2631B5DB1CC520860064231F /* guy.vert in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5D71CC520860064231F /* guy.vert */; };
-		2631B5DF1CC520A90064231F /* diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5DC1CC520A90064231F /* diffuse.png */; };
-		2631B5E01CC520A90064231F /* normal3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5DD1CC520A90064231F /* normal3.png */; };
-		2631B5E11CC520A90064231F /* specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5DE1CC520A90064231F /* specular.png */; };
-		2631B5E31CC522390064231F /* hockeypuck.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 2631B5E21CC522390064231F /* hockeypuck.mtl */; };
+		54DFF29E1C96E973005274A0 /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF29D1C96E973005274A0 /* sphere.obj */; };
+		54DFF2A01C96E985005274A0 /* sphere.frag in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF29F1C96E985005274A0 /* sphere.frag */; };
+		54DFF2A21C96E98D005274A0 /* sphere.vert in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF2A11C96E98D005274A0 /* sphere.vert */; };
+		54DFF2A41C96ED0D005274A0 /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF2A31C96ED0D005274A0 /* sphere.mtl */; };
 		B44186971BA331E300604D7F /* RenderProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44186961BA331E300604D7F /* RenderProject.cpp */; };
 		B47949AF1BA6742B00B5E9DC /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = B47949921BA6742B00B5E9DC /* config.json */; };
 		B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B47949C41BA6743D00B5E9DC /* LICENSE.txt */; };
@@ -118,17 +111,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2631B5CC1CC4E42C0064231F /* hockeypuck.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
-		2631B5CE1CC4E42C0064231F /* hockeypuck.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
-		2631B5D21CC51F7D0064231F /* hockeypuck.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hockeypuck.obj; sourceTree = "<group>"; };
-		2631B5D41CC520860064231F /* guy.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = guy.frag; sourceTree = "<group>"; };
-		2631B5D51CC520860064231F /* guy.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = guy.mtl; sourceTree = "<group>"; };
-		2631B5D61CC520860064231F /* guy.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = guy.obj; sourceTree = "<group>"; };
-		2631B5D71CC520860064231F /* guy.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = guy.vert; sourceTree = "<group>"; };
-		2631B5DC1CC520A90064231F /* diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diffuse.png; sourceTree = "<group>"; };
-		2631B5DD1CC520A90064231F /* normal3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal3.png; sourceTree = "<group>"; };
-		2631B5DE1CC520A90064231F /* specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = specular.png; sourceTree = "<group>"; };
-		2631B5E21CC522390064231F /* hockeypuck.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hockeypuck.mtl; sourceTree = "<group>"; };
+		54DFF29D1C96E973005274A0 /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
+		54DFF29F1C96E985005274A0 /* sphere.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sphere.frag; sourceTree = "<group>"; };
+		54DFF2A11C96E98D005274A0 /* sphere.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sphere.vert; sourceTree = "<group>"; };
+		54DFF2A31C96ED0D005274A0 /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
 		B44186941BA331E300604D7F /* RenderProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderProject.h; sourceTree = "<group>"; };
 		B44186961BA331E300604D7F /* RenderProject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderProject.cpp; sourceTree = "<group>"; };
 		B47949921BA6742B00B5E9DC /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
@@ -345,17 +331,10 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
-				2631B5DC1CC520A90064231F /* diffuse.png */,
-				2631B5DD1CC520A90064231F /* normal3.png */,
-				2631B5DE1CC520A90064231F /* specular.png */,
-				2631B5D41CC520860064231F /* guy.frag */,
-				2631B5D51CC520860064231F /* guy.mtl */,
-				2631B5D61CC520860064231F /* guy.obj */,
-				2631B5D71CC520860064231F /* guy.vert */,
-				2631B5CC1CC4E42C0064231F /* hockeypuck.frag */,
-				2631B5CE1CC4E42C0064231F /* hockeypuck.vert */,
-				2631B5D21CC51F7D0064231F /* hockeypuck.obj */,
-				2631B5E21CC522390064231F /* hockeypuck.mtl */,
+				54DFF2A31C96ED0D005274A0 /* sphere.mtl */,
+				54DFF2A11C96E98D005274A0 /* sphere.vert */,
+				54DFF29F1C96E985005274A0 /* sphere.frag */,
+				54DFF29D1C96E973005274A0 /* sphere.obj */,
 				B47949921BA6742B00B5E9DC /* config.json */,
 			);
 			path = data;
@@ -676,21 +655,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
-				2631B5D11CC4E42C0064231F /* hockeypuck.vert in Resources */,
+				54DFF2A41C96ED0D005274A0 /* sphere.mtl in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
+				54DFF29E1C96E973005274A0 /* sphere.obj in Resources */,
 				B47949AF1BA6742B00B5E9DC /* config.json in Resources */,
-				2631B5E01CC520A90064231F /* normal3.png in Resources */,
-				2631B5DB1CC520860064231F /* guy.vert in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,
-				2631B5DF1CC520A90064231F /* diffuse.png in Resources */,
-				2631B5D31CC51F7D0064231F /* hockeypuck.obj in Resources */,
+				54DFF2A21C96E98D005274A0 /* sphere.vert in Resources */,
 				B4CB8CD01B72E43300FE041B /* Project-Info.plist in Resources */,
-				2631B5D81CC520860064231F /* guy.frag in Resources */,
-				2631B5CF1CC4E42C0064231F /* hockeypuck.frag in Resources */,
-				2631B5E11CC520A90064231F /* specular.png in Resources */,
-				2631B5DA1CC520860064231F /* guy.obj in Resources */,
-				2631B5D91CC520860064231F /* guy.mtl in Resources */,
-				2631B5E31CC522390064231F /* hockeypuck.mtl in Resources */,
+				54DFF2A01C96E985005274A0 /* sphere.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

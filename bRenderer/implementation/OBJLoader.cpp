@@ -495,30 +495,8 @@ void OBJLoader::createFaceNormals()
         const vmml::Vector3f &p2 = _vertices[indexV2].position;
         const vmml::Vector3f &p3 = _vertices[indexV3].position;
         
-        // obtain each of this face's texture coordinates
-        const vmml::Vector2f &t1 = _texCoords[indexV1];
-        const vmml::Vector2f &t2 = _texCoords[indexV2];
-        const vmml::Vector2f &t3 = _texCoords[indexV3];
-        
         vmml::Vector3f e = p2 - p1;
         vmml::Vector3f f = p3 - p1;
-        
-        vmml::Vector2f u = t2 -t1;
-        vmml::Vector2f v = t3 -t1;
-        
-        //Matrix for world space
-        vmml::Matrix<2, 3, float> matWorld ;
-        matWorld.set_row(0, e );
-        matWorld.set_row(1, f );
-        
-        //Matrix for normal space
-        vmml::Matrix<2, 2, float> matNormal ;
-        matNormal.set_row(0, u );
-        matNormal.set_row(1, v );
-        
-        //Inverse for normal space
-        vmml::Matrix<2, 2, float> matInverse;
-        vmml::compute_inverse(matNormal, matInverse);
         
         // calculate normal for this face
         vmml::Vector3f normal = e.cross(f);
@@ -526,9 +504,23 @@ void OBJLoader::createFaceNormals()
         // set face normal
         face.normal = vmml::normalize(normal);
         
-        //calculate tangent for face
-        vmml::Matrix<2, 3, float> matTangent = matInverse * matWorld;
-        face.tangent = matTangent.get_column(0);
+        // if texture coordinates for this face exist
+        size_t nT = _texCoords.size();
+        if (nT > indexV1 && nT > indexV2 && nT > indexV3)
+        {
+            vmml::Vector3f v1(0.0, 0.0, 0.0);
+            v1.cross(face.normal, vmml::Vector3f(0.0, 0.0, -1.0));
+            vmml::Vector3f v2(0.0, 0.0, 0.0);
+            v2.cross(face.normal, vmml::Vector3f(0.0, -1.0, 0.0));
+            if (v1.length() > v2.length()){
+                face.tangent = v1;
+            }
+            else{
+                face.tangent = v2;
+            }
+            face.bitangent.cross(face.normal, face.tangent);
+            face.bitangent = vmml::normalize(face.bitangent);
+        }
     }
 }
 
@@ -538,7 +530,6 @@ void OBJLoader::createVertexNormals()
     {
         // only calculate vertex normal if not present
         vmml::Vector3f n = vmml::Vector3f::ZERO;
-        vmml::Vector3f t = vmml::Vector3f::ZERO;
         if (vertex.normal.squared_length() < std::numeric_limits< float >::epsilon())
         {
             vmml::Vector3f normalSum = vmml::Vector3f::ZERO;
@@ -553,23 +544,16 @@ void OBJLoader::createVertexNormals()
             n = vmml::normalize(vertex.normal);
         }
         
-        if (vertex.tangent.squared_length() < std::numeric_limits< float >::epsilon())
+        vmml::Vector3f tangentSum = vmml::Vector3f::ZERO;
+        vmml::Vector3f bitangentSum = vmml::Vector3f::ZERO;
+        for (Index &face : vertex.faces)
         {
-            vmml::Vector3f tangentSum = vmml::Vector3f::ZERO;
-            for (Index &face : vertex.faces)
-            {
-                tangentSum += _faces[face].tangent;
-            }
-            t = tangentSum;
-        }
-        else
-        {
-            t = vertex.tangent;
+            tangentSum += _faces[face].tangent;
+            bitangentSum += _faces[face].bitangent;
         }
         
         vertex.normal = n;
-        //calculate tangent for vertex, orthogonalize (Gramm Schmidt)
-        vmml::Vector3f orthogonalizedTangent = t-(vmml::dot(vertex.normal, t))*vertex.normal;
-        vertex.tangent = vmml::normalize(orthogonalizedTangent);
+        vertex.tangent = vmml::normalize(tangentSum);
+        vertex.bitangent = vmml::normalize(bitangentSum);
     }
 }
