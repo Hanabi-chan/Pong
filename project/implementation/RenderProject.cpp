@@ -3,7 +3,6 @@
 
 /* angle for the rotation of the planets */
 float angle;
-float x,y,z;
 float constant = 0;
 bool endOfScreenReached = false;
 
@@ -41,6 +40,8 @@ void RenderProject::initFunction()
     bRenderer().getObjects()->setShaderVersionDesktop("#version 120");
     bRenderer().getObjects()->setShaderVersionES("#version 100");
     
+    /* Loading Sphere Object */
+    
     // load materials and shaders before loading the model
     ShaderPtr sphereShader = bRenderer().getObjects()->loadShaderFile("sphere", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
     
@@ -49,6 +50,17 @@ void RenderProject::initFunction()
     
     // load model
     bRenderer().getObjects()->loadObjModel("sphere.obj", true, true, true, 4, true, false, sphereProperties);								// automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
+    
+    /* Loading Cube Object */
+    
+    // load materials and shaders before loading the model
+    ShaderPtr cubeShader = bRenderer().getObjects()->loadShaderFile("cube", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
+    
+    // create additional properties for a model
+    PropertiesPtr cubeProperties = bRenderer().getObjects()->createProperties("cubeProperties");
+    
+    // load model
+    bRenderer().getObjects()->loadObjModel("cube.obj", true, true, true, 4, true, false, sphereProperties);								// automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
     
     // create camera
     bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
@@ -97,11 +109,7 @@ void RenderProject::terminateFunction()
 /* Update render queue */
 void RenderProject::updateRenderQueue(const std::string &camera, const double &deltaTime)
 {
-    /*** solar system ***/
-    
     angle += deltaTime;
-    x += sin(angle + 3.14/2);
-    z += cos(angle + 3.14/2);
     
     //calculate the constant for the movement. When the Object reaches the end of the Screen, then move it to the other side.
     if(constant > 0) {
@@ -118,12 +126,28 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
         constant += 0.1f;
     }
     
-    /* Sun */
+    /* Moving Sphere */
     vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(6.5f+constant,.5f,6.9f));
     
     ShaderPtr shader = bRenderer().getObjects()->getShader("sphere");
     shader->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrix));
     bRenderer().getModelRenderer()->drawModel("sphere", "camera", modelMatrix, std::vector<std::string>({ }));
+    
+    /* Cube 1 */
+    vmml::Matrix4f modelMatrixCube1 = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(8.5f,.5f,6.9f));
+    
+    ShaderPtr shaderCube1 = bRenderer().getObjects()->getShader("cube");
+    shaderCube1->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixCube1));
+    shaderCube1->setUniform("color", vmml::Vector4f(0,1,0.7,1));
+    bRenderer().getModelRenderer()->drawModel("cube", "camera", modelMatrixCube1, std::vector<std::string>({ }));
+    
+    /* Cube 2 */
+    vmml::Matrix4f modelMatrixCube2 = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(-4.8f,.5f,6.9f));
+    
+    ShaderPtr shaderCube2 = bRenderer().getObjects()->getShader("cube");
+    shaderCube2->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixCube2));
+    shaderCube2->setUniform("color", vmml::Vector4f(1,0,0.7,1));
+    bRenderer().getModelRenderer()->drawModel("cube", "camera", modelMatrixCube2, std::vector<std::string>({ }));
     
 }
 
