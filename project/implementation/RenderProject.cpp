@@ -79,6 +79,7 @@ void RenderProject::initFunction()
     
     // Update render queue
     updateRenderQueue("camera", 0.0f);
+    
 }
 
 /* Draw your scene here */

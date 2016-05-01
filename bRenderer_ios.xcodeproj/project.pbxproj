@@ -119,6 +119,44 @@
 		B59A679D1ACC9A0400E3EB9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A679C1ACC9A0400E3EB9B /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BB906CB91CCFBB23004DD41E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80FF01D2141C3D980059E59D;
+			remoteInfo = Box2D;
+		};
+		BB906CBB1CCFBB23004DD41E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80BB890A141C3E2700F1753A;
+			remoteInfo = HelloWorld;
+		};
+		BB906CBD1CCFBB23004DD41E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80BB8918141C3E3600F1753A;
+			remoteInfo = Testbed;
+		};
+		BB906CBF1CCFBB23004DD41E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 805900B8184EEF2E00C8ECA3;
+			remoteInfo = GLFW;
+		};
+		BB906CC11CCFBB23004DD41E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80B51B3A1CC74762008DDE73;
+			remoteInfo = ImGui;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		266A21D41CD4C03B009ED9A7 /* cube.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = cube.frag; sourceTree = "<group>"; };
 		266A21D51CD4C03B009ED9A7 /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
@@ -286,6 +324,7 @@
 		B59A67981ACC8BCC00E3EB9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B59A679A1ACC99F900E3EB9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B59A679C1ACC9A0400E3EB9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Box2D.xcodeproj; path = externalLibraries/box2d/Box2D/Build/xcode6/Box2D.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +347,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */,
 				B47949BF1BA6743D00B5E9DC /* bRenderer */,
 				B4CB8C7E1B72E43300FE041B /* project */,
 				29B97323FDCFA39411CA2CEA /* externalLibraries */,
@@ -623,6 +663,18 @@
 			path = ios/resources;
 			sourceTree = "<group>";
 		};
+		BB906CB21CCFBB23004DD41E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB906CBA1CCFBB23004DD41E /* libBox2D.a */,
+				BB906CBC1CCFBB23004DD41E /* HelloWorld */,
+				BB906CBE1CCFBB23004DD41E /* Testbed */,
+				BB906CC01CCFBB23004DD41E /* libGLFW.a */,
+				BB906CC21CCFBB23004DD41E /* libImGui.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -649,7 +701,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 94PFB8AHJE;
@@ -669,12 +721,56 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BB906CB21CCFBB23004DD41E /* Products */;
+					ProjectRef = BB906CB11CCFBB23004DD41E /* Box2D.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* bRenderer_ios */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BB906CBA1CCFBB23004DD41E /* libBox2D.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBox2D.a;
+			remoteRef = BB906CB91CCFBB23004DD41E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BB906CBC1CCFBB23004DD41E /* HelloWorld */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = HelloWorld;
+			remoteRef = BB906CBB1CCFBB23004DD41E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BB906CBE1CCFBB23004DD41E /* Testbed */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Testbed;
+			remoteRef = BB906CBD1CCFBB23004DD41E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BB906CC01CCFBB23004DD41E /* libGLFW.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGLFW.a;
+			remoteRef = BB906CBF1CCFBB23004DD41E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BB906CC21CCFBB23004DD41E /* libImGui.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libImGui.a;
+			remoteRef = BB906CC11CCFBB23004DD41E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -828,6 +924,7 @@
 					$SRCROOT/bRenderer,
 					"$SRCROOT/externalLibraries/boost-library",
 					"$SRCROOT/externalLibraries/vmmlib-library",
+					"$SRCROOT/externalLibraries/box2d/Box2D/**",
 					"$SRCROOT/externalLibraries/freetype-2.6/include",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/project/ios/Resources/Project-Info.plist";
@@ -835,6 +932,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.uzh.ifi.cgapp;
 				PRODUCT_NAME = bRenderer_ios;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
@@ -867,6 +965,7 @@
 					$SRCROOT/bRenderer,
 					"$SRCROOT/externalLibraries/boost-library",
 					"$SRCROOT/externalLibraries/vmmlib-library",
+					"$SRCROOT/externalLibraries/box2d/Box2D/**",
 					"$SRCROOT/externalLibraries/freetype-2.6/include",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/project/ios/Resources/Project-Info.plist";
@@ -874,6 +973,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.uzh.ifi.cgapp;
 				PRODUCT_NAME = bRenderer_ios;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
@@ -886,6 +986,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = $SRCROOT;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
