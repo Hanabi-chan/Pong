@@ -46,6 +46,10 @@ public:
     
 private:
     
+    void pushModelMatrix(vmml::Matrix4f matrix);
+    
+    void popModelMatrix();
+    
     // draw sphere at origin of current reference frame
     void drawSphere();
     
