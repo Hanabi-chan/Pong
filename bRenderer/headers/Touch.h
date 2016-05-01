@@ -11,6 +11,7 @@ struct Touch
     GLfloat lastPositionY;
     GLfloat currentPositionX;
     GLfloat currentPositionY;
+    GLfloat currentPositionZ;
 };
 
 /* Typedefs */

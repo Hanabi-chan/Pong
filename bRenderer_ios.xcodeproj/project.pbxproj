@@ -12,6 +12,10 @@
 		266A21DB1CD4C03B009ED9A7 /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D61CD4C03B009ED9A7 /* cube.obj */; };
 		266A21DC1CD4C03B009ED9A7 /* cube.vert in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D71CD4C03B009ED9A7 /* cube.vert */; };
 		266A21DD1CD4C03B009ED9A7 /* quad.obj in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D81CD4C03B009ED9A7 /* quad.obj */; };
+		266A21E41CD51A70009ED9A7 /* hockeypuck.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 266A21E01CD51A70009ED9A7 /* hockeypuck.mtl */; };
+		266A21E51CD51A70009ED9A7 /* hockeypuck.obj in Resources */ = {isa = PBXBuildFile; fileRef = 266A21E11CD51A70009ED9A7 /* hockeypuck.obj */; };
+		266A21ED1CD520E1009ED9A7 /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = 266A21EB1CD520E1009ED9A7 /* hockeypuck.frag */; };
+		266A21EE1CD520E1009ED9A7 /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = 266A21EC1CD520E1009ED9A7 /* hockeypuck.vert */; };
 		54DFF29E1C96E973005274A0 /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF29D1C96E973005274A0 /* sphere.obj */; };
 		54DFF2A01C96E985005274A0 /* sphere.frag in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF29F1C96E985005274A0 /* sphere.frag */; };
 		54DFF2A21C96E98D005274A0 /* sphere.vert in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF2A11C96E98D005274A0 /* sphere.vert */; };
@@ -121,6 +125,10 @@
 		266A21D61CD4C03B009ED9A7 /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
 		266A21D71CD4C03B009ED9A7 /* cube.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = cube.vert; sourceTree = "<group>"; };
 		266A21D81CD4C03B009ED9A7 /* quad.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quad.obj; sourceTree = "<group>"; };
+		266A21E01CD51A70009ED9A7 /* hockeypuck.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hockeypuck.mtl; sourceTree = "<group>"; };
+		266A21E11CD51A70009ED9A7 /* hockeypuck.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hockeypuck.obj; sourceTree = "<group>"; };
+		266A21EB1CD520E1009ED9A7 /* hockeypuck.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
+		266A21EC1CD520E1009ED9A7 /* hockeypuck.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
 		54DFF29D1C96E973005274A0 /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
 		54DFF29F1C96E985005274A0 /* sphere.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sphere.frag; sourceTree = "<group>"; };
 		54DFF2A11C96E98D005274A0 /* sphere.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sphere.vert; sourceTree = "<group>"; };
@@ -341,6 +349,10 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				266A21EB1CD520E1009ED9A7 /* hockeypuck.frag */,
+				266A21EC1CD520E1009ED9A7 /* hockeypuck.vert */,
+				266A21E01CD51A70009ED9A7 /* hockeypuck.mtl */,
+				266A21E11CD51A70009ED9A7 /* hockeypuck.obj */,
 				266A21D41CD4C03B009ED9A7 /* cube.frag */,
 				266A21D51CD4C03B009ED9A7 /* cube.mtl */,
 				266A21D61CD4C03B009ED9A7 /* cube.obj */,
@@ -673,6 +685,7 @@
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				54DFF2A41C96ED0D005274A0 /* sphere.mtl in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
+				266A21EE1CD520E1009ED9A7 /* hockeypuck.vert in Resources */,
 				54DFF29E1C96E973005274A0 /* sphere.obj in Resources */,
 				B47949AF1BA6742B00B5E9DC /* config.json in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,
@@ -681,8 +694,11 @@
 				B4CB8CD01B72E43300FE041B /* Project-Info.plist in Resources */,
 				266A21DD1CD4C03B009ED9A7 /* quad.obj in Resources */,
 				266A21DA1CD4C03B009ED9A7 /* cube.mtl in Resources */,
+				266A21E51CD51A70009ED9A7 /* hockeypuck.obj in Resources */,
 				266A21D91CD4C03B009ED9A7 /* cube.frag in Resources */,
 				54DFF2A01C96E985005274A0 /* sphere.frag in Resources */,
+				266A21ED1CD520E1009ED9A7 /* hockeypuck.frag in Resources */,
+				266A21E41CD51A70009ED9A7 /* hockeypuck.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
