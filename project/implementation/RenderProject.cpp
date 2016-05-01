@@ -1,11 +1,27 @@
 #include "RenderProject.h"
 #include <math.h>
 #include <stdlib.h>
+#include <iostream>
 
-float angle;
-float constant = 0;
-bool endOfScreenReached = false;
 float translation = 0.0f;
+
+bool cube1Reached = false;
+bool cube2Reached = false;
+
+float constantMovement = 0;
+float movementDirection = -1.0;
+
+float translationSphere_Xpos = 0.0;
+float translationSphere_Ypos = 0.0;
+float translationSphere_Zpos = 0.0;
+
+float translationCube1_Xpos = 0.0;
+float translationCube1_Ypos = 0.0;
+float translationCube1_Zpos = 0.0;
+
+float translationCube2_Xpos = 0.0;
+float translationCube2_Ypos = 0.0;
+float translationCube2_Zpos = 0.0;
 
 /* Initialize the Project */
 void RenderProject::init()
@@ -122,9 +138,7 @@ void RenderProject::terminateFunction()
 /* Update render queue */
 void RenderProject::updateRenderQueue(const std::string &camera, const double &deltaTime)
 {
-    angle += deltaTime;
-
-    // get input translation
+    // get input translation from touch
     TouchMap touchMap = bRenderer().getInput()->getTouches();
     int i = 0;
     for (auto t = touchMap.begin(); t != touchMap.end(); ++t)
@@ -135,56 +149,77 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
             break;
     }
     
-    //calculate the constant for the movement. When the Object reaches the end of the Screen, then move it to the other side.
-    if(constant > 0) {
-        endOfScreenReached = false;
+    //translation positions of the objects
+    translationSphere_Xpos = 3.5f + constantMovement;
+    translationSphere_Zpos = 6.9f;
+    
+    translationCube1_Xpos = 8.5f;
+    translationCube1_Zpos = 6.9f + translation;
+    
+    translationCube2_Xpos = -4.8f;
+    translationCube2_Zpos = 6.9f;
+    
+    //calculate the collision of objects and movement of Sphere
+    if (translationSphere_Xpos > 8.5 or translationSphere_Xpos < -4.8) {
+        constantMovement = 0.1f;
+        translationSphere_Xpos = 0.0f;
+        translationSphere_Zpos = 6.9f;
     }
     
-    if(constant > -9.5f and endOfScreenReached == false){
-        constant -= 0.1f;
+    if (translationSphere_Xpos > translationCube1_Xpos - 2.0f
+        and (translationSphere_Zpos > translationCube1_Zpos - 2.0f
+             and translationSphere_Zpos < translationCube1_Zpos + 2.0f)) {
+        cube1Reached = true;
+        cube2Reached = false;
+        movementDirection = -1.0;
+        constantMovement += 0.1f * movementDirection;
+    }
+    if (translationSphere_Xpos < translationCube2_Xpos + 2.0f
+        and (translationSphere_Zpos > translationCube2_Zpos - 2.0f
+             and translationSphere_Zpos < translationCube2_Zpos + 2.0f)) {
+        cube2Reached = true;
+        cube1Reached = false;
+        movementDirection = 1.0;
+        constantMovement += 0.1f * movementDirection;
+
     }
     else {
-        endOfScreenReached = true;
+        constantMovement += 0.1f * movementDirection;
     }
-    if (endOfScreenReached == true and constant <= 0.1) {
-        constant += 0.1f;
-    }
-    
-    
-    /* Moving Sphere */
-    
-    vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(6.5f+constant,.5f,6.9f));
-    
-    ShaderPtr shader = bRenderer().getObjects()->getShader("sphere");
-    shader->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrix));
-    bRenderer().getModelRenderer()->drawModel("sphere", "camera", modelMatrix, std::vector<std::string>({ }));
     
     /* Cube 1 */
     
-    vmml::Matrix4f modelMatrixCube1 = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(8.5f,.5f,6.9f+translation));
-        
+    vmml::Matrix4f modelMatrixCube1 = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(translationCube1_Xpos,translationCube1_Ypos,translationCube1_Zpos));
+    
     ShaderPtr shaderCube1 = bRenderer().getObjects()->getShader("cube");
     shaderCube1->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixCube1));
     bRenderer().getModelRenderer()->drawModel("cube", "camera", modelMatrixCube1, std::vector<std::string>({ }));
     
     /* Cube 2 */
     
-    vmml::Matrix4f modelMatrixCube2 = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(-4.8f,.5f,6.9f+ constant));
+    vmml::Matrix4f modelMatrixCube2 = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(translationCube2_Xpos,translationCube2_Ypos,translationCube2_Zpos));
     
     ShaderPtr shaderCube2 = bRenderer().getObjects()->getShader("cube");
     shaderCube2->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixCube2));
     bRenderer().getModelRenderer()->drawModel("cube", "camera", modelMatrixCube2, std::vector<std::string>({ }));
     
-    /* Cube hockeypuck */
+    /* Moving Sphere */
     
-    vmml::Matrix4f modelMatrixHockeypuck = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(0.0f,.5f,0.0f));
+    vmml::Matrix4f modelMatrixSphere = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(translationSphere_Xpos,translationSphere_Ypos,translationSphere_Zpos));
     
-    ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
-    shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
-    shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
-    shaderHockeypuck->setUniform("color", vmml::Vector4f(1,0,0,1));
-    bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrixHockeypuck, std::vector<std::string>({ }));
+    ShaderPtr shaderSphere = bRenderer().getObjects()->getShader("sphere");
+    shaderSphere->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixSphere));
+    bRenderer().getModelRenderer()->drawModel("sphere", "camera", modelMatrixSphere, std::vector<std::string>({ }));
     
+//    /* Cube hockeypuck */
+//    
+//    vmml::Matrix4f modelMatrixHockeypuck = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(0.0f,.5f,0.0f));
+//    
+//    ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
+//    shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
+//    shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
+//    shaderHockeypuck->setUniform("color", vmml::Vector4f(1,0,0,1));
+//    bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrixHockeypuck, std::vector<std::string>({ }));
 }
 
 /* Camera movement */
