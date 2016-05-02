@@ -119,8 +119,8 @@
 		BB712D9A1CD64B3C008A3CA4 /* stick.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB712D991CD64B3C008A3CA4 /* stick.mtl */; };
 		BB712DA81CD66E46008A3CA4 /* field.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB712DA71CD66E46008A3CA4 /* field.obj */; };
 		BB712DAA1CD66E55008A3CA4 /* field.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB712DA91CD66E55008A3CA4 /* field.mtl */; };
-		BB712DAE1CD6702B008A3CA4 /* ice.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB712DAD1CD6702B008A3CA4 /* ice.frag */; };
-		BB712DB01CD67032008A3CA4 /* ice.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB712DAF1CD67032008A3CA4 /* ice.vert */; };
+		BB712DAE1CD6702B008A3CA4 /* field.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB712DAD1CD6702B008A3CA4 /* field.frag */; };
+		BB712DB01CD67032008A3CA4 /* field.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB712DAF1CD67032008A3CA4 /* field.vert */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -292,8 +292,8 @@
 		BB712D991CD64B3C008A3CA4 /* stick.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = stick.mtl; sourceTree = "<group>"; };
 		BB712DA71CD66E46008A3CA4 /* field.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = field.obj; sourceTree = "<group>"; };
 		BB712DA91CD66E55008A3CA4 /* field.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = field.mtl; sourceTree = "<group>"; };
-		BB712DAD1CD6702B008A3CA4 /* ice.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ice.frag; sourceTree = "<group>"; };
-		BB712DAF1CD67032008A3CA4 /* ice.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ice.vert; sourceTree = "<group>"; };
+		BB712DAD1CD6702B008A3CA4 /* field.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = field.frag; sourceTree = "<group>"; };
+		BB712DAF1CD67032008A3CA4 /* field.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = field.vert; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,8 +373,8 @@
 				B47949921BA6742B00B5E9DC /* config.json */,
 				BB712D931CD64936008A3CA4 /* stick.vert */,
 				BB712D951CD6493E008A3CA4 /* stick.frag */,
-				BB712DAD1CD6702B008A3CA4 /* ice.frag */,
-				BB712DAF1CD67032008A3CA4 /* ice.vert */,
+				BB712DAD1CD6702B008A3CA4 /* field.frag */,
+				BB712DAF1CD67032008A3CA4 /* field.vert */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -695,7 +695,7 @@
 			files = (
 				BB712DAA1CD66E55008A3CA4 /* field.mtl in Resources */,
 				BB712DA81CD66E46008A3CA4 /* field.obj in Resources */,
-				BB712DB01CD67032008A3CA4 /* ice.vert in Resources */,
+				BB712DB01CD67032008A3CA4 /* field.vert in Resources */,
 				BB712D9A1CD64B3C008A3CA4 /* stick.mtl in Resources */,
 				BB712D981CD64AAC008A3CA4 /* stick.obj in Resources */,
 				BB712D961CD6493E008A3CA4 /* stick.frag in Resources */,
@@ -703,7 +703,7 @@
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				54DFF2A41C96ED0D005274A0 /* sphere.mtl in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
-				BB712DAE1CD6702B008A3CA4 /* ice.frag in Resources */,
+				BB712DAE1CD6702B008A3CA4 /* field.frag in Resources */,
 				54DFF29E1C96E973005274A0 /* sphere.obj in Resources */,
 				B47949AF1BA6742B00B5E9DC /* config.json in Resources */,
 				BB712D941CD64936008A3CA4 /* stick.vert in Resources */,

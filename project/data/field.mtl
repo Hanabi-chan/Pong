@@ -1,7 +1,7 @@
 # Blender MTL File: 'field_border.blend'
 # Material Count: 1
 
-newmtl ice
+newmtl field
 Ns 194.117647
 Ka 1.000000 1.000000 1.000000
 Kd 0.538286 0.800000 0.776997
