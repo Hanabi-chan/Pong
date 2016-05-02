@@ -1,10 +1,16 @@
 #include "RenderProject.h"
 #include <math.h>
 
-/* angle for the rotation of the planets */
-float angle;
-float constant = 0;
-bool endOfScreenReached = false;
+float translation = 0.0f;
+
+float constantMovement = 0;
+float movementDirection = -1.0;
+
+float translationHockeypuck_Xpos = 0.0;
+float translationHockeypuck_Ypos = 0.0;
+float translationHockeypuck_Zpos = 0.0;
+
+bool scoredPuck = false;
 
 static GLint VIEW_WIDTH = View::getScreenWidth();
 static GLint VIEW_HEIGHT = View::getScreenHeight();
@@ -64,27 +70,16 @@ void RenderProject::initFunction()
     // load model
     bRenderer().getObjects()->loadObjModel("stick.obj", true, true, true, 4, true, false, stickProperties);
     
-    /* Loading Sphere Object */
+    /* Loading Hockeypuck Object */
     
     // load materials and shaders before loading the model
-    ShaderPtr sphereShader = bRenderer().getObjects()->loadShaderFile("sphere", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
+    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile("hockeypuck", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
     
     // create additional properties for a model
-    PropertiesPtr sphereProperties = bRenderer().getObjects()->createProperties("sphereProperties");
+    PropertiesPtr hockeypuckProperties = bRenderer().getObjects()->createProperties("hockeypuckProperties");
     
     // load model
-    bRenderer().getObjects()->loadObjModel("sphere.obj", true, true, true, 4, true, false, sphereProperties);								// automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
-    
-    /* Loading Cube Object */
-    
-    // load materials and shaders before loading the model
-    ShaderPtr cubeShader = bRenderer().getObjects()->loadShaderFile("cube", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
-    
-    // create additional properties for a model
-    PropertiesPtr cubeProperties = bRenderer().getObjects()->createProperties("cubeProperties");
-    
-    // load model
-    bRenderer().getObjects()->loadObjModel("cube.obj", true, true, true, 4, true, false, cubeProperties);								// automatically generates a shader with a maximum of 4 lights (number of lights may vary between 0 and 4 during rendering without performance loss)
+    bRenderer().getObjects()->loadObjModel("hockeypuck.obj", true, true, true, 4, true, false, hockeypuckProperties);
     
     // create camera
     bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
@@ -159,59 +154,13 @@ GLfloat computeStickPosition(GLfloat yPosition){
 void RenderProject::updateRenderQueue(const std::string &camera, const double &deltaTime)
 {
     
-    /* field */
-    vmml::Matrix4f fieldModelMatrix = vmml::create_scaling(vmml::Vector3f(1.0f))
-        //* vmml::create_translation(vmml::Vector3f(0,0,10.0f))
-        * vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))
-    ;//* vmml::create_rotation(1.0f, vmml::Vector3f(0,1,0));
+    /* Sticks Variables */
+    vmml::Vector3f xAxis = vmml::Vector3f(1,0,0);
+    float scale = 0.001;
+    float trans_x = 4.0, trans_z = 0.5;
+    float rotation_x = -0.9;
     
-    ShaderPtr fieldShader = bRenderer().getObjects()->getShader("field");
-    fieldShader->setUniform("NormalMatrix", vmml::Matrix3f(fieldModelMatrix));
-    bRenderer().getModelRenderer()->drawModel("field", "camera", fieldModelMatrix, std::vector<std::string>({ }));
-    
-    angle += deltaTime;
-    
-    //calculate the constant for the movement. When the Object reaches the end of the Screen, then move it to the other side.
-    if(constant > 0) {
-        endOfScreenReached = false;
-    }
-    
-    if(constant > -9.5f and endOfScreenReached == false){
-        constant -= 0.1f;
-    }
-    else {
-        endOfScreenReached = true;
-    }
-    if (endOfScreenReached == true and constant <= 0.1) {
-        constant += 0.1f;
-    }
-    
-    /* Moving Sphere */
-//    vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(6.5f+constant,.5f,6.9f));
-//    
-//    ShaderPtr shader = bRenderer().getObjects()->getShader("sphere");
-//    shader->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrix));
-//    bRenderer().getModelRenderer()->drawModel("sphere", "camera", modelMatrix, std::vector<std::string>({ }));
-    
-//    /* Cube 1 */
-//    vmml::Matrix4f modelMatrixCube1 = vmml::create_scaling(vmml::Vector3f(10.0f))
-//    ; //* vmml::create_translation(vmml::Vector3f(8.5f,.5f,6.9f));
-//    
-//    ShaderPtr shaderCube1 = bRenderer().getObjects()->getShader("cube");
-//    shaderCube1->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixCube1));
-////    shaderCube1->setUniform("color", vmml::Vector4f(0,1,0.7,1));
-//    bRenderer().getModelRenderer()->drawModel("cube", "camera", modelMatrixCube1, std::vector<std::string>({ }));
-//    
-//    /* Cube 2 */
-//    vmml::Matrix4f modelMatrixCube2 = vmml::create_scaling(vmml::Vector3f(0.7f))
-//    ;//* vmml::create_translation(vmml::Vector3f(-4.8f,.5f,6.9f));
-//    
-//    ShaderPtr shaderCube2 = bRenderer().getObjects()->getShader("cube");
-//    shaderCube2->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixCube2));
-////    shaderCube2->setUniform("color", vmml::Vector4f(1,0,0.7,1));
-//    bRenderer().getModelRenderer()->drawModel("cube", "camera", modelMatrixCube2, std::vector<std::string>({ }));
-    
-    // handle touch inputs
+    /* handle touch inputs */
     TouchMap touches = bRenderer().getInput()->getTouches();
     for(TouchMap::iterator it = touches.begin(); it != touches.end(); it++){
         Touch touch = it->second;
@@ -224,11 +173,56 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
         }
     }
     
-    /* Sticks */
-    vmml::Vector3f xAxis = vmml::Vector3f(1,0,0);
-    float scale = 0.001;
-    float trans_x = 4.0, trans_z = 0.5;
-    float rotation_x = -0.9;
+    /*Collision caluculation*/
+    
+    //translation positions of hockeypuck
+    translationHockeypuck_Xpos = 0.0f + constantMovement;
+    translationHockeypuck_Zpos = 0.3f;
+    
+    //pause after a scored point when the puck is in the middle of the field again
+    if (scoredPuck) {
+        sleep(2);
+        scoredPuck = false;
+    }
+    
+    //reset hockeypuck after reaching the goal
+    if (translationHockeypuck_Xpos > trans_x + 0.5f or translationHockeypuck_Xpos < -trans_x - 0.5f) {
+        constantMovement = 0.1f;
+        translationHockeypuck_Xpos = 0.0f + constantMovement;
+        scoredPuck = true;
+    }
+    
+    //collision with right stick
+    if (translationHockeypuck_Xpos > trans_x
+        and translationHockeypuck_Zpos < move_1 + .5f
+        and translationHockeypuck_Zpos > move_1 - .3f) {
+        movementDirection = -1.0;
+        constantMovement += 0.1f * movementDirection;
+    }
+    
+    //collision with left stick
+    if (translationHockeypuck_Xpos < -trans_x
+        and translationHockeypuck_Zpos < move_2 + .5f
+        and translationHockeypuck_Zpos > move_2 - .3f) {
+        movementDirection = 1.0;
+        constantMovement += 0.1f * movementDirection;
+    }
+    
+    //movement of hockeypuck without collision
+    else {
+        constantMovement += 0.1f * movementDirection;
+    }
+    
+    
+    /* field */
+    vmml::Matrix4f fieldModelMatrix = vmml::create_scaling(vmml::Vector3f(1.0f))
+        //* vmml::create_translation(vmml::Vector3f(0,0,10.0f))
+        * vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))
+    ;//* vmml::create_rotation(1.0f, vmml::Vector3f(0,1,0));
+    
+    ShaderPtr fieldShader = bRenderer().getObjects()->getShader("field");
+    fieldShader->setUniform("NormalMatrix", vmml::Matrix3f(fieldModelMatrix));
+    bRenderer().getModelRenderer()->drawModel("field", "camera", fieldModelMatrix, std::vector<std::string>({ }));
     
     /* Stick 1 */
     vmml::Matrix4f stickModelMatrix = fieldModelMatrix
@@ -249,6 +243,27 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     ShaderPtr stick2Shader = bRenderer().getObjects()->getShader("stick");
     stick2Shader->setUniform("NormalMatrix", vmml::Matrix3f(stick2ModelMatrix));
     bRenderer().getModelRenderer()->drawModel("stick", "camera", stick2ModelMatrix, std::vector<std::string>({ }));
+    
+    /* Hockeypuck */
+//    vmml::Matrix4f modelMatrixHockeypuck = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(translationHockeypuck_Xpos,translationHockeypuck_Ypos,translationHockeypuck_Zpos));
+    
+    vmml::Matrix4f modelMatrixHockeypuck = vmml::create_translation(vmml::Vector3f(vmml::Vector3f(translationHockeypuck_Xpos, 0.0f, translationHockeypuck_Zpos))) * vmml::create_scaling(vmml::Vector3f(0.2f)) * vmml::create_rotation(rotation_x + 0.25f, xAxis);
+    
+//    vmml::Matrix4f modelMatrixHockeypuck = fieldModelMatrix
+//    * vmml::create_translation(vmml::Vector3f(0.0, 0.0, 4.0f))
+//    * vmml::create_scaling(vmml::Vector3f(scale))
+//    * vmml::create_rotation(rotation_x, xAxis);
+    
+    ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
+    shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
+    shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
+    //shaderHockeypuck->setUniform("color", vmml::Vector4f(1,1,0,1));
+    bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrixHockeypuck, std::vector<std::string>({ }));
+    
+    //pause after scored point
+    if (scoredPuck) {
+        sleep(2);
+    }
     
 }
 
