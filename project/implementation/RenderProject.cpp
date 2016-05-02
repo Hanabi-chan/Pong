@@ -1,7 +1,10 @@
 #include "RenderProject.h"
 #include <math.h>
+#include <string>
+#include<stdio.h>
 
 float translation = 0.0f;
+int scoreId = 0;
 
 float constantMovement = 0;
 float movementDirection = -1.0;
@@ -11,6 +14,13 @@ float translationHockeypuck_Ypos = 0.0;
 float translationHockeypuck_Zpos = 0.0;
 
 bool scoredPuck = false;
+bool endOfGame = false;
+bool showEndgameText = false;
+
+std::string winner = "";
+
+int scoreLeftPlayer = 0;
+int scoreRightPlayer = 0;
 
 static GLint VIEW_WIDTH = View::getScreenWidth();
 static GLint VIEW_HEIGHT = View::getScreenHeight();
@@ -83,6 +93,10 @@ void RenderProject::initFunction()
     
     // create camera
     bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
+    
+    //font
+    FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
+    bRenderer().getObjects()->createTextSprite("score", vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
     
     // Update render queue
     updateRenderQueue("camera", 0.0f);
@@ -173,24 +187,56 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
         }
     }
     
-    /*Collision caluculation*/
-    
     //translation positions of hockeypuck
     translationHockeypuck_Xpos = 0.0f + constantMovement;
     translationHockeypuck_Zpos = 0.3f;
     
-    //pause after a scored point when the puck is in the middle of the field again
+    /* Pauses in the Game */
+    
+    //pause 2 seconds after a scored point when the puck is in the middle of the field again
     if (scoredPuck) {
         sleep(2);
         scoredPuck = false;
+        movementDirection *= -1;
+        if (scoreLeftPlayer == 5) {
+            endOfGame = true;
+            winner = "Left Player";
+        }
+        if (scoreRightPlayer == 5) {
+            endOfGame = true;
+            winner = "Right Player";
+        }
     }
     
+    //pause 5 seconds when showing the winning text
+    if (showEndgameText) {
+        sleep(5);
+        scoreLeftPlayer = 0;
+        scoreRightPlayer = 0;
+        endOfGame = false;
+        showEndgameText = false;
+    }
+    
+    /* Movement of Puck */
+    
     //reset hockeypuck after reaching the goal
-    if (translationHockeypuck_Xpos > trans_x + 0.5f or translationHockeypuck_Xpos < -trans_x - 0.5f) {
+    if (translationHockeypuck_Xpos > trans_x + 0.5f) {
         constantMovement = 0.1f;
         translationHockeypuck_Xpos = 0.0f + constantMovement;
         scoredPuck = true;
+        scoreLeftPlayer += 1;
+        scoreId += 1;
     }
+    
+    if (translationHockeypuck_Xpos < -trans_x - 0.5f) {
+        constantMovement = 0.1f;
+        translationHockeypuck_Xpos = 0.0f + constantMovement;
+        scoredPuck = true;
+        scoreRightPlayer += 1;
+        scoreId += 1;
+    }
+    
+    /* Collison of Puck */
     
     //collision with right stick
     if (translationHockeypuck_Xpos > trans_x
@@ -213,6 +259,48 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
         constantMovement += 0.1f * movementDirection;
     }
     
+    /* Score */
+    if (endOfGame == false) {
+        FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
+        bRenderer().getObjects()->createTextSprite("score"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
+        
+        GLfloat scaleText = 0.1f;
+        vmml::Matrix4f scalingMatrix = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
+        
+        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrix;
+        
+        vmml::Matrix4f viewMatrix = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
+        
+        vmml::Matrix4f projectionMatrix = vmml::Matrix4f::IDENTITY;
+        
+        ModelPtr score = bRenderer().getObjects()->getTextSprite("score"+std::to_string(scoreId));
+        // draw without lighting (empty vector of strings)
+        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrix, projectionMatrix, std::vector<std::string>({}));
+    }
+    else {
+        scoreLeftPlayer = 0;
+        scoreRightPlayer = 0;
+        
+        /* winning message */
+        FontPtr fontWinner = bRenderer().getObjects()->loadFont("orange juice 2.0.ttf", 50);
+        bRenderer().getObjects()->createTextSprite("winner"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), "Winner: "+winner+"\nRestart in 5 seconds!", fontWinner);
+        
+        GLfloat scaleTextWinner = 0.1f;
+        vmml::Matrix4f scalingMatrixWinner = vmml::create_scaling(vmml::Vector3f(scaleTextWinner / bRenderer().getView()->getAspectRatio(), scaleTextWinner, scaleTextWinner));
+        
+        vmml::Matrix4f modelMatrixTextWinner = vmml::create_translation(vmml::Vector3f(-0.3f, 0.7f, 0.f)) * scalingMatrixWinner;
+        
+        vmml::Matrix4f viewMatrixWinner = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
+        
+        vmml::Matrix4f projectionMatrixWinner = vmml::Matrix4f::IDENTITY;
+        
+        ModelPtr scoreWinner = bRenderer().getObjects()->getTextSprite("winner"+std::to_string(scoreId));
+        // draw without lighting (empty vector of strings)
+        bRenderer().getModelRenderer()->drawModel(scoreWinner, modelMatrixTextWinner, viewMatrixWinner, projectionMatrixWinner, std::vector<std::string>({}));
+        
+        showEndgameText = true;
+        scoreId += 1;
+    }
     
     /* field */
     vmml::Matrix4f fieldModelMatrix = vmml::create_scaling(vmml::Vector3f(1.0f))
@@ -245,14 +333,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     bRenderer().getModelRenderer()->drawModel("stick", "camera", stick2ModelMatrix, std::vector<std::string>({ }));
     
     /* Hockeypuck */
-//    vmml::Matrix4f modelMatrixHockeypuck = vmml::create_scaling(vmml::Vector3f(0.7f)) * vmml::create_translation(vmml::Vector3f(translationHockeypuck_Xpos,translationHockeypuck_Ypos,translationHockeypuck_Zpos));
-    
     vmml::Matrix4f modelMatrixHockeypuck = vmml::create_translation(vmml::Vector3f(vmml::Vector3f(translationHockeypuck_Xpos, 0.0f, translationHockeypuck_Zpos))) * vmml::create_scaling(vmml::Vector3f(0.2f)) * vmml::create_rotation(rotation_x + 0.25f, xAxis);
-    
-//    vmml::Matrix4f modelMatrixHockeypuck = fieldModelMatrix
-//    * vmml::create_translation(vmml::Vector3f(0.0, 0.0, 4.0f))
-//    * vmml::create_scaling(vmml::Vector3f(scale))
-//    * vmml::create_rotation(rotation_x, xAxis);
     
     ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
     shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
