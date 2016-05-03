@@ -159,7 +159,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     /* Sticks Variables */
     vmml::Vector3f xAxis = vmml::Vector3f(1,0,0);
     float scale = 0.001;
-    float trans_x = 4.0, trans_z = 0.5;
+    float trans_x = 4.0, trans_z = 1;
     float rotation_x = -0.9;
     
     /* handle touch inputs */
@@ -177,7 +177,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     
     //translation positions of hockeypuck
     translationHockeypuck_Xpos = 0.0f + constantMovement;
-    translationHockeypuck_Zpos = 0.3f;
+    translationHockeypuck_Zpos = 0.5f;
     
     /* Pauses in the Game */
     
@@ -294,8 +294,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     }
     
     /* field */
-    vmml::Matrix4f fieldModelMatrix = vmml::create_scaling(vmml::Vector3f(1.0f))
-        * vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
+    vmml::Matrix4f fieldModelMatrix = create_translation(vmml::Vector3f(1.0f)) *vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
     
     ShaderPtr fieldShader = bRenderer().getObjects()->getShader("field");
     fieldShader->setUniform("NormalMatrix", vmml::Matrix3f(fieldModelMatrix));
@@ -322,7 +321,9 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     bRenderer().getModelRenderer()->drawModel("stick", "camera", stick2ModelMatrix, std::vector<std::string>({ }));
     
     /* Hockeypuck */
-    vmml::Matrix4f modelMatrixHockeypuck = vmml::create_translation(vmml::Vector3f(vmml::Vector3f(translationHockeypuck_Xpos, 0.0f, translationHockeypuck_Zpos))) * vmml::create_scaling(vmml::Vector3f(0.2f)) * vmml::create_rotation(rotation_x + 0.25f, xAxis);
+    vmml::Matrix4f modelMatrixHockeypuck = fieldModelMatrix
+                                                * vmml::create_translation(vmml::Vector3f(translationHockeypuck_Xpos, translationHockeypuck_Zpos, 0.0f))
+                                                * vmml::create_scaling(vmml::Vector3f(0.15f));
     
     ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
     shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
