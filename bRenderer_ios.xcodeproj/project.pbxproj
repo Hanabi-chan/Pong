@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */; };
+		26DE6D131CD90337000DBBB7 /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D111CD90337000DBBB7 /* hockeypuck.frag */; };
+		26DE6D141CD90337000DBBB7 /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D121CD90337000DBBB7 /* hockeypuck.vert */; };
 		B44186971BA331E300604D7F /* RenderProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44186961BA331E300604D7F /* RenderProject.cpp */; };
 		B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B47949C41BA6743D00B5E9DC /* LICENSE.txt */; };
 		B4794A2B1BA6743D00B5E9DC /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = B47949C61BA6743D00B5E9DC /* platform.c */; };
@@ -108,10 +111,8 @@
 		BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB7730171CD8861C00C2B91D /* cube.mtl */; };
 		BB7730301CD8861C00C2B91D /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730181CD8861C00C2B91D /* cube.obj */; };
 		BB7730311CD8861C00C2B91D /* cube.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730191CD8861C00C2B91D /* cube.vert */; };
-		BB7730361CD8861C00C2B91D /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB77301E1CD8861C00C2B91D /* hockeypuck.frag */; };
 		BB7730371CD8861C00C2B91D /* hockeypuck.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB77301F1CD8861C00C2B91D /* hockeypuck.mtl */; };
 		BB7730381CD8861C00C2B91D /* hockeypuck.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730201CD8861C00C2B91D /* hockeypuck.obj */; };
-		BB7730391CD8861C00C2B91D /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730211CD8861C00C2B91D /* hockeypuck.vert */; };
 		BB77303C1CD8861C00C2B91D /* quad.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730241CD8861C00C2B91D /* quad.obj */; };
 		BB77303D1CD8861C00C2B91D /* sphere.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB7730251CD8861C00C2B91D /* sphere.frag */; };
 		BB77303E1CD8861C00C2B91D /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB7730261CD8861C00C2B91D /* sphere.mtl */; };
@@ -130,6 +131,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockeypuck.png; sourceTree = "<group>"; };
+		26DE6D111CD90337000DBBB7 /* hockeypuck.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
+		26DE6D121CD90337000DBBB7 /* hockeypuck.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
 		B44186941BA331E300604D7F /* RenderProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderProject.h; sourceTree = "<group>"; };
 		B44186961BA331E300604D7F /* RenderProject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderProject.cpp; sourceTree = "<group>"; };
 		B47949C01BA6743D00B5E9DC /* bRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bRenderer.h; sourceTree = "<group>"; };
@@ -287,10 +291,8 @@
 		BB7730171CD8861C00C2B91D /* cube.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
 		BB7730181CD8861C00C2B91D /* cube.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
 		BB7730191CD8861C00C2B91D /* cube.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = cube.vert; sourceTree = "<group>"; };
-		BB77301E1CD8861C00C2B91D /* hockeypuck.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
 		BB77301F1CD8861C00C2B91D /* hockeypuck.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = hockeypuck.mtl; sourceTree = "<group>"; };
 		BB7730201CD8861C00C2B91D /* hockeypuck.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = hockeypuck.obj; sourceTree = "<group>"; };
-		BB7730211CD8861C00C2B91D /* hockeypuck.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
 		BB7730241CD8861C00C2B91D /* quad.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = quad.obj; sourceTree = "<group>"; };
 		BB7730251CD8861C00C2B91D /* sphere.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = sphere.frag; sourceTree = "<group>"; };
 		BB7730261CD8861C00C2B91D /* sphere.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */,
 				BB77304D1CD887DA00C2B91D /* field.frag */,
 				BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */,
 				BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */,
@@ -380,10 +383,10 @@
 				BB7730171CD8861C00C2B91D /* cube.mtl */,
 				BB7730181CD8861C00C2B91D /* cube.obj */,
 				BB7730191CD8861C00C2B91D /* cube.vert */,
-				BB77301E1CD8861C00C2B91D /* hockeypuck.frag */,
+				26DE6D121CD90337000DBBB7 /* hockeypuck.vert */,
+				26DE6D111CD90337000DBBB7 /* hockeypuck.frag */,
 				BB77301F1CD8861C00C2B91D /* hockeypuck.mtl */,
 				BB7730201CD8861C00C2B91D /* hockeypuck.obj */,
-				BB7730211CD8861C00C2B91D /* hockeypuck.vert */,
 				BB7730241CD8861C00C2B91D /* quad.obj */,
 				BB7730251CD8861C00C2B91D /* sphere.frag */,
 				BB7730261CD8861C00C2B91D /* sphere.mtl */,
@@ -721,13 +724,13 @@
 				BB77302E1CD8861C00C2B91D /* cube.frag in Resources */,
 				BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */,
 				BB7730301CD8861C00C2B91D /* cube.obj in Resources */,
+				26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */,
 				BB7730311CD8861C00C2B91D /* cube.vert in Resources */,
-				BB7730361CD8861C00C2B91D /* hockeypuck.frag in Resources */,
 				BB7730371CD8861C00C2B91D /* hockeypuck.mtl in Resources */,
 				BB7730381CD8861C00C2B91D /* hockeypuck.obj in Resources */,
-				BB7730391CD8861C00C2B91D /* hockeypuck.vert in Resources */,
 				BB77303C1CD8861C00C2B91D /* quad.obj in Resources */,
 				BB77303D1CD8861C00C2B91D /* sphere.frag in Resources */,
+				26DE6D141CD90337000DBBB7 /* hockeypuck.vert in Resources */,
 				BB77303E1CD8861C00C2B91D /* sphere.mtl in Resources */,
 				BB77303F1CD8861C00C2B91D /* sphere.obj in Resources */,
 				BB7730401CD8861C00C2B91D /* sphere.vert in Resources */,
@@ -739,6 +742,7 @@
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4CB8CD01B72E43300FE041B /* Project-Info.plist in Resources */,
+				26DE6D131CD90337000DBBB7 /* hockeypuck.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

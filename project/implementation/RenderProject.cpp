@@ -256,17 +256,17 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
         bRenderer().getObjects()->createTextSprite("score"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
         
         GLfloat scaleText = 0.1f;
-        vmml::Matrix4f scalingMatrix = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
+        vmml::Matrix4f scalingMatrixText = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
         
-        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrix;
+        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrixText;
         
-        vmml::Matrix4f viewMatrix = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
+        vmml::Matrix4f viewMatrixText = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
         
-        vmml::Matrix4f projectionMatrix = vmml::Matrix4f::IDENTITY;
+        vmml::Matrix4f projectionMatrixText = vmml::Matrix4f::IDENTITY;
         
         ModelPtr score = bRenderer().getObjects()->getTextSprite("score"+std::to_string(scoreId));
         // draw without lighting (empty vector of strings)
-        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrix, projectionMatrix, std::vector<std::string>({}));
+        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrixText, projectionMatrixText, std::vector<std::string>({}));
     }
     else {
         scoreLeftPlayer = 0;
@@ -324,7 +324,31 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     /* Hockeypuck */
     vmml::Matrix4f modelMatrixHockeypuck = vmml::create_translation(vmml::Vector3f(vmml::Vector3f(translationHockeypuck_Xpos, 0.0f, translationHockeypuck_Zpos))) * vmml::create_scaling(vmml::Vector3f(0.2f)) * vmml::create_rotation(rotation_x + 0.25f, xAxis);
     
+    vmml::Matrix4f viewMatrixHockeypuck = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
+
     ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
+    if (shaderHockeypuck.get())
+    {
+        shaderHockeypuck->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
+        shaderHockeypuck->setUniform("ViewMatrix", viewMatrixHockeypuck);
+        shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
+        
+        vmml::Matrix3f normalMatrixHockeypuck;
+        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(modelMatrixHockeypuck)), normalMatrixHockeypuck);
+        shaderHockeypuck->setUniform("NormalMatrix", normalMatrixHockeypuck);
+        
+        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
+        shaderHockeypuck->setUniform("EyePos", eyePos);
+        
+        shaderHockeypuck->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
+        shaderHockeypuck->setUniform("Ia", vmml::Vector3f(1.f));
+        shaderHockeypuck->setUniform("Id", vmml::Vector3f(1.f));
+        shaderHockeypuck->setUniform("Is", vmml::Vector3f(1.f));
+    }
+    else
+    {
+        bRenderer::log("No shader available.");
+    }
     shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
     shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
     //shaderHockeypuck->setUniform("color", vmml::Vector4f(1,1,0,1));
