@@ -7,17 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		266A21D91CD4C03B009ED9A7 /* cube.frag in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D41CD4C03B009ED9A7 /* cube.frag */; };
-		266A21DA1CD4C03B009ED9A7 /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D51CD4C03B009ED9A7 /* cube.mtl */; };
-		266A21DB1CD4C03B009ED9A7 /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D61CD4C03B009ED9A7 /* cube.obj */; };
-		266A21DC1CD4C03B009ED9A7 /* cube.vert in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D71CD4C03B009ED9A7 /* cube.vert */; };
-		266A21DD1CD4C03B009ED9A7 /* quad.obj in Resources */ = {isa = PBXBuildFile; fileRef = 266A21D81CD4C03B009ED9A7 /* quad.obj */; };
-		54DFF29E1C96E973005274A0 /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF29D1C96E973005274A0 /* sphere.obj */; };
-		54DFF2A01C96E985005274A0 /* sphere.frag in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF29F1C96E985005274A0 /* sphere.frag */; };
-		54DFF2A21C96E98D005274A0 /* sphere.vert in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF2A11C96E98D005274A0 /* sphere.vert */; };
-		54DFF2A41C96ED0D005274A0 /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 54DFF2A31C96ED0D005274A0 /* sphere.mtl */; };
 		B44186971BA331E300604D7F /* RenderProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B44186961BA331E300604D7F /* RenderProject.cpp */; };
-		B47949AF1BA6742B00B5E9DC /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = B47949921BA6742B00B5E9DC /* config.json */; };
 		B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B47949C41BA6743D00B5E9DC /* LICENSE.txt */; };
 		B4794A2B1BA6743D00B5E9DC /* platform.c in Sources */ = {isa = PBXBuildFile; fileRef = B47949C61BA6743D00B5E9DC /* platform.c */; };
 		B4794A2C1BA6743D00B5E9DC /* texture-atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = B47949C81BA6743D00B5E9DC /* texture-atlas.c */; };
@@ -113,29 +103,35 @@
 		B59A67991ACC8BCC00E3EB9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A67981ACC8BCC00E3EB9B /* UIKit.framework */; };
 		B59A679B1ACC99F900E3EB9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A679A1ACC99F900E3EB9B /* CoreGraphics.framework */; };
 		B59A679D1ACC9A0400E3EB9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A679C1ACC9A0400E3EB9B /* QuartzCore.framework */; };
-		BB712D941CD64936008A3CA4 /* stick.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB712D931CD64936008A3CA4 /* stick.vert */; };
-		BB712D961CD6493E008A3CA4 /* stick.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB712D951CD6493E008A3CA4 /* stick.frag */; };
-		BB712D981CD64AAC008A3CA4 /* stick.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB712D971CD64AAC008A3CA4 /* stick.obj */; };
-		BB712D9A1CD64B3C008A3CA4 /* stick.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB712D991CD64B3C008A3CA4 /* stick.mtl */; };
-		BB712DA81CD66E46008A3CA4 /* field.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB712DA71CD66E46008A3CA4 /* field.obj */; };
-		BB712DAA1CD66E55008A3CA4 /* field.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB712DA91CD66E55008A3CA4 /* field.mtl */; };
-		BB712DAE1CD6702B008A3CA4 /* field.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB712DAD1CD6702B008A3CA4 /* field.frag */; };
-		BB712DB01CD67032008A3CA4 /* field.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB712DAF1CD67032008A3CA4 /* field.vert */; };
+		BB77302D1CD8861C00C2B91D /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = BB7730151CD8861C00C2B91D /* config.json */; };
+		BB77302E1CD8861C00C2B91D /* cube.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB7730161CD8861C00C2B91D /* cube.frag */; };
+		BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB7730171CD8861C00C2B91D /* cube.mtl */; };
+		BB7730301CD8861C00C2B91D /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730181CD8861C00C2B91D /* cube.obj */; };
+		BB7730311CD8861C00C2B91D /* cube.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730191CD8861C00C2B91D /* cube.vert */; };
+		BB7730361CD8861C00C2B91D /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB77301E1CD8861C00C2B91D /* hockeypuck.frag */; };
+		BB7730371CD8861C00C2B91D /* hockeypuck.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB77301F1CD8861C00C2B91D /* hockeypuck.mtl */; };
+		BB7730381CD8861C00C2B91D /* hockeypuck.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730201CD8861C00C2B91D /* hockeypuck.obj */; };
+		BB7730391CD8861C00C2B91D /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730211CD8861C00C2B91D /* hockeypuck.vert */; };
+		BB77303C1CD8861C00C2B91D /* quad.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730241CD8861C00C2B91D /* quad.obj */; };
+		BB77303D1CD8861C00C2B91D /* sphere.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB7730251CD8861C00C2B91D /* sphere.frag */; };
+		BB77303E1CD8861C00C2B91D /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB7730261CD8861C00C2B91D /* sphere.mtl */; };
+		BB77303F1CD8861C00C2B91D /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB7730271CD8861C00C2B91D /* sphere.obj */; };
+		BB7730401CD8861C00C2B91D /* sphere.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730281CD8861C00C2B91D /* sphere.vert */; };
+		BB7730411CD8861C00C2B91D /* stick.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB7730291CD8861C00C2B91D /* stick.frag */; };
+		BB7730421CD8861C00C2B91D /* stick.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB77302A1CD8861C00C2B91D /* stick.mtl */; };
+		BB7730431CD8861C00C2B91D /* stick.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB77302B1CD8861C00C2B91D /* stick.obj */; };
+		BB7730441CD8861C00C2B91D /* stick.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB77302C1CD8861C00C2B91D /* stick.vert */; };
+		BB7730511CD887DA00C2B91D /* field.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB77304D1CD887DA00C2B91D /* field.frag */; };
+		BB7730521CD887DA00C2B91D /* field.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB77304E1CD887DA00C2B91D /* field.mtl */; };
+		BB7730531CD887DA00C2B91D /* field.obj in Resources */ = {isa = PBXBuildFile; fileRef = BB77304F1CD887DA00C2B91D /* field.obj */; };
+		BB7730541CD887DA00C2B91D /* field.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730501CD887DA00C2B91D /* field.vert */; };
+		BB7730571CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */; };
+		BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		266A21D41CD4C03B009ED9A7 /* cube.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = cube.frag; sourceTree = "<group>"; };
-		266A21D51CD4C03B009ED9A7 /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
-		266A21D61CD4C03B009ED9A7 /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
-		266A21D71CD4C03B009ED9A7 /* cube.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = cube.vert; sourceTree = "<group>"; };
-		266A21D81CD4C03B009ED9A7 /* quad.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quad.obj; sourceTree = "<group>"; };
-		54DFF29D1C96E973005274A0 /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
-		54DFF29F1C96E985005274A0 /* sphere.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sphere.frag; sourceTree = "<group>"; };
-		54DFF2A11C96E98D005274A0 /* sphere.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sphere.vert; sourceTree = "<group>"; };
-		54DFF2A31C96ED0D005274A0 /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
 		B44186941BA331E300604D7F /* RenderProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderProject.h; sourceTree = "<group>"; };
 		B44186961BA331E300604D7F /* RenderProject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderProject.cpp; sourceTree = "<group>"; };
-		B47949921BA6742B00B5E9DC /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		B47949C01BA6743D00B5E9DC /* bRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bRenderer.h; sourceTree = "<group>"; };
 		B47949C31BA6743D00B5E9DC /* freetype-gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "freetype-gl.h"; sourceTree = "<group>"; };
 		B47949C41BA6743D00B5E9DC /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -286,14 +282,30 @@
 		B59A67981ACC8BCC00E3EB9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B59A679A1ACC99F900E3EB9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B59A679C1ACC9A0400E3EB9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BB712D931CD64936008A3CA4 /* stick.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stick.vert; sourceTree = "<group>"; };
-		BB712D951CD6493E008A3CA4 /* stick.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stick.frag; sourceTree = "<group>"; };
-		BB712D971CD64AAC008A3CA4 /* stick.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = stick.obj; sourceTree = "<group>"; };
-		BB712D991CD64B3C008A3CA4 /* stick.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = stick.mtl; sourceTree = "<group>"; };
-		BB712DA71CD66E46008A3CA4 /* field.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = field.obj; sourceTree = "<group>"; };
-		BB712DA91CD66E55008A3CA4 /* field.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = field.mtl; sourceTree = "<group>"; };
-		BB712DAD1CD6702B008A3CA4 /* field.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = field.frag; sourceTree = "<group>"; };
-		BB712DAF1CD67032008A3CA4 /* field.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = field.vert; sourceTree = "<group>"; };
+		BB7730151CD8861C00C2B91D /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		BB7730161CD8861C00C2B91D /* cube.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = cube.frag; sourceTree = "<group>"; };
+		BB7730171CD8861C00C2B91D /* cube.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
+		BB7730181CD8861C00C2B91D /* cube.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		BB7730191CD8861C00C2B91D /* cube.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = cube.vert; sourceTree = "<group>"; };
+		BB77301E1CD8861C00C2B91D /* hockeypuck.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
+		BB77301F1CD8861C00C2B91D /* hockeypuck.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = hockeypuck.mtl; sourceTree = "<group>"; };
+		BB7730201CD8861C00C2B91D /* hockeypuck.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = hockeypuck.obj; sourceTree = "<group>"; };
+		BB7730211CD8861C00C2B91D /* hockeypuck.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
+		BB7730241CD8861C00C2B91D /* quad.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = quad.obj; sourceTree = "<group>"; };
+		BB7730251CD8861C00C2B91D /* sphere.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = sphere.frag; sourceTree = "<group>"; };
+		BB7730261CD8861C00C2B91D /* sphere.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
+		BB7730271CD8861C00C2B91D /* sphere.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
+		BB7730281CD8861C00C2B91D /* sphere.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = sphere.vert; sourceTree = "<group>"; };
+		BB7730291CD8861C00C2B91D /* stick.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = stick.frag; sourceTree = "<group>"; };
+		BB77302A1CD8861C00C2B91D /* stick.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = stick.mtl; sourceTree = "<group>"; };
+		BB77302B1CD8861C00C2B91D /* stick.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = stick.obj; sourceTree = "<group>"; };
+		BB77302C1CD8861C00C2B91D /* stick.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = stick.vert; sourceTree = "<group>"; };
+		BB77304D1CD887DA00C2B91D /* field.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = field.frag; sourceTree = "<group>"; };
+		BB77304E1CD887DA00C2B91D /* field.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = field.mtl; sourceTree = "<group>"; };
+		BB77304F1CD887DA00C2B91D /* field.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = field.obj; sourceTree = "<group>"; };
+		BB7730501CD887DA00C2B91D /* field.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = field.vert; sourceTree = "<group>"; };
+		BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DJB Up on the Scoreboard.ttf"; sourceTree = "<group>"; };
+		BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice 2.0.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,24 +369,30 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
-				BB712DA91CD66E55008A3CA4 /* field.mtl */,
-				BB712DA71CD66E46008A3CA4 /* field.obj */,
-				BB712D991CD64B3C008A3CA4 /* stick.mtl */,
-				BB712D971CD64AAC008A3CA4 /* stick.obj */,
-				266A21D41CD4C03B009ED9A7 /* cube.frag */,
-				266A21D51CD4C03B009ED9A7 /* cube.mtl */,
-				266A21D61CD4C03B009ED9A7 /* cube.obj */,
-				266A21D71CD4C03B009ED9A7 /* cube.vert */,
-				266A21D81CD4C03B009ED9A7 /* quad.obj */,
-				54DFF2A31C96ED0D005274A0 /* sphere.mtl */,
-				54DFF2A11C96E98D005274A0 /* sphere.vert */,
-				54DFF29F1C96E985005274A0 /* sphere.frag */,
-				54DFF29D1C96E973005274A0 /* sphere.obj */,
-				B47949921BA6742B00B5E9DC /* config.json */,
-				BB712D931CD64936008A3CA4 /* stick.vert */,
-				BB712D951CD6493E008A3CA4 /* stick.frag */,
-				BB712DAD1CD6702B008A3CA4 /* field.frag */,
-				BB712DAF1CD67032008A3CA4 /* field.vert */,
+				BB77304D1CD887DA00C2B91D /* field.frag */,
+				BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */,
+				BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */,
+				BB77304E1CD887DA00C2B91D /* field.mtl */,
+				BB77304F1CD887DA00C2B91D /* field.obj */,
+				BB7730501CD887DA00C2B91D /* field.vert */,
+				BB7730151CD8861C00C2B91D /* config.json */,
+				BB7730161CD8861C00C2B91D /* cube.frag */,
+				BB7730171CD8861C00C2B91D /* cube.mtl */,
+				BB7730181CD8861C00C2B91D /* cube.obj */,
+				BB7730191CD8861C00C2B91D /* cube.vert */,
+				BB77301E1CD8861C00C2B91D /* hockeypuck.frag */,
+				BB77301F1CD8861C00C2B91D /* hockeypuck.mtl */,
+				BB7730201CD8861C00C2B91D /* hockeypuck.obj */,
+				BB7730211CD8861C00C2B91D /* hockeypuck.vert */,
+				BB7730241CD8861C00C2B91D /* quad.obj */,
+				BB7730251CD8861C00C2B91D /* sphere.frag */,
+				BB7730261CD8861C00C2B91D /* sphere.mtl */,
+				BB7730271CD8861C00C2B91D /* sphere.obj */,
+				BB7730281CD8861C00C2B91D /* sphere.vert */,
+				BB7730291CD8861C00C2B91D /* stick.frag */,
+				BB77302A1CD8861C00C2B91D /* stick.mtl */,
+				BB77302B1CD8861C00C2B91D /* stick.obj */,
+				BB77302C1CD8861C00C2B91D /* stick.vert */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -693,28 +711,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB712DAA1CD66E55008A3CA4 /* field.mtl in Resources */,
-				BB712DA81CD66E46008A3CA4 /* field.obj in Resources */,
-				BB712DB01CD67032008A3CA4 /* field.vert in Resources */,
-				BB712D9A1CD64B3C008A3CA4 /* stick.mtl in Resources */,
-				BB712D981CD64AAC008A3CA4 /* stick.obj in Resources */,
-				BB712D961CD6493E008A3CA4 /* stick.frag in Resources */,
-				266A21DB1CD4C03B009ED9A7 /* cube.obj in Resources */,
+				BB7730571CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf in Resources */,
+				BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */,
+				BB7730511CD887DA00C2B91D /* field.frag in Resources */,
+				BB7730521CD887DA00C2B91D /* field.mtl in Resources */,
+				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
+				BB7730541CD887DA00C2B91D /* field.vert in Resources */,
+				BB77302D1CD8861C00C2B91D /* config.json in Resources */,
+				BB77302E1CD8861C00C2B91D /* cube.frag in Resources */,
+				BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */,
+				BB7730301CD8861C00C2B91D /* cube.obj in Resources */,
+				BB7730311CD8861C00C2B91D /* cube.vert in Resources */,
+				BB7730361CD8861C00C2B91D /* hockeypuck.frag in Resources */,
+				BB7730371CD8861C00C2B91D /* hockeypuck.mtl in Resources */,
+				BB7730381CD8861C00C2B91D /* hockeypuck.obj in Resources */,
+				BB7730391CD8861C00C2B91D /* hockeypuck.vert in Resources */,
+				BB77303C1CD8861C00C2B91D /* quad.obj in Resources */,
+				BB77303D1CD8861C00C2B91D /* sphere.frag in Resources */,
+				BB77303E1CD8861C00C2B91D /* sphere.mtl in Resources */,
+				BB77303F1CD8861C00C2B91D /* sphere.obj in Resources */,
+				BB7730401CD8861C00C2B91D /* sphere.vert in Resources */,
+				BB7730411CD8861C00C2B91D /* stick.frag in Resources */,
+				BB7730421CD8861C00C2B91D /* stick.mtl in Resources */,
+				BB7730431CD8861C00C2B91D /* stick.obj in Resources */,
+				BB7730441CD8861C00C2B91D /* stick.vert in Resources */,
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
-				54DFF2A41C96ED0D005274A0 /* sphere.mtl in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
-				BB712DAE1CD6702B008A3CA4 /* field.frag in Resources */,
-				54DFF29E1C96E973005274A0 /* sphere.obj in Resources */,
-				B47949AF1BA6742B00B5E9DC /* config.json in Resources */,
-				BB712D941CD64936008A3CA4 /* stick.vert in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,
-				266A21DC1CD4C03B009ED9A7 /* cube.vert in Resources */,
-				54DFF2A21C96E98D005274A0 /* sphere.vert in Resources */,
 				B4CB8CD01B72E43300FE041B /* Project-Info.plist in Resources */,
-				266A21DD1CD4C03B009ED9A7 /* quad.obj in Resources */,
-				266A21DA1CD4C03B009ED9A7 /* cube.mtl in Resources */,
-				266A21D91CD4C03B009ED9A7 /* cube.frag in Resources */,
-				54DFF2A01C96E985005274A0 /* sphere.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,34 +61,22 @@ void RenderProject::initFunction()
     bRenderer().getObjects()->setShaderVersionES("#version 100");
     
     /* Loading field */
-    
     // load materials and shaders before loading the model
+    // load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
     ShaderPtr fieldShader = bRenderer().getObjects()->loadShaderFile("field", 0, false, true, true, false, false);
     // create additional properties for a model
     PropertiesPtr fieldProperties = bRenderer().getObjects()->createProperties("fieldProperties");
-    
     // load model
     bRenderer().getObjects()->loadObjModel("field.obj", true, true, true, 4, true, false, fieldProperties);
     
     /* Loading stick */
-    
-    // load materials and shaders before loading the model
     ShaderPtr stickShader = bRenderer().getObjects()->loadShaderFile("stick", 0, false, true, true, false, false);
-    // create additional properties for a model
     PropertiesPtr stickProperties = bRenderer().getObjects()->createProperties("stickProperties");
-    
-    // load model
     bRenderer().getObjects()->loadObjModel("stick.obj", true, true, true, 4, true, false, stickProperties);
     
     /* Loading Hockeypuck Object */
-    
-    // load materials and shaders before loading the model
-    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile("hockeypuck", 0, false, true, true, false, false);				// load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
-    
-    // create additional properties for a model
+    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile("hockeypuck", 0, false, true, true, false, false);
     PropertiesPtr hockeypuckProperties = bRenderer().getObjects()->createProperties("hockeypuckProperties");
-    
-    // load model
     bRenderer().getObjects()->loadObjModel("hockeypuck.obj", true, true, true, 4, true, false, hockeypuckProperties);
     
     // create camera
@@ -198,6 +186,9 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
         sleep(2);
         scoredPuck = false;
         movementDirection *= -1;
+        // reset sticks
+        move_1 = 0.0f;
+        move_2 = 0.0f;
         if (scoreLeftPlayer == 5) {
             endOfGame = true;
             winner = "Left Player";
@@ -304,9 +295,7 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     
     /* field */
     vmml::Matrix4f fieldModelMatrix = vmml::create_scaling(vmml::Vector3f(1.0f))
-        //* vmml::create_translation(vmml::Vector3f(0,0,10.0f))
-        * vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))
-    ;//* vmml::create_rotation(1.0f, vmml::Vector3f(0,1,0));
+        * vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
     
     ShaderPtr fieldShader = bRenderer().getObjects()->getShader("field");
     fieldShader->setUniform("NormalMatrix", vmml::Matrix3f(fieldModelMatrix));
@@ -340,11 +329,6 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
     //shaderHockeypuck->setUniform("color", vmml::Vector4f(1,1,0,1));
     bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrixHockeypuck, std::vector<std::string>({ }));
-    
-    //pause after scored point
-    if (scoredPuck) {
-        sleep(2);
-    }
     
 }
 
