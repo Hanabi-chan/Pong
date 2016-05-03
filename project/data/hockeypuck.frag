@@ -32,7 +32,6 @@ varying mediump vec3 normal;
 
 void main()
 {
-    //implement Phong Shading (per-fragment lighting)
     
     mediump vec3 n = normal ;
     mediump vec3 l = normalize(LightPos - pos).xyz;
