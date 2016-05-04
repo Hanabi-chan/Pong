@@ -31,8 +31,6 @@ private:
     
     bool left;
     
-    GLfloat move;
-    
     Field *field;
     
     struct Translation {
@@ -45,6 +43,8 @@ private:
         
     };
     Translation translation;
+    
+    void makeMovement(Renderer &bRenderer);
     
 };
 #endif /* Stick_hpp */
