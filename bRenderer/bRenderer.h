@@ -15,4 +15,10 @@
 /* Box2D includes */
 #include "Box2D/Box2D.h"
 
+/* model */
+#include "Field.hpp"
+#include "Puck.hpp"
+#include "Stick.hpp"
+#include "Player.hpp"
+
 #endif /* defined(B_BRENDERER_H) */
