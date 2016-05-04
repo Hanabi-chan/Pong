@@ -17,6 +17,7 @@ class Player {
 public:
     
     int score;
+    
     Stick *stick;
     
     Player(Stick *stick);

@@ -18,6 +18,12 @@ public:
     
     const std::string MODEL_NAME;
     
+    struct Dimension {
+        GLfloat x;
+        GLfloat y;
+    };
+    Dimension dimension;
+    
     void drawModel(Renderer &bRenderer, const std::string &modelName, const std::string &cameraName, const vmml::Matrix4f & modelMatrix, const std::vector<std::string> &lightNames);
 
     virtual void drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME);
@@ -25,12 +31,6 @@ public:
 protected:
     
     ObjectModel(const std::string &model_name);
-    
-    struct Dimension {
-        GLfloat x;
-        GLfloat y;
-    };
-    Dimension dimension;
     
     vmml::Vector3f scale;
     

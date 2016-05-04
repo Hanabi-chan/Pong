@@ -21,6 +21,8 @@ public:
     
     Stick(Field *field, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale, bool left = false);
     
+    bool left;
+    
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
 
 private:
@@ -28,8 +30,6 @@ private:
     const vmml::Vector3f xAxis;
     
     const GLfloat rotation, trans_x, trans_z;
-    
-    bool left;
     
     Field *field;
     
