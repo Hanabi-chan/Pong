@@ -4,28 +4,13 @@
 #include<stdio.h>
 #include <list>
 
-float translation = 0.0f;
-int scoreId = 0;
+static const GLint VIEW_WIDTH = View::getScreenWidth();
+static const GLint VIEW_HEIGHT = View::getScreenHeight();
 
-float constantMovement = 0;
-float movementDirection = -1.0;
-
-float translationHockeypuck_Xpos = 0.0;
-float translationHockeypuck_Ypos = 0.0;
-float translationHockeypuck_Zpos = 0.0;
-
-bool scoredPuck = false;
-bool endOfGame = false;
-bool showEndgameText = false;
-
-std::string winner = "";
-
-int scoreLeftPlayer = 0;
-int scoreRightPlayer = 0;
-
-/* variables */
-static GLint VIEW_WIDTH = View::getScreenWidth();
-static GLint VIEW_HEIGHT = View::getScreenHeight();
+const int targetScore = 5;
+bool waitForRestart = false;
+int scoreId = std::numeric_limits<int>::min();
+int lastScoreLeft, lastScoreRight;
 
 static std::list<ObjectModel*> models;
 
@@ -92,7 +77,7 @@ void RenderProject::initFunction()
     
     //font
     FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
-    bRenderer().getObjects()->createTextSprite("score", vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
+    bRenderer().getObjects()->createTextSprite("score", vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(0) + " : " + std::to_string(0), font);
     
     // fill object model list
     models.push_back(&field);
@@ -139,31 +124,6 @@ void RenderProject::loopFunction(const double &deltaTime, const double &elapsedT
 void RenderProject::terminateFunction()
 {
     bRenderer::log("I totally terminated this Renderer :-)");
-}
-
-/* 
- * TODO: get field coordinates.
- * 320 is where the field "starts", seen from the upper right corner.
- * 500 where it ends.
- * -5 and 5 for the y translation are only estimated values.
- */
-GLfloat fieldHeight = 180,
-            fieldHeightStart = 320,
-            fieldHeightEnd = 500,
-            yTransMin = -3.0f,
-            yTransMax = -yTransMin,
-            yTrans = fabsf(yTransMin) + yTransMax; // because of 0
-
-GLfloat move_1 = 0.0,
-        move_2 = 0.0;
-
-GLfloat computeStickPosition(GLfloat yPosition){
-    std::cout << "Position: " << yPosition << "\n";
-    if(yPosition > fieldHeightEnd) return yTransMin;
-    else if(yPosition < fieldHeightStart) return yTransMax;
-    else {
-        return -(yTrans/fieldHeight * (yPosition - fieldHeightStart) - yTransMax);
-    }
 }
 
 /* Update render queue */
@@ -257,49 +217,50 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
 //    else {
 //        constantMovement += 0.1f * movementDirection;
 //    }
-//    
-//    /* Score */
-//    if (endOfGame == false) {
-//        FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
-//        bRenderer().getObjects()->createTextSprite("score"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
-//        
-//        GLfloat scaleText = 0.1f;
-//        vmml::Matrix4f scalingMatrix = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
-//        
-//        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrix;
-//        
-//        vmml::Matrix4f viewMatrix = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
-//        
-//        vmml::Matrix4f projectionMatrix = vmml::Matrix4f::IDENTITY;
-//        
-//        ModelPtr score = bRenderer().getObjects()->getTextSprite("score"+std::to_string(scoreId));
-//        // draw without lighting (empty vector of strings)
-//        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrix, projectionMatrix, std::vector<std::string>({}));
-//    }
-//    else {
-//        scoreLeftPlayer = 0;
-//        scoreRightPlayer = 0;
-//        
-//        /* winning message */
-//        FontPtr fontWinner = bRenderer().getObjects()->loadFont("orange juice 2.0.ttf", 50);
-//        bRenderer().getObjects()->createTextSprite("winner"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), "Winner: "+winner+"\nRestart in 5 seconds!", fontWinner);
-//        
-//        GLfloat scaleTextWinner = 0.1f;
-//        vmml::Matrix4f scalingMatrixWinner = vmml::create_scaling(vmml::Vector3f(scaleTextWinner / bRenderer().getView()->getAspectRatio(), scaleTextWinner, scaleTextWinner));
-//        
-//        vmml::Matrix4f modelMatrixTextWinner = vmml::create_translation(vmml::Vector3f(-0.3f, 0.7f, 0.f)) * scalingMatrixWinner;
-//        
-//        vmml::Matrix4f viewMatrixWinner = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
-//        
-//        vmml::Matrix4f projectionMatrixWinner = vmml::Matrix4f::IDENTITY;
-//        
-//        ModelPtr scoreWinner = bRenderer().getObjects()->getTextSprite("winner"+std::to_string(scoreId));
-//        // draw without lighting (empty vector of strings)
-//        bRenderer().getModelRenderer()->drawModel(scoreWinner, modelMatrixTextWinner, viewMatrixWinner, projectionMatrixWinner, std::vector<std::string>({}));
-//        
-//        showEndgameText = true;
-//        scoreId += 1;
-//    }
+//
+    // wait 5 seconds before game restarts
+    if(waitForRestart){
+        sleep(5);
+        waitForRestart = false;
+    }
+    /* Score */
+    if (player1.getScore() == targetScore || player2.getScore() == targetScore) {
+        player1.resetScore();
+        player2.resetScore();
+        
+        /* winning message */
+        FontPtr fontWinner = bRenderer().getObjects()->loadFont("orange juice 2.0.ttf", 50);
+        std::string winner(player2.getScore() == targetScore ? "Left" : "Right");
+        bRenderer().getObjects()->createTextSprite("winner"+std::to_string(++scoreId), vmml::Vector3f(1.f, 1.f, 1.f), "Winner: " + winner + "\nRestart in 5 seconds!", fontWinner);
+        
+        GLfloat scaleTextWinner = 0.1f;
+        vmml::Matrix4f scalingMatrixWinner = vmml::create_scaling(vmml::Vector3f(scaleTextWinner / bRenderer().getView()->getAspectRatio(), scaleTextWinner, scaleTextWinner));
+        vmml::Matrix4f modelMatrixTextWinner = vmml::create_translation(vmml::Vector3f(-0.3f, 0.7f, 0.f)) * scalingMatrixWinner;
+        vmml::Matrix4f viewMatrixWinner = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
+        vmml::Matrix4f projectionMatrixWinner = vmml::Matrix4f::IDENTITY;
+        
+        ModelPtr scoreWinner = bRenderer().getObjects()->getTextSprite("winner"+std::to_string(scoreId));
+        // draw without lighting (empty vector of strings)
+        bRenderer().getModelRenderer()->drawModel(scoreWinner, modelMatrixTextWinner, viewMatrixWinner, projectionMatrixWinner, std::vector<std::string>({}));
+        waitForRestart = true;
+    }  else {
+        FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
+        // only create new sprite, if score has changed
+        if(player1.getScore() != lastScoreRight || player2.getScore() != lastScoreLeft || scoreId == std::numeric_limits<int>::min()) {
+            lastScoreRight = player1.getScore();
+            lastScoreLeft = player2.getScore();
+            bRenderer().getObjects()->createTextSprite("score"+std::to_string(++scoreId), vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(player2.getScore()) + " : " + std::to_string(player1.getScore()), font);
+        }
+        GLfloat scaleText = 0.1f;
+        vmml::Matrix4f scalingMatrix = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
+        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrix;
+        vmml::Matrix4f viewMatrix = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
+        vmml::Matrix4f projectionMatrix = vmml::Matrix4f::IDENTITY;
+
+        ModelPtr score = bRenderer().getObjects()->getTextSprite("score"+std::to_string(scoreId));
+        // draw without lighting (empty vector of strings)
+        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrix, projectionMatrix, std::vector<std::string>({}));
+    }
     
     for(std::list<ObjectModel*>::const_iterator it = models.begin(); it != models.end(); ++it){
         (*it)->drawModel(bRenderer());

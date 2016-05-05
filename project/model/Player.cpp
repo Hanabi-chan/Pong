@@ -20,3 +20,7 @@ void Player::scorePoint(){
 int Player::getScore(){
     return this->score;
 }
+
+void Player::resetScore(){
+    this->score = 0;
+}

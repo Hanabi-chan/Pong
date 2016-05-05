@@ -24,6 +24,8 @@ public:
     
     int getScore();
     
+    void resetScore();
+    
 private:
     
     int score;

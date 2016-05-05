@@ -58,7 +58,6 @@ bool Puck::checkPlayerCollision(Player *player, Point &next, GLfloat xBound, boo
         if( (diff > 0 && next.x > xBound + 0.5f) || (diff < 0 && next.x < xBound - 0.5f)){
             std::cout << "SCORE!" << "\n";
             std::cout << "reset puck to origin" << "\n";
-            player->scorePoint();
             sleep(2);
             this->current = Point(0.0,0.0);
             this->velocity = this->initVelocity;
@@ -104,11 +103,13 @@ void Puck::makeMovement(){
     if(next.x + radius >= xBound) {
         std::cout << "possible player collision on the right.." << "\n";
         if(this->checkPlayerCollision(this->right, next, xBound, collision)) {
+            this->left->scorePoint();
             return;
         }
     } else if (next.x - radius <= -xBound) {
         std::cout << "possible player collision on the left.." << "\n";
         if(this->checkPlayerCollision(this->left, next, -xBound, collision)) {
+            this->right->scorePoint();
             return;
         }
     } else {
