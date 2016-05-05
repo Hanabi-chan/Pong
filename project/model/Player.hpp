@@ -16,12 +16,16 @@ class Player {
     
 public:
     
-    int score;
-    
     Stick *stick;
     
     Player(Stick *stick);
     
+    void scorePoint();
     
+    int getScore();
+    
+private:
+    
+    int score;
 };
 #endif /* Player_hpp */

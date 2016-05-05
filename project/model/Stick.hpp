@@ -21,6 +21,17 @@ public:
     
     Stick(Field *field, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale, bool left = false);
     
+    struct Translation {
+        
+        GLfloat x, y, z;
+        
+        vmml::Vector3f toVector(){
+            return vmml::Vector3f(x, z, y);
+        }
+        
+    };
+    Translation translation;
+    
     bool left;
     
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
@@ -32,17 +43,6 @@ private:
     const GLfloat rotation, trans_x, trans_z;
     
     Field *field;
-    
-    struct Translation {
-        
-        GLfloat x, y, z;
-        
-        vmml::Vector3f toVector(){
-            return vmml::Vector3f(x, z, y);
-        }
-        
-    };
-    Translation translation;
     
     void makeMovement(Renderer &bRenderer);
     

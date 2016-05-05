@@ -30,7 +30,7 @@ static GLint VIEW_HEIGHT = View::getScreenHeight();
 static std::list<ObjectModel*> models;
 
 Field field(10, 5, 1);
-Stick stick1(&field, 0.2, 1, 0.001), stick2(stick1, true);
+Stick stick1(&field, 200, 1000, 0.001), stick2(stick1, true);
 Player player1(&stick1), player2(&stick2);
 Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.15);
 

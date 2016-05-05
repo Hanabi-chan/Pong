@@ -24,6 +24,8 @@ public:
     
 private:
     
+    const GLfloat initVelocity;
+    
     const GLfloat trans_z;
     
     Field *field;
@@ -41,6 +43,8 @@ private:
         
         GLfloat x, y;
         
+        bool isImpact = false, playerCollision = false;
+        
         void addVelocity(GLfloat velocity, Point &last){
             this->x += ((this->x > last.x ? 1 : -1) * velocity);
             this->y += ((this->y > last.y ? 1 : -1) * velocity);
@@ -51,7 +55,9 @@ private:
     
     void makeMovement();
     
-    Point bounce(Point &current, Point &impact);
+    Point bounce(Point &last, Point &currentImpact, bool yAxis);
+    
+    bool checkPlayerCollision(Player *player, Point &next, GLfloat xBound, bool &collision);
     
 };
 

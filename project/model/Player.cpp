@@ -11,3 +11,12 @@
 Player::Player(Stick *stick){
     this->stick = stick;
 }
+
+void Player::scorePoint(){
+    ++this->score;
+    this->stick->translation.y = 0.0;
+}
+
+int Player::getScore(){
+    return this->score;
+}

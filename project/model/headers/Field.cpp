@@ -10,8 +10,8 @@
 
 Field::Field(GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))) {
     this->scale(scale);
-    this->dimension.x = dimensionX;
-    this->dimension.y = dimensionY;
+    this->dimension.x = dimensionX * scale;
+    this->dimension.y = dimensionY * scale;
 }
 
 void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME){
