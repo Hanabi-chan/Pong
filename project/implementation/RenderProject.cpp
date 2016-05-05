@@ -2,28 +2,22 @@
 #include <math.h>
 #include <string>
 #include<stdio.h>
+#include <list>
 
-float translation = 0.0f;
-int scoreId = 0;
+static const GLint VIEW_WIDTH = View::getScreenWidth();
+static const GLint VIEW_HEIGHT = View::getScreenHeight();
 
-float constantMovement = 0;
-float movementDirection = -1.0;
+const int targetScore = 5;
+bool waitForRestart = false;
+int scoreId = std::numeric_limits<int>::min();
+int lastScoreLeft, lastScoreRight;
 
-float translationHockeypuck_Xpos = 0.0;
-float translationHockeypuck_Ypos = 0.0;
-float translationHockeypuck_Zpos = 0.0;
+static std::list<ObjectModel*> models;
 
-bool scoredPuck = false;
-bool endOfGame = false;
-bool showEndgameText = false;
-
-std::string winner = "";
-
-int scoreLeftPlayer = 0;
-int scoreRightPlayer = 0;
-
-static GLint VIEW_WIDTH = View::getScreenWidth();
-static GLint VIEW_HEIGHT = View::getScreenHeight();
+Field field(10, 5, 1);
+Stick stick1(&field, 200, 1000, 0.001), stick2(stick1, true);
+Player player1(&stick1), player2(&stick2);
+Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.15);
 
 /* Initialize the Project */
 void RenderProject::init()
@@ -62,29 +56,34 @@ void RenderProject::initFunction()
     
     /* Loading field */
     // load materials and shaders before loading the model
-    // load shader from file without lighting, the number of lights won't ever change during rendering (no variable number of lights)
-    ShaderPtr fieldShader = bRenderer().getObjects()->loadShaderFile("field", 0, false, true, true, false, false);
+    ShaderPtr fieldShader = bRenderer().getObjects()->loadShaderFile(field.MODEL_NAME, 0, false, true, true, false, false);
     // create additional properties for a model
     PropertiesPtr fieldProperties = bRenderer().getObjects()->createProperties("fieldProperties");
     // load model
     bRenderer().getObjects()->loadObjModel("field.obj", true, true, true, 4, true, false, fieldProperties);
     
     /* Loading stick */
-    ShaderPtr stickShader = bRenderer().getObjects()->loadShaderFile("stick", 0, false, true, true, false, false);
+    ShaderPtr stickShader = bRenderer().getObjects()->loadShaderFile(stick1.MODEL_NAME, 0, false, true, true, false, false);
     PropertiesPtr stickProperties = bRenderer().getObjects()->createProperties("stickProperties");
     bRenderer().getObjects()->loadObjModel("stick.obj", true, true, true, 4, true, false, stickProperties);
     
     /* Loading Hockeypuck Object */
-    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile("hockeypuck", 0, false, true, true, false, false);
+    ShaderPtr hockeypuckShader = bRenderer().getObjects()->loadShaderFile(puck.MODEL_NAME, 0, false, true, true, false, false);
     PropertiesPtr hockeypuckProperties = bRenderer().getObjects()->createProperties("hockeypuckProperties");
     bRenderer().getObjects()->loadObjModel("hockeypuck.obj", true, true, true, 4, true, false, hockeypuckProperties);
     
     // create camera
-    bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
+    bRenderer().getObjects()->createCamera(ObjectModel::CAMERA_NAME, vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
     
     //font
     FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
-    bRenderer().getObjects()->createTextSprite("score", vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
+    bRenderer().getObjects()->createTextSprite("score", vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(0) + " : " + std::to_string(0), font);
+    
+    // fill object model list
+    models.push_back(&field);
+    models.push_back(&puck);
+    models.push_back(&stick1);
+    models.push_back(&stick2);
     
     // Update render queue
     updateRenderQueue("camera", 0.0f);
@@ -127,259 +126,58 @@ void RenderProject::terminateFunction()
     bRenderer::log("I totally terminated this Renderer :-)");
 }
 
-/* 
- * TODO: get field coordinates.
- * 320 is where the field "starts", seen from the upper right corner.
- * 500 where it ends.
- * -5 and 5 for the y translation are only estimated values.
- */
-GLfloat fieldHeight = 180,
-            fieldHeightStart = 320,
-            fieldHeightEnd = 500,
-            yTransMin = -3.0f,
-            yTransMax = -yTransMin,
-            yTrans = fabsf(yTransMin) + yTransMax; // because of 0
-
-GLfloat move_1 = 0.1,
-        move_2 = 0.1;
-
-GLfloat computeStickPosition(GLfloat yPosition){
-    std::cout << "Position: " << yPosition << "\n";
-    if(yPosition > fieldHeightEnd) return yTransMin;
-    else if(yPosition < fieldHeightStart) return yTransMax;
-    else {
-        return -(yTrans/fieldHeight * (yPosition - fieldHeightStart) - yTransMax);
-    }
-}
-
 /* Update render queue */
 void RenderProject::updateRenderQueue(const std::string &camera, const double &deltaTime)
 {
-    
-    /* Sticks Variables */
-    vmml::Vector3f xAxis = vmml::Vector3f(1,0,0);
-    float scale = 0.001;
-    float trans_x = 4.0, trans_z = 1.0;
-    float rotation_x = -0.9;
-    
-    /* handle touch inputs */
-    TouchMap touches = bRenderer().getInput()->getTouches();
-    for(TouchMap::iterator it = touches.begin(); it != touches.end(); it++){
-        Touch touch = it->second;
-        // Apply movement to the correct screen side
-        if(touch.startPositionX < VIEW_WIDTH / 2){
-            move_2 = computeStickPosition(touch.lastPositionY);
-        } else {
-            move_1 = computeStickPosition(touch.lastPositionY);
-            std::cout << "Move 1 :" << move_1 << "\n";
-        }
-    }
-    
-    //translation positions of hockeypuck
-    translationHockeypuck_Xpos = 0.0f + constantMovement;
-    translationHockeypuck_Zpos = 0.5f;
-    
-    /* Pauses in the Game */
-    
-    //pause 2 seconds after a scored point when the puck is in the middle of the field again
-    if (scoredPuck) {
-        sleep(2);
-        scoredPuck = false;
-        movementDirection *= -1;
-        // reset sticks
-        move_1 = 0.1f;
-        move_2 = 0.1f;
-        if (scoreLeftPlayer == 5) {
-            endOfGame = true;
-            winner = "Left Player";
-        }
-        if (scoreRightPlayer == 5) {
-            endOfGame = true;
-            winner = "Right Player";
-        }
-    }
-    
-    //pause 5 seconds when showing the winning text
-    if (showEndgameText) {
+    // wait 5 seconds before game restarts
+    if(waitForRestart){
         sleep(5);
-        scoreLeftPlayer = 0;
-        scoreRightPlayer = 0;
-        endOfGame = false;
-        showEndgameText = false;
+        waitForRestart = false;
     }
-    
-    /* Movement of Puck */
-    
-    //reset hockeypuck after reaching the goal
-    if (translationHockeypuck_Xpos > trans_x + 0.5f) {
-        constantMovement = 0.1f;
-        translationHockeypuck_Xpos = 0.0f + constantMovement;
-        scoredPuck = true;
-        scoreLeftPlayer += 1;
-        scoreId += 1;
-    }
-    
-    if (translationHockeypuck_Xpos < -trans_x - 0.5f) {
-        constantMovement = 0.1f;
-        translationHockeypuck_Xpos = 0.0f + constantMovement;
-        scoredPuck = true;
-        scoreRightPlayer += 1;
-        scoreId += 1;
-    }
-    
-    /* Collison of Puck */
-    
-    //collision with right stick
-    if (translationHockeypuck_Xpos > trans_x
-        and translationHockeypuck_Zpos < move_1 + .5f
-        and translationHockeypuck_Zpos > move_1 - .3f) {
-        movementDirection = -1.0;
-        constantMovement += 0.1f * movementDirection;
-    }
-    
-    //collision with left stick
-    if (translationHockeypuck_Xpos < -trans_x
-        and translationHockeypuck_Zpos < move_2 + .5f
-        and translationHockeypuck_Zpos > move_2 - .3f) {
-        movementDirection = 1.0;
-        constantMovement += 0.1f * movementDirection;
-    }
-    
-    //movement of hockeypuck without collision
-    else {
-        constantMovement += 0.1f * movementDirection;
-    }
-    
-    /* Score */
-    if (endOfGame == false) {
-        FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
-        bRenderer().getObjects()->createTextSprite("score"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(scoreLeftPlayer) + " : " + std::to_string(scoreRightPlayer), font);
-        
-        GLfloat scaleText = 0.1f;
-        vmml::Matrix4f scalingMatrixText = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
-        
-        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrixText;
-        
-        vmml::Matrix4f viewMatrixText = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
-        
-        vmml::Matrix4f projectionMatrixText = vmml::Matrix4f::IDENTITY;
-        
-        ModelPtr score = bRenderer().getObjects()->getTextSprite("score"+std::to_string(scoreId));
-        // draw without lighting (empty vector of strings)
-        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrixText, projectionMatrixText, std::vector<std::string>({}));
-    }
-    else {
-        scoreLeftPlayer = 0;
-        scoreRightPlayer = 0;
+
+    if (player1.getScore() == targetScore || player2.getScore() == targetScore) {
         
         /* winning message */
         FontPtr fontWinner = bRenderer().getObjects()->loadFont("orange juice 2.0.ttf", 50);
-        bRenderer().getObjects()->createTextSprite("winner"+std::to_string(scoreId), vmml::Vector3f(1.f, 1.f, 1.f), "Winner: "+winner+"\nRestart in 5 seconds!", fontWinner);
+        std::string winner(player2.getScore() == targetScore ? "Left Player" : "Right Player");
+        bRenderer().getObjects()->createTextSprite("winner"+std::to_string(++scoreId), vmml::Vector3f(1.f, 1.f, 1.f), "Winner: " + winner + "\nRestart in 5 seconds!", fontWinner);
+        
+        player1.resetScore();
+        player2.resetScore();
         
         GLfloat scaleTextWinner = 0.1f;
         vmml::Matrix4f scalingMatrixWinner = vmml::create_scaling(vmml::Vector3f(scaleTextWinner / bRenderer().getView()->getAspectRatio(), scaleTextWinner, scaleTextWinner));
-        
         vmml::Matrix4f modelMatrixTextWinner = vmml::create_translation(vmml::Vector3f(-0.3f, 0.7f, 0.f)) * scalingMatrixWinner;
-        
         vmml::Matrix4f viewMatrixWinner = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
-        
         vmml::Matrix4f projectionMatrixWinner = vmml::Matrix4f::IDENTITY;
         
         ModelPtr scoreWinner = bRenderer().getObjects()->getTextSprite("winner"+std::to_string(scoreId));
         // draw without lighting (empty vector of strings)
         bRenderer().getModelRenderer()->drawModel(scoreWinner, modelMatrixTextWinner, viewMatrixWinner, projectionMatrixWinner, std::vector<std::string>({}));
-        
-        showEndgameText = true;
-        scoreId += 1;
+        waitForRestart = true;
     }
-    
-    /* field */
-    vmml::Matrix4f fieldModelMatrix = create_translation(vmml::Vector3f(1.0f)) *vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
-    
-    vmml::Matrix4f viewMatrixField = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
-    
-    ShaderPtr fieldShader = bRenderer().getObjects()->getShader("field");
-    
-    if (fieldShader.get())
-    {
-        fieldShader->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
-        fieldShader->setUniform("ViewMatrix", viewMatrixField);
-        fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
-        
-        vmml::Matrix3f normalMatrixField;
-        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(fieldModelMatrix)), normalMatrixField);
-        fieldShader->setUniform("NormalMatrix", normalMatrixField);
-        
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
-        fieldShader->setUniform("EyePos", eyePos);
-        
-        fieldShader->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-        fieldShader->setUniform("Ia", vmml::Vector3f(1.f));
-        fieldShader->setUniform("Id", vmml::Vector3f(1.f));
-        fieldShader->setUniform("Is", vmml::Vector3f(1.f));
+    else {
+        FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
+        // only create new sprite, if score has changed
+        if(player1.getScore() != lastScoreRight || player2.getScore() != lastScoreLeft || scoreId == std::numeric_limits<int>::min()) {
+            lastScoreRight = player1.getScore();
+            lastScoreLeft = player2.getScore();
+            bRenderer().getObjects()->createTextSprite("score"+std::to_string(++scoreId), vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(player2.getScore()) + " : " + std::to_string(player1.getScore()), font);
+        }
+        GLfloat scaleText = 0.1f;
+        vmml::Matrix4f scalingMatrix = vmml::create_scaling(vmml::Vector3f(scaleText / bRenderer().getView()->getAspectRatio(), scaleText, scaleText));
+        vmml::Matrix4f modelMatrixText = vmml::create_translation(vmml::Vector3f(-0.1f, 0.7f, 0.f)) * scalingMatrix;
+        vmml::Matrix4f viewMatrix = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
+        vmml::Matrix4f projectionMatrix = vmml::Matrix4f::IDENTITY;
+
+        ModelPtr score = bRenderer().getObjects()->getTextSprite("score"+std::to_string(scoreId));
+        // draw without lighting (empty vector of strings)
+        bRenderer().getModelRenderer()->drawModel(score, modelMatrixText, viewMatrix, projectionMatrix, std::vector<std::string>({}));
     }
-    else
-    {
-        bRenderer::log("No shader available.");
+
+    for(std::list<ObjectModel*>::const_iterator it = models.begin(); it != models.end(); ++it){
+        (*it)->drawModel(bRenderer());
     }
-    fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
-    fieldShader->setUniform("NormalMatrix", vmml::Matrix3f(fieldModelMatrix));
-    bRenderer().getModelRenderer()->drawModel("field", "camera", fieldModelMatrix, std::vector<std::string>({ }));
-    
-    /* Stick 1 */
-    vmml::Matrix4f stickModelMatrix = fieldModelMatrix
-        * vmml::create_translation(vmml::Vector3f(trans_x, trans_z, move_1))
-        * vmml::create_scaling(vmml::Vector3f(scale))
-        * vmml::create_rotation(rotation_x, xAxis);
-   
-    ShaderPtr stickShader = bRenderer().getObjects()->getShader("stick");
-    stickShader->setUniform("NormalMatrix", vmml::Matrix3f(stickModelMatrix));
-    bRenderer().getModelRenderer()->drawModel("stick", "camera", stickModelMatrix, std::vector<std::string>({ }));
-    
-    /* Stick2 */
-    vmml::Matrix4f stick2ModelMatrix = fieldModelMatrix
-        * vmml::create_translation(vmml::Vector3f(-trans_x, trans_z, move_2))
-        * vmml::create_scaling(vmml::Vector3f(scale))
-        * vmml::create_rotation(rotation_x, xAxis);
-    
-    ShaderPtr stick2Shader = bRenderer().getObjects()->getShader("stick");
-    stick2Shader->setUniform("NormalMatrix", vmml::Matrix3f(stick2ModelMatrix));
-    bRenderer().getModelRenderer()->drawModel("stick", "camera", stick2ModelMatrix, std::vector<std::string>({ }));
-    
-    /* Hockeypuck */
-    vmml::Matrix4f modelMatrixHockeypuck = fieldModelMatrix
-                                                * vmml::create_translation(vmml::Vector3f(translationHockeypuck_Xpos, translationHockeypuck_Zpos, 0.0f))
-    * vmml::create_scaling(vmml::Vector3f(0.15f));
-    
-    vmml::Matrix4f viewMatrixHockeypuck = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
-    
-    ShaderPtr shaderHockeypuck = bRenderer().getObjects()->getShader("hockeypuck");
-    if (shaderHockeypuck.get())
-    {
-        shaderHockeypuck->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
-        shaderHockeypuck->setUniform("ViewMatrix", viewMatrixHockeypuck);
-        shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
-        
-        vmml::Matrix3f normalMatrixHockeypuck;
-        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(modelMatrixHockeypuck)), normalMatrixHockeypuck);
-        shaderHockeypuck->setUniform("NormalMatrix", normalMatrixHockeypuck);
-        
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
-        shaderHockeypuck->setUniform("EyePos", eyePos);
-        
-        shaderHockeypuck->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-        shaderHockeypuck->setUniform("Ia", vmml::Vector3f(1.f));
-        shaderHockeypuck->setUniform("Id", vmml::Vector3f(1.f));
-        shaderHockeypuck->setUniform("Is", vmml::Vector3f(1.f));
-    }
-    else
-    {
-        bRenderer::log("No shader available.");
-    }
-    shaderHockeypuck->setUniform("NormalMatrix", vmml::Matrix3f(modelMatrixHockeypuck));
-    shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
-    //shaderHockeypuck->setUniform("color", vmml::Vector4f(1,1,0,1));
-    bRenderer().getModelRenderer()->drawModel("hockeypuck", "camera", modelMatrixHockeypuck, std::vector<std::string>({ }));
     
 }
 

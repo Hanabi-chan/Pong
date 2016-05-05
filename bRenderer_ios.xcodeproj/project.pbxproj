@@ -129,6 +129,11 @@
 		BB7730541CD887DA00C2B91D /* field.vert in Resources */ = {isa = PBXBuildFile; fileRef = BB7730501CD887DA00C2B91D /* field.vert */; };
 		BB7730571CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */; };
 		BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */; };
+		BB7730631CD928E300C2B91D /* Puck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB7730611CD928E300C2B91D /* Puck.cpp */; };
+		BB7730661CD92A6000C2B91D /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB7730641CD92A6000C2B91D /* Field.cpp */; };
+		BB7730691CD94B0300C2B91D /* Stick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB7730671CD94B0300C2B91D /* Stick.cpp */; };
+		BB77306C1CD9518E00C2B91D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB77306A1CD9518E00C2B91D /* Player.cpp */; };
+		BBB7B4741CDA584A00266C06 /* ObjectModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB77305E1CD9255A00C2B91D /* ObjectModel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -310,6 +315,16 @@
 		BB7730501CD887DA00C2B91D /* field.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = field.vert; sourceTree = "<group>"; };
 		BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DJB Up on the Scoreboard.ttf"; sourceTree = "<group>"; };
 		BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice 2.0.ttf"; sourceTree = "<group>"; };
+		BB77305D1CD9234700C2B91D /* ObjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjectModel.h; path = model/headers/ObjectModel.h; sourceTree = "<group>"; };
+		BB77305E1CD9255A00C2B91D /* ObjectModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectModel.cpp; path = ../../project/model/implementation/ObjectModel.cpp; sourceTree = "<group>"; };
+		BB7730611CD928E300C2B91D /* Puck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Puck.cpp; path = ../../project/model/headers/Puck.cpp; sourceTree = "<group>"; };
+		BB7730621CD928E300C2B91D /* Puck.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Puck.hpp; path = model/headers/Puck.hpp; sourceTree = "<group>"; };
+		BB7730641CD92A6000C2B91D /* Field.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Field.cpp; path = ../../project/model/headers/Field.cpp; sourceTree = "<group>"; };
+		BB7730651CD92A6000C2B91D /* Field.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Field.hpp; path = model/headers/Field.hpp; sourceTree = "<group>"; };
+		BB7730671CD94B0300C2B91D /* Stick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Stick.cpp; path = ../../project/model/Stick.cpp; sourceTree = "<group>"; };
+		BB7730681CD94B0300C2B91D /* Stick.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Stick.hpp; path = model/Stick.hpp; sourceTree = "<group>"; };
+		BB77306A1CD9518E00C2B91D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../project/model/Player.cpp; sourceTree = "<group>"; };
+		BB77306B1CD9518E00C2B91D /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = model/Player.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,6 +523,7 @@
 				B47949FE1BA6743D00B5E9DC /* TextureData.h */,
 				B47949FF1BA6743D00B5E9DC /* Touch.h */,
 				B4794A001BA6743D00B5E9DC /* View.h */,
+				BB7730591CD922E100C2B91D /* model */,
 			);
 			path = headers;
 			sourceTree = "<group>";
@@ -515,6 +531,7 @@
 		B4794A011BA6743D00B5E9DC /* implementation */ = {
 			isa = PBXGroup;
 			children = (
+				BB7730601CD926C200C2B91D /* model */,
 				B4794A021BA6743D00B5E9DC /* Camera.cpp */,
 				B4794A031BA6743D00B5E9DC /* Configuration.cpp */,
 				B4794A041BA6743D00B5E9DC /* CubeMap.cpp */,
@@ -659,6 +676,31 @@
 			path = ios/resources;
 			sourceTree = "<group>";
 		};
+		BB7730591CD922E100C2B91D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BB77305D1CD9234700C2B91D /* ObjectModel.h */,
+				BB7730621CD928E300C2B91D /* Puck.hpp */,
+				BB7730651CD92A6000C2B91D /* Field.hpp */,
+				BB7730681CD94B0300C2B91D /* Stick.hpp */,
+				BB77306B1CD9518E00C2B91D /* Player.hpp */,
+			);
+			name = model;
+			path = ../../project;
+			sourceTree = "<group>";
+		};
+		BB7730601CD926C200C2B91D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BB77306A1CD9518E00C2B91D /* Player.cpp */,
+				BB7730671CD94B0300C2B91D /* Stick.cpp */,
+				BB7730641CD92A6000C2B91D /* Field.cpp */,
+				BB7730611CD928E300C2B91D /* Puck.cpp */,
+				BB77305E1CD9255A00C2B91D /* ObjectModel.cpp */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -757,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBB7B4741CDA584A00266C06 /* ObjectModel.cpp in Sources */,
 				B47AD6E11B827F0F00AFC632 /* type1.c in Sources */,
 				B4794A3C1BA6743D00B5E9DC /* Material.cpp in Sources */,
 				B47AD7051B8280A900AFC632 /* ftsystem.c in Sources */,
@@ -765,6 +808,7 @@
 				B4794A4A1BA6743D00B5E9DC /* TextSprite.cpp in Sources */,
 				B4794A2D1BA6743D00B5E9DC /* texture-font.c in Sources */,
 				B4794A2C1BA6743D00B5E9DC /* texture-atlas.c in Sources */,
+				BB77306C1CD9518E00C2B91D /* Player.cpp in Sources */,
 				B47AD6BF1B827DCD00AFC632 /* ftgxval.c in Sources */,
 				B4CB8CD11B72E43300FE041B /* ViewController.mm in Sources */,
 				B47AD6C91B827E3E00AFC632 /* ftpfr.c in Sources */,
@@ -825,6 +869,7 @@
 				B47AD6FB1B82804C00AFC632 /* ftglyph.c in Sources */,
 				B47AD6FF1B82807D00AFC632 /* ftinit.c in Sources */,
 				B4794A391BA6743D00B5E9DC /* Framebuffer.cpp in Sources */,
+				BB7730631CD928E300C2B91D /* Puck.cpp in Sources */,
 				B47AD6BB1B827DA000AFC632 /* ftbbox.c in Sources */,
 				B47AD6E71B827F4A00AFC632 /* winfnt.c in Sources */,
 				B4794A441BA6743D00B5E9DC /* RenderQueue.cpp in Sources */,
@@ -836,6 +881,8 @@
 				B47AD6ED1B827FC200AFC632 /* cff.c in Sources */,
 				B4794A341BA6743D00B5E9DC /* Camera.cpp in Sources */,
 				B4794A3E1BA6743D00B5E9DC /* Model.cpp in Sources */,
+				BB7730691CD94B0300C2B91D /* Stick.cpp in Sources */,
+				BB7730661CD92A6000C2B91D /* Field.cpp in Sources */,
 				B4794A3A1BA6743D00B5E9DC /* Geometry.cpp in Sources */,
 				B4794A521BA6743D00B5E9DC /* BView.mm in Sources */,
 				B4794A321BA6743D00B5E9DC /* obj.cpp in Sources */,
