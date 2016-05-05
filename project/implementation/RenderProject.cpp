@@ -296,7 +296,33 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     /* field */
     vmml::Matrix4f fieldModelMatrix = create_translation(vmml::Vector3f(1.0f)) *vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
     
+    vmml::Matrix4f viewMatrixField = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
+    
     ShaderPtr fieldShader = bRenderer().getObjects()->getShader("field");
+    
+    if (fieldShader.get())
+    {
+        fieldShader->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
+        fieldShader->setUniform("ViewMatrix", viewMatrixField);
+        fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
+        
+        vmml::Matrix3f normalMatrixField;
+        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(fieldModelMatrix)), normalMatrixField);
+        fieldShader->setUniform("NormalMatrix", normalMatrixField);
+        
+        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
+        fieldShader->setUniform("EyePos", eyePos);
+        
+        fieldShader->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
+        fieldShader->setUniform("Ia", vmml::Vector3f(1.f));
+        fieldShader->setUniform("Id", vmml::Vector3f(1.f));
+        fieldShader->setUniform("Is", vmml::Vector3f(1.f));
+    }
+    else
+    {
+        bRenderer::log("No shader available.");
+    }
+    fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
     fieldShader->setUniform("NormalMatrix", vmml::Matrix3f(fieldModelMatrix));
     bRenderer().getModelRenderer()->drawModel("field", "camera", fieldModelMatrix, std::vector<std::string>({ }));
     

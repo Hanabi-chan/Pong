@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26C2AF6C1CDB8226006A74BA /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2AF6B1CDB8225006A74BA /* field.png */; };
 		26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */; };
 		26DE6D131CD90337000DBBB7 /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D111CD90337000DBBB7 /* hockeypuck.frag */; };
 		26DE6D141CD90337000DBBB7 /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D121CD90337000DBBB7 /* hockeypuck.vert */; };
@@ -131,6 +132,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26C2AF6B1CDB8225006A74BA /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
 		26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockeypuck.png; sourceTree = "<group>"; };
 		26DE6D111CD90337000DBBB7 /* hockeypuck.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
 		26DE6D121CD90337000DBBB7 /* hockeypuck.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
@@ -372,9 +374,10 @@
 			isa = PBXGroup;
 			children = (
 				26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */,
-				BB77304D1CD887DA00C2B91D /* field.frag */,
+				26C2AF6B1CDB8225006A74BA /* field.png */,
 				BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */,
 				BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */,
+				BB77304D1CD887DA00C2B91D /* field.frag */,
 				BB77304E1CD887DA00C2B91D /* field.mtl */,
 				BB77304F1CD887DA00C2B91D /* field.obj */,
 				BB7730501CD887DA00C2B91D /* field.vert */,
@@ -720,6 +723,7 @@
 				BB7730521CD887DA00C2B91D /* field.mtl in Resources */,
 				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
 				BB7730541CD887DA00C2B91D /* field.vert in Resources */,
+				26C2AF6C1CDB8226006A74BA /* field.png in Resources */,
 				BB77302D1CD8861C00C2B91D /* config.json in Resources */,
 				BB77302E1CD8861C00C2B91D /* cube.frag in Resources */,
 				BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */,
