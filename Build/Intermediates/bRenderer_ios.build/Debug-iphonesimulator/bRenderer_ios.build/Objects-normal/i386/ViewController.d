@@ -206,4 +206,9 @@ dependencies: \
   externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h \
   externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h \
   externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
+  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/Field.hpp \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/ObjectModel.h \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/Puck.hpp \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Player.hpp \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Stick.hpp

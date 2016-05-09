@@ -19,6 +19,7 @@ uniform lowp vec3 Id;   // diffuse light intensity
 uniform lowp vec3 Is;   // specular light intensity
 
 uniform sampler2D DiffuseMap;
+uniform sampler2D NormalMap;
 
 varying lowp vec4 ambientVarying;
 varying lowp vec4 diffuseVarying;
@@ -34,7 +35,8 @@ varying mediump vec3 normal;
 void main()
 {
     
-    mediump vec3 n = normal ;
+    //mediump vec3 n = normal ;
+    mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb * 2.0 - 1.0);
     mediump vec3 l = normalize(LightPos - pos).xyz;
     
     mediump vec3 Ca = Ka * Ia;
