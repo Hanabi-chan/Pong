@@ -48,7 +48,7 @@ Stick::Stick(const Stick &stick, bool left) : Stick::Stick(stick) {
 }
 
 Stick::Stick(Field *field, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale, bool left)
-        : ObjectModel("stick"), xAxis(1,0,0), rotation(-0.9), trans_x(4.0), trans_z(1.0) {
+        : ObjectModel("stick"), xAxis(1,0,0), rotation(-0.9), trans_x(4.0), trans_z(1.5) {
     this->field = field;
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;

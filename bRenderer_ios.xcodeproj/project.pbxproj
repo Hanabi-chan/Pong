@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265A4B7C1CE232FC003590C8 /* backgroundobj.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 265A4B7A1CE232FC003590C8 /* backgroundobj.mtl */; };
+		265A4B7D1CE232FC003590C8 /* backgroundobj.obj in Resources */ = {isa = PBXBuildFile; fileRef = 265A4B7B1CE232FC003590C8 /* backgroundobj.obj */; };
+		265A4B7F1CE23312003590C8 /* hockey_arena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 265A4B7E1CE23312003590C8 /* hockey_arena.jpg */; };
 		269FB4EC1CDE7DDC003BA373 /* normalMapField.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 269FB4EB1CDE7DDC003BA373 /* normalMapField.jpeg */; };
 		26C2AF6C1CDB8226006A74BA /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2AF6B1CDB8225006A74BA /* field.png */; };
 		26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */; };
@@ -139,6 +142,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		265A4B7A1CE232FC003590C8 /* backgroundobj.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backgroundobj.mtl; sourceTree = "<group>"; };
+		265A4B7B1CE232FC003590C8 /* backgroundobj.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = backgroundobj.obj; sourceTree = "<group>"; };
+		265A4B7E1CE23312003590C8 /* hockey_arena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hockey_arena.jpg; sourceTree = "<group>"; };
 		269FB4EB1CDE7DDC003BA373 /* normalMapField.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = normalMapField.jpeg; sourceTree = "<group>"; };
 		26C2AF6B1CDB8225006A74BA /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
 		26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockeypuck.png; sourceTree = "<group>"; };
@@ -392,6 +398,9 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				265A4B7E1CE23312003590C8 /* hockey_arena.jpg */,
+				265A4B7A1CE232FC003590C8 /* backgroundobj.mtl */,
+				265A4B7B1CE232FC003590C8 /* backgroundobj.obj */,
 				269FB4EB1CDE7DDC003BA373 /* normalMapField.jpeg */,
 				26E3AF4E1CDE17C80080D27E /* normalMapHockeypuck.jpg */,
 				26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */,
@@ -772,13 +781,16 @@
 				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
 				BB7730541CD887DA00C2B91D /* field.vert in Resources */,
 				26C2AF6C1CDB8226006A74BA /* field.png in Resources */,
+				265A4B7D1CE232FC003590C8 /* backgroundobj.obj in Resources */,
 				BB77302D1CD8861C00C2B91D /* config.json in Resources */,
+				265A4B7F1CE23312003590C8 /* hockey_arena.jpg in Resources */,
 				BB77302E1CD8861C00C2B91D /* cube.frag in Resources */,
 				BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */,
 				BB7730301CD8861C00C2B91D /* cube.obj in Resources */,
 				26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */,
 				BB7730311CD8861C00C2B91D /* cube.vert in Resources */,
 				BB7730371CD8861C00C2B91D /* hockeypuck.mtl in Resources */,
+				265A4B7C1CE232FC003590C8 /* backgroundobj.mtl in Resources */,
 				BB7730381CD8861C00C2B91D /* hockeypuck.obj in Resources */,
 				BB77303C1CD8861C00C2B91D /* quad.obj in Resources */,
 				BB77303D1CD8861C00C2B91D /* sphere.frag in Resources */,

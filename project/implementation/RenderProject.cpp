@@ -15,7 +15,7 @@ int lastScoreLeft, lastScoreRight;
 static std::list<ObjectModel*> models;
 
 Field field(10, 5, 1);
-Stick stick1(&field, 200, 1000, 0.001), stick2(stick1, true);
+Stick stick1(&field, 200, 1000, 0.0015), stick2(stick1, true);
 Player player1(&stick1), player2(&stick2);
 Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.20);
 
@@ -178,7 +178,9 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
     for(std::list<ObjectModel*>::const_iterator it = models.begin(); it != models.end(); ++it){
         (*it)->drawModel(bRenderer());
     }
-    
+//    GLfloat ambientColor[] = {0.2f, 0.2f, 0.2f, 1.0f}; //Color(0.2, 0.2, 0.2)
+//    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
+    Light(vmml::Vector3f(1,1,1), vmml::Vector3f(1,0,1));
 }
 
 /* Camera movement */
