@@ -13,6 +13,9 @@ uniform lowp vec3 Kd;   // diffuse material coefficient
 uniform lowp vec3 Ks;   // specular material coefficient
 
 uniform mediump float Ns;   // specular material exponent (shininess)
+uniform mediump float Ni;   // optical density (1.0 means light does not bend while passing through object)
+uniform mediump float transparency;
+uniform mediump vec3 ambientColor;
 
 uniform lowp vec3 Ia;   // ambient light intensity
 uniform lowp vec3 Id;   // diffuse light intensity
@@ -46,11 +49,11 @@ void main()
         mediump vec3 v = normalize(EyePos - pos).xyz;
         mediump vec3 r = normalize(l + v);
         
-        Cs = Ks * pow(dot(n,r),Ns) * Is;
+        Cs = Ks * pow(dot(n,r),Ni) * Is;
     }
     
     //read color from DiffuseMap
     lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
     
-    gl_FragColor = (vec4(clamp(Cd, 0.0, 1.0), 1.0) + vec4(Ca, 1.0)) * color + vec4(clamp(Cs, 0.0, 1.0), 1.0);
+    gl_FragColor = (vec4(clamp(Cd, 0.0, 1.0), 1.0) + vec4(Ca, 1.0)) * color + vec4(clamp(Cs, 0.0, 1.0), transparency);
 }

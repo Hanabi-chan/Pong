@@ -13,6 +13,9 @@ uniform lowp vec3 Kd;   // diffuse material coefficient
 uniform lowp vec3 Ks;   // specular material coefficient
 
 uniform mediump float Ns;   // specular material exponent (shininess)
+uniform mediump float Ni;   // optical density (1.0 means light does not bend while passing through object)
+uniform mediump float transparency;
+uniform mediump vec3 ambientColor;
 
 uniform lowp vec3 Ia;   // ambient light intensity
 uniform lowp vec3 Id;   // diffuse light intensity
@@ -42,7 +45,7 @@ void main()
     mediump vec4 cameraPos = ProjectionMatrix * Position;
     texCoordVarying = TexCoord;
     
-    ambientVarying = vec4(Ka * Ia, 1.0);
+    ambientVarying = vec4(ambientColor, 1.0); //vec4(Ka * Ia, 1.0);
     
     //calculate diffuse lighting
     diffuseVarying = vec4(0.0);

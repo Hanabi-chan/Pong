@@ -15,15 +15,13 @@ Field::Field(GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectMode
 }
 
 void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME){
+   
     ShaderPtr fieldShader = bRenderer.getObjects()->getShader(MODEL_NAME);
-    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
-
-    vmml::Matrix4f fieldModelMatrix = vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
-
-    vmml::Matrix4f viewMatrixField = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
-    
     if (fieldShader.get())
     {
+        vmml::Matrix4f fieldModelMatrix = vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
+        vmml::Matrix4f viewMatrixField = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
+        
         fieldShader->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
         fieldShader->setUniform("ViewMatrix", viewMatrixField);
         fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
@@ -44,6 +42,7 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
     {
         bRenderer::log("No shader available.");
     }
-    fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
+//    fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
+    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
 
 }
