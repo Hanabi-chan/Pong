@@ -107,6 +107,8 @@
 		B59A67991ACC8BCC00E3EB9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A67981ACC8BCC00E3EB9B /* UIKit.framework */; };
 		B59A679B1ACC99F900E3EB9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A679A1ACC99F900E3EB9B /* CoreGraphics.framework */; };
 		B59A679D1ACC9A0400E3EB9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A679C1ACC9A0400E3EB9B /* QuartzCore.framework */; };
+		BB3400221CE8F49B003D424E /* normalMapField.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BB3400201CE8F49B003D424E /* normalMapField.jpeg */; };
+		BB3400231CE8F49B003D424E /* normalMapHockeypuck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB3400211CE8F49B003D424E /* normalMapHockeypuck.jpg */; };
 		BB77302D1CD8861C00C2B91D /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = BB7730151CD8861C00C2B91D /* config.json */; };
 		BB77302E1CD8861C00C2B91D /* cube.frag in Resources */ = {isa = PBXBuildFile; fileRef = BB7730161CD8861C00C2B91D /* cube.frag */; };
 		BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BB7730171CD8861C00C2B91D /* cube.mtl */; };
@@ -134,6 +136,13 @@
 		BB7730691CD94B0300C2B91D /* Stick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB7730671CD94B0300C2B91D /* Stick.cpp */; };
 		BB77306C1CD9518E00C2B91D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB77306A1CD9518E00C2B91D /* Player.cpp */; };
 		BBB7B4741CDA584A00266C06 /* ObjectModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB77305E1CD9255A00C2B91D /* ObjectModel.cpp */; };
+		BBE03FC71CE9AB8B00393C2D /* field_gloss.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FC61CE9AB8B00393C2D /* field_gloss.png */; };
+		BBE03FDE1CEA0B5600393C2D /* Cushion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBE03FDC1CEA0B5600393C2D /* Cushion.cpp */; };
+		BBE03FDF1CEA100200393C2D /* bande.frag in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCE1CE9FF3200393C2D /* bande.frag */; };
+		BBE03FE01CEA100200393C2D /* bande.vert in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCF1CE9FF3200393C2D /* bande.vert */; };
+		BBE03FE11CEA100200393C2D /* bande.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCA1CE9FEBC00393C2D /* bande.mtl */; };
+		BBE03FE21CEA100200393C2D /* bande.obj in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCB1CE9FEBC00393C2D /* bande.obj */; };
+		BBE03FE41CEA466700393C2D /* cushion.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FE31CEA466700393C2D /* cushion.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -293,6 +302,8 @@
 		B59A67981ACC8BCC00E3EB9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B59A679A1ACC99F900E3EB9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B59A679C1ACC9A0400E3EB9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BB3400201CE8F49B003D424E /* normalMapField.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = normalMapField.jpeg; sourceTree = "<group>"; };
+		BB3400211CE8F49B003D424E /* normalMapHockeypuck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = normalMapHockeypuck.jpg; sourceTree = "<group>"; };
 		BB7730151CD8861C00C2B91D /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		BB7730161CD8861C00C2B91D /* cube.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = cube.frag; sourceTree = "<group>"; };
 		BB7730171CD8861C00C2B91D /* cube.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
@@ -325,6 +336,14 @@
 		BB7730681CD94B0300C2B91D /* Stick.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Stick.hpp; path = model/Stick.hpp; sourceTree = "<group>"; };
 		BB77306A1CD9518E00C2B91D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../project/model/Player.cpp; sourceTree = "<group>"; };
 		BB77306B1CD9518E00C2B91D /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = model/Player.hpp; sourceTree = "<group>"; };
+		BBE03FC61CE9AB8B00393C2D /* field_gloss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field_gloss.png; sourceTree = "<group>"; };
+		BBE03FCA1CE9FEBC00393C2D /* bande.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; name = bande.mtl; path = project/data/bande.mtl; sourceTree = "<group>"; };
+		BBE03FCB1CE9FEBC00393C2D /* bande.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = bande.obj; path = project/data/bande.obj; sourceTree = "<group>"; };
+		BBE03FCE1CE9FF3200393C2D /* bande.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = bande.frag; path = project/data/bande.frag; sourceTree = "<group>"; };
+		BBE03FCF1CE9FF3200393C2D /* bande.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = bande.vert; path = project/data/bande.vert; sourceTree = "<group>"; };
+		BBE03FDC1CEA0B5600393C2D /* Cushion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cushion.cpp; path = ../../project/model/Cushion.cpp; sourceTree = "<group>"; };
+		BBE03FDD1CEA0B5600393C2D /* Cushion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cushion.hpp; path = model/Cushion.hpp; sourceTree = "<group>"; };
+		BBE03FE31CEA466700393C2D /* cushion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cushion.png; path = project/data/cushion.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +366,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BBE03FE31CEA466700393C2D /* cushion.png */,
+				BBE03FCE1CE9FF3200393C2D /* bande.frag */,
+				BBE03FCF1CE9FF3200393C2D /* bande.vert */,
+				BBE03FCA1CE9FEBC00393C2D /* bande.mtl */,
+				BBE03FCB1CE9FEBC00393C2D /* bande.obj */,
 				B47949BF1BA6743D00B5E9DC /* bRenderer */,
 				B4CB8C7E1B72E43300FE041B /* project */,
 				29B97323FDCFA39411CA2CEA /* externalLibraries */,
@@ -388,14 +412,17 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				BBE03FC61CE9AB8B00393C2D /* field_gloss.png */,
+				BB3400201CE8F49B003D424E /* normalMapField.jpeg */,
+				BB3400211CE8F49B003D424E /* normalMapHockeypuck.jpg */,
 				26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */,
 				26C2AF6B1CDB8225006A74BA /* field.png */,
 				BB7730551CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf */,
 				BB7730561CD888BC00C2B91D /* orange juice 2.0.ttf */,
 				BB77304D1CD887DA00C2B91D /* field.frag */,
+				BB7730501CD887DA00C2B91D /* field.vert */,
 				BB77304E1CD887DA00C2B91D /* field.mtl */,
 				BB77304F1CD887DA00C2B91D /* field.obj */,
-				BB7730501CD887DA00C2B91D /* field.vert */,
 				BB7730151CD8861C00C2B91D /* config.json */,
 				BB7730161CD8861C00C2B91D /* cube.frag */,
 				BB7730171CD8861C00C2B91D /* cube.mtl */,
@@ -684,6 +711,7 @@
 				BB7730651CD92A6000C2B91D /* Field.hpp */,
 				BB7730681CD94B0300C2B91D /* Stick.hpp */,
 				BB77306B1CD9518E00C2B91D /* Player.hpp */,
+				BBE03FDD1CEA0B5600393C2D /* Cushion.hpp */,
 			);
 			name = model;
 			path = ../../project;
@@ -692,6 +720,7 @@
 		BB7730601CD926C200C2B91D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BBE03FDC1CEA0B5600393C2D /* Cushion.cpp */,
 				BB77306A1CD9518E00C2B91D /* Player.cpp */,
 				BB7730671CD94B0300C2B91D /* Stick.cpp */,
 				BB7730641CD92A6000C2B91D /* Field.cpp */,
@@ -727,7 +756,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 94PFB8AHJE;
@@ -759,6 +788,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE03FE41CEA466700393C2D /* cushion.png in Resources */,
+				BBE03FDF1CEA100200393C2D /* bande.frag in Resources */,
+				BBE03FE01CEA100200393C2D /* bande.vert in Resources */,
+				BBE03FE11CEA100200393C2D /* bande.mtl in Resources */,
+				BBE03FE21CEA100200393C2D /* bande.obj in Resources */,
+				BBE03FC71CE9AB8B00393C2D /* field_gloss.png in Resources */,
+				BB3400221CE8F49B003D424E /* normalMapField.jpeg in Resources */,
+				BB3400231CE8F49B003D424E /* normalMapHockeypuck.jpg in Resources */,
 				BB7730571CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf in Resources */,
 				BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */,
 				BB7730511CD887DA00C2B91D /* field.frag in Resources */,
@@ -872,6 +909,7 @@
 				BB7730631CD928E300C2B91D /* Puck.cpp in Sources */,
 				B47AD6BB1B827DA000AFC632 /* ftbbox.c in Sources */,
 				B47AD6E71B827F4A00AFC632 /* winfnt.c in Sources */,
+				BBE03FDE1CEA0B5600393C2D /* Cushion.cpp in Sources */,
 				B4794A441BA6743D00B5E9DC /* RenderQueue.cpp in Sources */,
 				B4794A4D1BA6743D00B5E9DC /* FileHandler_desktop.cpp in Sources */,
 				B4CB8CCE1B72E43300FE041B /* AppDelegate.m in Sources */,
@@ -931,6 +969,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.uzh.ifi.cgapp;
 				PRODUCT_NAME = bRenderer_ios;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
@@ -971,6 +1010,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.uzh.ifi.cgapp;
 				PRODUCT_NAME = bRenderer_ios;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
@@ -983,6 +1023,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = $SRCROOT;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;

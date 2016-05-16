@@ -8,26 +8,27 @@
 
 #include "Field.hpp"
 
-Field::Field(GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))) {
+Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))) {
     this->scale(scale);
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;
+    this->cushion = cushion;
 }
+
 
 void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME){
    
     ShaderPtr fieldShader = bRenderer.getObjects()->getShader(MODEL_NAME);
     if (fieldShader.get())
     {
-        vmml::Matrix4f fieldModelMatrix = vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
         vmml::Matrix4f viewMatrixField = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
         
         fieldShader->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
         fieldShader->setUniform("ViewMatrix", viewMatrixField);
-        fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
+        fieldShader->setUniform("ModelMatrix", this->fieldMatrix);
         
         vmml::Matrix3f normalMatrixField;
-        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(fieldModelMatrix)), normalMatrixField);
+        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(this->fieldMatrix)), normalMatrixField);
         fieldShader->setUniform("NormalMatrix", normalMatrixField);
         
         vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
@@ -42,7 +43,8 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
     {
         bRenderer::log("No shader available.");
     }
-//    fieldShader->setUniform("ModelMatrix", fieldModelMatrix);
     this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
-
+    vmml::Matrix4f cushionMatrix = this->cushion->drawModel(this->fieldMatrix, bRenderer, cameraName);
+    this->ObjectModel::drawModel(bRenderer, this->cushion->MODEL_NAME, cameraName, cushionMatrix, std::vector<std::string>({ }));
+    
 }

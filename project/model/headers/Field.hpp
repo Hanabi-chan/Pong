@@ -11,16 +11,20 @@
 
 #include <stdio.h>
 #include "ObjectModel.h"
+#include "Cushion.hpp"
 
 class Field : public ObjectModel {
     
 public:
     
+    Cushion *cushion;
+    
     const vmml::Matrix4f fieldMatrix;
     
-    Field(GLfloat dimensionX, GLfloat dimensionY, GLfloat scale);
+    Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale);
     
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
+    
     
 };
 

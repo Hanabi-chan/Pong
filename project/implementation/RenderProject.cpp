@@ -14,7 +14,8 @@ int lastScoreLeft, lastScoreRight;
 
 static std::list<ObjectModel*> models;
 
-Field field(10, 5, 1);
+Cushion cushion;
+Field field(&cushion, 10, 5, 1);
 Stick stick1(&field, 200, 1000, 0.001), stick2(stick1, true);
 Player player1(&stick1), player2(&stick2);
 Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.15);
@@ -61,6 +62,11 @@ void RenderProject::initFunction()
     PropertiesPtr fieldProperties = bRenderer().getObjects()->createProperties("fieldProperties");
     // load model
     bRenderer().getObjects()->loadObjModel("field.obj", true, true, true, 4, true, false, fieldProperties);
+    
+    /* Loading cushion */
+    ShaderPtr cushionShader = bRenderer().getObjects()->loadShaderFile(field.cushion->MODEL_NAME, 0, false, true, true, false, false);
+    PropertiesPtr cushionProperties = bRenderer().getObjects()->createProperties("cushionProperties");
+    bRenderer().getObjects()->loadObjModel("bande.obj", true, true, true, 4, true, false, cushionProperties);
     
     /* Loading stick */
     ShaderPtr stickShader = bRenderer().getObjects()->loadShaderFile(stick1.MODEL_NAME, 0, false, true, true, false, false);

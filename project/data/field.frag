@@ -1,5 +1,6 @@
 
 uniform mediump mat4 ViewMatrix;
+uniform mediump mat4 ModelViewMatrix;
 uniform mediump mat4 ModelMatrix;
 uniform mediump mat4 ProjectionMatrix;
 
@@ -23,6 +24,7 @@ uniform lowp vec3 Is;   // specular light intensity
 
 uniform sampler2D DiffuseMap;
 uniform sampler2D NormalMap;
+uniform sampler2D SphereMap;
 
 varying lowp vec4 ambientVarying;
 varying lowp vec4 diffuseVarying;
@@ -38,7 +40,7 @@ varying mediump vec3 normal;
 void main()
 {
     
-    mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb * 2.0 - 1.0);
+    mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb);// * 2.0 - 1.0);
     mediump vec3 l = normalize(LightPos - pos).xyz;
     
     mediump vec3 Ca = Ka * Ia;
@@ -56,5 +58,8 @@ void main()
     //read color from DiffuseMap
     lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
     
-    gl_FragColor = (vec4(clamp(Cd, 0.0, 1.0), 1.0) + vec4(Ca, 1.0)) * color + vec4(clamp(Cs, 0.0, 1.0), transparency);
+    lowp float colorAlpha = 0.1;
+    lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
+    colorTransp.a = transparency;
+    gl_FragColor = colorTransp;
 }
