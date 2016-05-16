@@ -52,8 +52,8 @@ void RenderProject::initFunction()
     _viewMatrixHUD = Camera::lookAt(vmml::Vector3f(0.0f, 0.0f, 0.25f), vmml::Vector3f::ZERO, vmml::Vector3f::UP);
     
     // set shader versions (optional)
-    bRenderer().getObjects()->setShaderVersionDesktop("#version 120");
-    bRenderer().getObjects()->setShaderVersionES("#version 100");
+//    bRenderer().getObjects()->setShaderVersionDesktop("#version 120");
+//    bRenderer().getObjects()->setShaderVersionES("#version 100");
     
     /* Loading field */
     // load materials and shaders before loading the model

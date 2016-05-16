@@ -1,3 +1,4 @@
+
 uniform mediump mat4 ViewMatrix;
 uniform mediump mat4 ModelMatrix;
 uniform mediump mat4 ProjectionMatrix;
@@ -34,8 +35,8 @@ varying mediump vec3 normal;
 void main()
 {
     
+    mediump vec3 n = normal ;
     //mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb * 2.0 - 1.0);
-    mediump vec3 n = normal;
     mediump vec3 l = normalize(LightPos - pos).xyz;
     
     mediump vec3 Ca = Ka * Ia;
@@ -51,11 +52,11 @@ void main()
     }
     
     //read color from DiffuseMap
-    lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
+    mediump vec4 color = texture2D(DiffuseMap, texCoordVarying.st);
     
     gl_FragColor = (vec4(clamp(Cd, 0.0, 1.0), 1.0) + vec4(Ca, 1.0)) * color + vec4(clamp(Cs, 0.0, 1.0), 1.0);
-    //gl_FragColor = vec4(vec3(0.5) + color.xyz * 0.5, 1.0);
-    //gl_FragColor = vec4(1,1,0,1);
+    //gl_FragColor = color;
+    //gl_FragColor = vec4(1,0,0,1);
 }
 
 //varying lowp vec4 colorVarying;
