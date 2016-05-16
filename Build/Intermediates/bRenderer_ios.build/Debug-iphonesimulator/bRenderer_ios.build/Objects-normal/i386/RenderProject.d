@@ -209,4 +209,5 @@ dependencies: \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/ObjectModel.h \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/Puck.hpp \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Player.hpp \
-  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Stick.hpp
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Stick.hpp \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/bRenderer/implementation/Skybox.hpp
