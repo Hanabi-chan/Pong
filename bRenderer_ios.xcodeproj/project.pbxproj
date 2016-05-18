@@ -337,13 +337,13 @@
 		BB77306A1CD9518E00C2B91D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../project/model/Player.cpp; sourceTree = "<group>"; };
 		BB77306B1CD9518E00C2B91D /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = model/Player.hpp; sourceTree = "<group>"; };
 		BBE03FC61CE9AB8B00393C2D /* field_gloss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field_gloss.png; sourceTree = "<group>"; };
-		BBE03FCA1CE9FEBC00393C2D /* bande.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; name = bande.mtl; path = project/data/bande.mtl; sourceTree = "<group>"; };
-		BBE03FCB1CE9FEBC00393C2D /* bande.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = bande.obj; path = project/data/bande.obj; sourceTree = "<group>"; };
-		BBE03FCE1CE9FF3200393C2D /* bande.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = bande.frag; path = project/data/bande.frag; sourceTree = "<group>"; };
-		BBE03FCF1CE9FF3200393C2D /* bande.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = bande.vert; path = project/data/bande.vert; sourceTree = "<group>"; };
+		BBE03FCA1CE9FEBC00393C2D /* bande.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = bande.mtl; sourceTree = "<group>"; };
+		BBE03FCB1CE9FEBC00393C2D /* bande.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = bande.obj; sourceTree = "<group>"; };
+		BBE03FCE1CE9FF3200393C2D /* bande.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = bande.frag; sourceTree = "<group>"; };
+		BBE03FCF1CE9FF3200393C2D /* bande.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = bande.vert; sourceTree = "<group>"; };
 		BBE03FDC1CEA0B5600393C2D /* Cushion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cushion.cpp; path = ../../project/model/Cushion.cpp; sourceTree = "<group>"; };
 		BBE03FDD1CEA0B5600393C2D /* Cushion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cushion.hpp; path = model/Cushion.hpp; sourceTree = "<group>"; };
-		BBE03FE31CEA466700393C2D /* cushion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cushion.png; path = project/data/cushion.png; sourceTree = "<group>"; };
+		BBE03FE31CEA466700393C2D /* cushion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cushion.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,11 +366,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				BBE03FE31CEA466700393C2D /* cushion.png */,
-				BBE03FCE1CE9FF3200393C2D /* bande.frag */,
-				BBE03FCF1CE9FF3200393C2D /* bande.vert */,
-				BBE03FCA1CE9FEBC00393C2D /* bande.mtl */,
-				BBE03FCB1CE9FEBC00393C2D /* bande.obj */,
 				B47949BF1BA6743D00B5E9DC /* bRenderer */,
 				B4CB8C7E1B72E43300FE041B /* project */,
 				29B97323FDCFA39411CA2CEA /* externalLibraries */,
@@ -412,6 +407,11 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				BBE03FE31CEA466700393C2D /* cushion.png */,
+				BBE03FCE1CE9FF3200393C2D /* bande.frag */,
+				BBE03FCF1CE9FF3200393C2D /* bande.vert */,
+				BBE03FCA1CE9FEBC00393C2D /* bande.mtl */,
+				BBE03FCB1CE9FEBC00393C2D /* bande.obj */,
 				BBE03FC61CE9AB8B00393C2D /* field_gloss.png */,
 				BB3400201CE8F49B003D424E /* normalMapField.jpeg */,
 				BB3400211CE8F49B003D424E /* normalMapHockeypuck.jpg */,

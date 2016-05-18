@@ -62,6 +62,7 @@ void RenderProject::initFunction()
     PropertiesPtr fieldProperties = bRenderer().getObjects()->createProperties("fieldProperties");
     // load model
     bRenderer().getObjects()->loadObjModel("field.obj", true, true, true, 4, true, false, fieldProperties);
+//    vmml::AABBf fieldBounding = bRenderer().getObjects()->loadObjModel("field.obj", true, true, true, 4, true, false, fieldProperties)->getBoundingBoxObjectSpace();
     
     /* Loading cushion */
     ShaderPtr cushionShader = bRenderer().getObjects()->loadShaderFile(field.cushion->MODEL_NAME, 0, false, true, true, false, false);
@@ -192,6 +193,9 @@ void RenderProject::updateCamera(const std::string &camera, const double &deltaT
 {
     //// Adjust aspect ratio ////
     bRenderer().getObjects()->getCamera(camera)->setAspectRatio(bRenderer().getView()->getAspectRatio());
+//    bRenderer().getObjects()->getCamera(camera)->moveCameraSideward(1.0);
+//    bRenderer().getObjects()->getCamera(camera)->rotateCamera(0, 13.2f, 0);
+    
 }
 
 /* For iOS only: Handle device rotation */
