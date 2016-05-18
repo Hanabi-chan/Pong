@@ -18,7 +18,7 @@ Field field(10, 5, 1);
 Stick stick1(&field, 200, 1000, 0.0015), stick2(stick1, true);
 Player player1(&stick1), player2(&stick2);
 Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.20);
-Skybox skybox(10, 5, 1);
+Skybox skybox(1, 1, 0);
 
 /* Initialize the Project */
 void RenderProject::init()

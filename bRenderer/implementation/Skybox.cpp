@@ -8,7 +8,7 @@
 
 #include "Skybox.hpp"
 
-Skybox::Skybox(GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("skybox"), skyboxMatrix(vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))) {
+Skybox::Skybox(GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("skybox"), skyboxMatrix(vmml::create_rotation(-3.5f, vmml::Vector3f(1,0,0))) {
     this->scale(scale);
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;
@@ -18,7 +18,7 @@ void Skybox::drawModel(Renderer &bRenderer, const std::string &cameraName = Obje
     ShaderPtr skyboxShader = bRenderer.getObjects()->getShader(MODEL_NAME);
     this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->skyboxMatrix, std::vector<std::string>({ }));
     
-    vmml::Matrix4f skyboxModelMatrix = vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0));
+    vmml::Matrix4f skyboxModelMatrix = vmml::create_translation(vmml::Vector3f(0,5,0)) * vmml::create_rotation(-3.0f, vmml::Vector3f(1,0,0)) * vmml::create_rotation(115.0f, vmml::Vector3f(0,1,0)); //* create_rotation(-3.0f, vmml::Vector3f(0,0,1));
     
     vmml::Matrix4f viewMatrixSkybox = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
     
