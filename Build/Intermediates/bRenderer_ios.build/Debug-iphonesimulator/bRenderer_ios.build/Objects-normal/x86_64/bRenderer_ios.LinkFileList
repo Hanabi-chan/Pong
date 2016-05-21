@@ -1,86 +1,93 @@
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/type1.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Material.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftsystem.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/obj_parser.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/View_ios.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextSprite.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/texture-font.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/texture-atlas.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftgxval.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ViewController.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftpfr.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftfstype.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftpatent.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/jsoncpp.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Input_desktop.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/truetype.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/sfnt.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftmm.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Configuration.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ShaderDataGenerator.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftfntfmt.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftdebug.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftbitmap.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftgasp.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ObjectManager.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/CubeMap.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/DepthMap.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftlcdfil.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/autofit.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Sprite.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/platform.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Shader.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextureData.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/pfr.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextureData_ios.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Renderer_desktop.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftbase.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/type42.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ShaderSource.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextureData_desktop.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/vector.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftlzw.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/fttype1.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ModelData.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftcache.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftgzip.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftwinfnt.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/RenderProject.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/OBJLoader.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ModelRenderer.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ShaderDataFile.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/pshinter.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/smooth.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/psaux.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftotval.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/psmodule.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Logger.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Input_ios.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Font.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/main.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftstroke.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Renderer.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Renderer_ios.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/pcf.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/FileHandler_ios.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftglyph.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftinit.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Framebuffer.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftbbox.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/winfnt.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/RenderQueue.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/FileHandler_desktop.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/AppDelegate.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Texture.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/View_desktop.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/bdf.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/cff.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Camera.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Model.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Geometry.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/BView.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/obj.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftsynth.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/raster.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/type1cid.o
-/Users/Sarah/Documents/4. Semester (FS16)/ComputerGraphicLab/UE/Assignment4/14-719-421_Sarah_Zurmuehle_4 2/1a/bRenderer/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/MatrixStack.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ObjectModel.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/type1.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Material.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftsystem.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/obj_parser.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/View_ios.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextSprite.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/texture-font.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/texture-atlas.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Player.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftgxval.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ViewController.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftpfr.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftfstype.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftpatent.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/jsoncpp.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Input_desktop.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/truetype.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/sfnt.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftmm.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Configuration.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ShaderDataGenerator.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftfntfmt.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Skybox.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftdebug.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftbitmap.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftgasp.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ObjectManager.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/CubeMap.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/DepthMap.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftlcdfil.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/autofit.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Sprite.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/platform.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Shader.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextureData.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/pfr.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextureData_ios.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Renderer_desktop.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftbase.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/type42.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ShaderSource.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/TextureData_desktop.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/vector.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftlzw.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/fttype1.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ModelData.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftcache.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftgzip.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftwinfnt.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/RenderProject.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/OBJLoader.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ModelRenderer.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ShaderDataFile.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/pshinter.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/smooth.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/psaux.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftotval.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/psmodule.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Logger.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Input_ios.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Font.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/main.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftstroke.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Renderer.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Renderer_ios.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/pcf.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/FileHandler_ios.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftglyph.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftinit.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Framebuffer.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Puck.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftbbox.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/winfnt.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Cushion.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/RenderQueue.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/FileHandler_desktop.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/AppDelegate.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Texture.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/View_desktop.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/bdf.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/cff.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Camera.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Model.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Stick.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Field.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/Geometry.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/BView.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/obj.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/ftsynth.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/raster.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/type1cid.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/x86_64/MatrixStack.o

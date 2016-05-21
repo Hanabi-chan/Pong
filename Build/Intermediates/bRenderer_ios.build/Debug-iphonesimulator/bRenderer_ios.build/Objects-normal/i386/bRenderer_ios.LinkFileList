@@ -1,3 +1,4 @@
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ObjectModel.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/type1.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Material.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftsystem.o
@@ -6,6 +7,7 @@
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/TextSprite.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/texture-font.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/texture-atlas.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Player.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftgxval.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ViewController.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftpfr.o
@@ -19,6 +21,7 @@
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Configuration.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ShaderDataGenerator.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftfntfmt.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Skybox.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftdebug.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftbitmap.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftgasp.o
@@ -66,8 +69,10 @@
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftglyph.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftinit.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Framebuffer.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Puck.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/ftbbox.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/winfnt.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Cushion.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/RenderQueue.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/FileHandler_desktop.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/AppDelegate.o
@@ -77,6 +82,8 @@
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/cff.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Camera.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Model.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Stick.o
+/Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Field.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/Geometry.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/BView.o
 /Users/Sarah/Desktop/Project_CGLab/Pong/Build/Intermediates/bRenderer_ios.build/Debug-iphonesimulator/bRenderer_ios.build/Objects-normal/i386/obj.o
