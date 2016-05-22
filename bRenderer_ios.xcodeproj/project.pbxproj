@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2616F33D1CEEFCD30041EDD0 /* bande.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2616F33C1CEEFCD30041EDD0 /* bande.obj */; };
+		263C16371CF0E6DC00C93568 /* ibl.frag in Resources */ = {isa = PBXBuildFile; fileRef = 263C16351CF0E6DC00C93568 /* ibl.frag */; };
+		263C16381CF0E6DC00C93568 /* ibl.vert in Resources */ = {isa = PBXBuildFile; fileRef = 263C16361CF0E6DC00C93568 /* ibl.vert */; };
 		26C2AF6C1CDB8226006A74BA /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2AF6B1CDB8225006A74BA /* field.png */; };
 		26DB1CBC1CEE406300E331F0 /* skybox.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB41CEE406300E331F0 /* skybox.mtl */; };
 		26DB1CBD1CEE406300E331F0 /* skybox.obj in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB51CEE406300E331F0 /* skybox.obj */; };
@@ -158,6 +160,8 @@
 
 /* Begin PBXFileReference section */
 		2616F33C1CEEFCD30041EDD0 /* bande.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bande.obj; sourceTree = "<group>"; };
+		263C16351CF0E6DC00C93568 /* ibl.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.frag; sourceTree = "<group>"; };
+		263C16361CF0E6DC00C93568 /* ibl.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.vert; sourceTree = "<group>"; };
 		26C2AF6B1CDB8225006A74BA /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
 		26DB1CB41CEE406300E331F0 /* skybox.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skybox.mtl; sourceTree = "<group>"; };
 		26DB1CB51CEE406300E331F0 /* skybox.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skybox.obj; sourceTree = "<group>"; };
@@ -430,6 +434,8 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				263C16351CF0E6DC00C93568 /* ibl.frag */,
+				263C16361CF0E6DC00C93568 /* ibl.vert */,
 				26DB1CC41CEE416200E331F0 /* skybox.frag */,
 				26DB1CC51CEE416200E331F0 /* skybox.vert */,
 				26DB1CB41CEE406300E331F0 /* skybox.mtl */,
@@ -837,6 +843,7 @@
 				BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */,
 				26DB1CBD1CEE406300E331F0 /* skybox.obj in Resources */,
 				BB7730511CD887DA00C2B91D /* field.frag in Resources */,
+				263C16371CF0E6DC00C93568 /* ibl.frag in Resources */,
 				BB7730521CD887DA00C2B91D /* field.mtl in Resources */,
 				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
 				26DB1CC61CEE416200E331F0 /* skybox.frag in Resources */,
@@ -864,6 +871,7 @@
 				26DB1CC01CEE406300E331F0 /* skyboxSide3.png in Resources */,
 				BB7730431CD8861C00C2B91D /* stick.obj in Resources */,
 				BB7730441CD8861C00C2B91D /* stick.vert in Resources */,
+				263C16381CF0E6DC00C93568 /* ibl.vert in Resources */,
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,

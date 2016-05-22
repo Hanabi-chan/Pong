@@ -20,7 +20,7 @@ void main()
     cameraPos = ProjectionMatrix * Position;
     texCoordVarying = TexCoord;
     gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(position, 1.0);
-
+    
 }
 
 

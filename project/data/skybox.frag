@@ -18,6 +18,7 @@ void main()
     gl_FragColor = cubeMap;
 }
 
+
 //
 //uniform mediump mat4 ViewMatrix;
 //uniform mediump mat4 ModelMatrix;

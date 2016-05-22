@@ -38,6 +38,18 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
         fieldShader->setUniform("Ia", vmml::Vector3f(1.f));
         fieldShader->setUniform("Id", vmml::Vector3f(1.f));
         fieldShader->setUniform("Is", vmml::Vector3f(1.f));
+        
+        std::vector<std::string> cubeMapFileNames;
+        cubeMapFileNames.push_back("skyboxSide5.png");
+        cubeMapFileNames.push_back("skyboxSide2.png");
+        cubeMapFileNames.push_back("skyboxSide4.png");
+        cubeMapFileNames.push_back("skyboxSide1.png");
+        cubeMapFileNames.push_back("skyboxSide3.png"); //not visible
+        cubeMapFileNames.push_back("skyboxSide6.png");
+        
+        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(MODEL_NAME, cubeMapFileNames);
+        fieldShader->setUniform("skybox", cubeMap);
+        
     }
     else
     {
