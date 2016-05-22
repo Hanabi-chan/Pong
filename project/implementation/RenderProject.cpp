@@ -83,11 +83,7 @@ void RenderProject::initFunction()
     /* Loading skybox */
     // load materials and shaders before loading the model
     ShaderPtr skyboxShader = bRenderer().getObjects()->loadShaderFile(skybox.MODEL_NAME, 0, false, true, true, false, false);
-//    ShaderPtr skyboxShader2 = bRenderer().getObjects()->loadShaderFile("skybox2", 0, false, true, true, false, false);
-//    ShaderPtr skyboxShader3 = bRenderer().getObjects()->loadShaderFile("skybox3", 0, false, true, true, false, false);
-//    ShaderPtr skyboxShader4 = bRenderer().getObjects()->loadShaderFile("skybox4", 0, false, true, true, false, false);
-//    ShaderPtr skyboxShader5 = bRenderer().getObjects()->loadShaderFile("skybox5", 0, false, true, true, false, false);
-//    ShaderPtr skyboxShader6 = bRenderer().getObjects()->loadShaderFile("skybox6", 0, false, true, true, false, false);
+
     // create additional properties for a model
     PropertiesPtr skyboxProperties = bRenderer().getObjects()->createProperties("skyboxProperties");
     // load model
