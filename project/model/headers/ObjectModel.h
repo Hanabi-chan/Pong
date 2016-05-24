@@ -26,15 +26,23 @@ public:
     
     void drawModel(Renderer &bRenderer, const std::string &modelName, const std::string &cameraName, const vmml::Matrix4f & modelMatrix, const std::vector<std::string> &lightNames);
 
+//    vmml::Vector3f getScale();
+//    
+//    vmml::Vector3f getTranslation();
+    
+    vmml::Vector3f scale;
+    
+    vmml::Vector3f translation;
+    
     virtual void drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME);
+    
+    
 
 protected:
     
     ObjectModel(const std::string &model_name);
     
-    vmml::Vector3f scale;
-    
-    vmml::Vector3f translation;
+   
     
 };
 

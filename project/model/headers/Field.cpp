@@ -8,7 +8,7 @@
 
 #include "Field.hpp"
 
-Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_rotation(-0.2f, vmml::Vector3f(1,0,0)) * vmml::create_rotation(-0.7f, vmml::Vector3f(0,1,0))) {
+Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))) {
     this->scale(scale);
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;
@@ -43,51 +43,6 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
     {
         bRenderer::log("No shader available.");
     }
-    
-    /*
-     *
-     *
-     *
-     */
-    /*
-    CameraPtr reflCamPtr;
-    reflCamPtr->setPosition(vmml::Vector3f(0.0f, -1.0f, 0.0f));
-    // bad access
-//    bRenderer.getObjects()->addCamera("reflection", reflCamPtr);
-    
-    glEnable(GL_CULL_FACE);
-    
-    // Use 0 for clear stencil, enable stencil test
-    glClear( GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT );
-    glEnable( GL_STENCIL_TEST );
-    
-    // Set 1's in very location where the portal is.
-    glStencilFunc( GL_NEVER, 0, 0xFF );
-    glStencilOp( GL_INCR, GL_KEEP, GL_KEEP );
-    
-    glDisable(GL_DEPTH_TEST);
-    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, "reflection", this->fieldMatrix, std::vector<std::string>({ }));
-    glEnable(GL_DEPTH_TEST);
-    
-    // Render the entire scene at every location where there's a 1 (aka, a portal).
-    glStencilFunc( GL_LEQUAL, 1, 0xFF );
-    glStencilOp( GL_KEEP, GL_KEEP, GL_KEEP );
-    
-    // Set up CLIP PLANE ?
-    
-    // Render the actual scene inside of the portal.
-    // LOOP
-     bRenderer.getModelRenderer()->drawQueue(/*GL_LINES);
-    
-    // Done with stenciling.
-    glDisable( GL_STENCIL_TEST );
-    */
-    /*
-     *
-     *
-     *
-     *
-     */
     
     this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
     vmml::Matrix4f cushionMatrix = this->cushion->drawModel(this->fieldMatrix, bRenderer, cameraName);

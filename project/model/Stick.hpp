@@ -35,12 +35,16 @@ public:
     bool left;
     
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
-
-private:
-
+    
     const vmml::Vector3f xAxis;
     
     const GLfloat rotation, trans_x, trans_z;
+
+private:
+
+//    const vmml::Vector3f xAxis;
+//    
+//    const GLfloat rotation, trans_x, trans_z;
     
     Field *field;
     

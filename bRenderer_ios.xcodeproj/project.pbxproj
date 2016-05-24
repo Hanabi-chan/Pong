@@ -962,7 +962,7 @@
 					"$SRCROOT/externalLibraries/boost-library",
 					"$SRCROOT/externalLibraries/vmmlib-library",
 					"$SRCROOT/externalLibraries/freetype-2.6/include",
-					"$SRCROOT/externalLibraries/box2d/**",
+					$SRCROOT/externalLibraries/box2d,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/project/ios/Resources/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1003,7 +1003,7 @@
 					"$SRCROOT/externalLibraries/boost-library",
 					"$SRCROOT/externalLibraries/vmmlib-library",
 					"$SRCROOT/externalLibraries/freetype-2.6/include",
-					"$SRCROOT/externalLibraries/box2d/**",
+					$SRCROOT/externalLibraries/box2d,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/project/ios/Resources/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

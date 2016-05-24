@@ -21,3 +21,11 @@ void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, c
 void ObjectModel::drawModel(Renderer &bRenderer, const std::string &cameraName){
     // do nothing
 }
+
+//vmml::Vector3f ObjectModel::getScale() {
+//    return this->scale;
+//}
+//
+//vmml::Vector3f ObjectModel::getTranslation(){
+//    return this->translation;
+//}

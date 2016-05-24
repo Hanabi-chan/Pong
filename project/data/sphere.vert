@@ -15,7 +15,7 @@ void main()
     vec4 pos = ModelViewMatrix * Position;  // vertex position in eye coordinates
     vec3 normal = normalize(NormalMatrix * Normal.xyz);
 
-    colorVarying = vec4(vec3(0.5) + normal * 0.5, 1.0);
+    colorVarying = vec4(vec3(0.5) + normal * 0.5, 0.3);
     
     gl_Position = ProjectionMatrix * pos;
 }
