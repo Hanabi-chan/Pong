@@ -19,6 +19,7 @@ Field field(&cushion, 10, 5, 1);
 Stick stick1(&field, 200, 1000, 0.001), stick2(stick1, true);
 Player player1(&stick1), player2(&stick2);
 Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.15);
+Skybox skybox(1, 1, 0);
 
 /* Initialize the Project */
 void RenderProject::init()
@@ -79,6 +80,15 @@ void RenderProject::initFunction()
     PropertiesPtr hockeypuckProperties = bRenderer().getObjects()->createProperties("hockeypuckProperties");
     bRenderer().getObjects()->loadObjModel("hockeypuck.obj", true, true, true, 4, true, false, hockeypuckProperties);
     
+    /* Loading skybox */
+    // load materials and shaders before loading the model
+    ShaderPtr skyboxShader = bRenderer().getObjects()->loadShaderFile(skybox.MODEL_NAME, 0, false, true, true, false, false);
+
+    // create additional properties for a model
+    PropertiesPtr skyboxProperties = bRenderer().getObjects()->createProperties("skyboxProperties");
+    // load model
+    bRenderer().getObjects()->loadObjModel("skybox.obj", true, true, true, 4, true, false, skyboxProperties);
+    
     // create camera
     bRenderer().getObjects()->createCamera(ObjectModel::CAMERA_NAME, vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
     
@@ -91,6 +101,7 @@ void RenderProject::initFunction()
     models.push_back(&puck);
     models.push_back(&stick1);
     models.push_back(&stick2);
+    models.push_back(&skybox);
     
     // Update render queue
     updateRenderQueue("camera", 0.0f);

@@ -20,5 +20,6 @@
 #include "Puck.hpp"
 #include "Stick.hpp"
 #include "Player.hpp"
+#include "Skybox.hpp"
 
 #endif /* defined(B_BRENDERER_H) */

@@ -33,35 +33,49 @@ varying mediump vec3 normalVarying;    // normal in world space
 
 varying mediump vec4 pos;
 varying mediump vec3 normal;
+varying mediump vec3 cameraVector;
 
 void main()
 {
-    pos = ModelMatrix * Position;
+    // normal in world space
     normal = normalize(NormalMatrix * Normal);
+    
     mediump vec4 cameraPos = ProjectionMatrix * Position;
+    
+    pos = ModelMatrix * Position;
+    
+    cameraVector = normalize(cameraPos.xyz - pos.xyz);
+    
     texCoordVarying = TexCoord;
     
-    ambientVarying = vec4(Ka * Ia, 1.0);
-    
-    //calculate diffuse lighting
-    diffuseVarying = vec4(0.0);
-    mediump vec3 n = normal ;
-    mediump vec3 l = normalize(LightPos - pos).xyz;
-    
-    lowp float intensity = dot(n,l);
-    lowp vec3 diffuse = Kd * clamp(intensity, 0.0, 1.0) * Id;
-    diffuseVarying = vec4(clamp(diffuse, 0.0, 1.0), 1.0);
-    
-    //If vertex is lit, calculate specular term in view space using the Blinn-Phong model
-    specularVarying = vec4(0.0);
-    if (intensity > 0.0)
-    {
-        mediump vec3 eyeVec = normalize(EyePos - pos).xyz;
-        mediump vec3 h = normalize(l+ eyeVec);
-        
-        mediump vec3 specular = Ks * pow(dot(n,h),Ns) * Is;
-        specularVarying = vec4(clamp(specular, 0.0, 1.0), 1.0);
-    }
-    
     gl_Position = ProjectionMatrix * ViewMatrix * pos;
+    
+//    pos = ModelMatrix * Position;
+//    normal = normalize(NormalMatrix * Normal);
+//    mediump vec4 cameraPos = ProjectionMatrix * Position;
+//    texCoordVarying = TexCoord;
+//    
+//    ambientVarying = vec4(Ka * Ia, 1.0);
+//    
+//    //calculate diffuse lighting
+//    diffuseVarying = vec4(0.0);
+//    mediump vec3 n = normal ;
+//    mediump vec3 l = normalize(LightPos - pos).xyz;
+//    
+//    lowp float intensity = dot(n,l);
+//    lowp vec3 diffuse = Kd * clamp(intensity, 0.0, 1.0) * Id;
+//    diffuseVarying = vec4(clamp(diffuse, 0.0, 1.0), 1.0);
+//    
+//    //If vertex is lit, calculate specular term in view space using the Blinn-Phong model
+//    specularVarying = vec4(0.0);
+//    if (intensity > 0.0)
+//    {
+//        mediump vec3 eyeVec = normalize(EyePos - pos).xyz;
+//        mediump vec3 h = normalize(l+ eyeVec);
+//        
+//        mediump vec3 specular = Ks * pow(dot(n,h),Ns) * Is;
+//        specularVarying = vec4(clamp(specular, 0.0, 1.0), 1.0);
+//    }
+//    
+//    gl_Position = ProjectionMatrix * ViewMatrix * pos;
 }

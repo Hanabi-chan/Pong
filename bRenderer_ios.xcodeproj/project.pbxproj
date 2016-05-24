@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2616F33D1CEEFCD30041EDD0 /* bande.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2616F33C1CEEFCD30041EDD0 /* bande.obj */; };
+		263C16371CF0E6DC00C93568 /* ibl.frag in Resources */ = {isa = PBXBuildFile; fileRef = 263C16351CF0E6DC00C93568 /* ibl.frag */; };
+		263C16381CF0E6DC00C93568 /* ibl.vert in Resources */ = {isa = PBXBuildFile; fileRef = 263C16361CF0E6DC00C93568 /* ibl.vert */; };
 		26C2AF6C1CDB8226006A74BA /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2AF6B1CDB8225006A74BA /* field.png */; };
+		26DB1CBC1CEE406300E331F0 /* skybox.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB41CEE406300E331F0 /* skybox.mtl */; };
+		26DB1CBD1CEE406300E331F0 /* skybox.obj in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB51CEE406300E331F0 /* skybox.obj */; };
+		26DB1CBE1CEE406300E331F0 /* skyboxSide1.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB61CEE406300E331F0 /* skyboxSide1.png */; };
+		26DB1CBF1CEE406300E331F0 /* skyboxSide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB71CEE406300E331F0 /* skyboxSide2.png */; };
+		26DB1CC01CEE406300E331F0 /* skyboxSide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB81CEE406300E331F0 /* skyboxSide3.png */; };
+		26DB1CC11CEE406300E331F0 /* skyboxSide4.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB91CEE406300E331F0 /* skyboxSide4.png */; };
+		26DB1CC21CEE406300E331F0 /* skyboxSide5.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CBA1CEE406300E331F0 /* skyboxSide5.png */; };
+		26DB1CC31CEE406300E331F0 /* skyboxSide6.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CBB1CEE406300E331F0 /* skyboxSide6.png */; };
+		26DB1CC61CEE416200E331F0 /* skybox.frag in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CC41CEE416200E331F0 /* skybox.frag */; };
+		26DB1CC71CEE416200E331F0 /* skybox.vert in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CC51CEE416200E331F0 /* skybox.vert */; };
+		26DB1CCA1CEE420800E331F0 /* Skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26DB1CC81CEE420800E331F0 /* Skybox.cpp */; };
 		26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */; };
 		26DE6D131CD90337000DBBB7 /* hockeypuck.frag in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D111CD90337000DBBB7 /* hockeypuck.frag */; };
 		26DE6D141CD90337000DBBB7 /* hockeypuck.vert in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6D121CD90337000DBBB7 /* hockeypuck.vert */; };
@@ -141,12 +155,26 @@
 		BBE03FDF1CEA100200393C2D /* bande.frag in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCE1CE9FF3200393C2D /* bande.frag */; };
 		BBE03FE01CEA100200393C2D /* bande.vert in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCF1CE9FF3200393C2D /* bande.vert */; };
 		BBE03FE11CEA100200393C2D /* bande.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCA1CE9FEBC00393C2D /* bande.mtl */; };
-		BBE03FE21CEA100200393C2D /* bande.obj in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FCB1CE9FEBC00393C2D /* bande.obj */; };
 		BBE03FE41CEA466700393C2D /* cushion.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE03FE31CEA466700393C2D /* cushion.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2616F33C1CEEFCD30041EDD0 /* bande.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bande.obj; sourceTree = "<group>"; };
+		263C16351CF0E6DC00C93568 /* ibl.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.frag; sourceTree = "<group>"; };
+		263C16361CF0E6DC00C93568 /* ibl.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.vert; sourceTree = "<group>"; };
 		26C2AF6B1CDB8225006A74BA /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
+		26DB1CB41CEE406300E331F0 /* skybox.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skybox.mtl; sourceTree = "<group>"; };
+		26DB1CB51CEE406300E331F0 /* skybox.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skybox.obj; sourceTree = "<group>"; };
+		26DB1CB61CEE406300E331F0 /* skyboxSide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide1.png; sourceTree = "<group>"; };
+		26DB1CB71CEE406300E331F0 /* skyboxSide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide2.png; sourceTree = "<group>"; };
+		26DB1CB81CEE406300E331F0 /* skyboxSide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide3.png; sourceTree = "<group>"; };
+		26DB1CB91CEE406300E331F0 /* skyboxSide4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide4.png; sourceTree = "<group>"; };
+		26DB1CBA1CEE406300E331F0 /* skyboxSide5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide5.png; sourceTree = "<group>"; };
+		26DB1CBB1CEE406300E331F0 /* skyboxSide6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide6.png; sourceTree = "<group>"; };
+		26DB1CC41CEE416200E331F0 /* skybox.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = skybox.frag; sourceTree = "<group>"; };
+		26DB1CC51CEE416200E331F0 /* skybox.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = skybox.vert; sourceTree = "<group>"; };
+		26DB1CC81CEE420800E331F0 /* Skybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skybox.cpp; sourceTree = "<group>"; };
+		26DB1CC91CEE420800E331F0 /* Skybox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Skybox.hpp; path = ../bRenderer/implementation/Skybox.hpp; sourceTree = "<group>"; };
 		26DE6D0F1CD90233000DBBB7 /* hockeypuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hockeypuck.png; sourceTree = "<group>"; };
 		26DE6D111CD90337000DBBB7 /* hockeypuck.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.frag; sourceTree = "<group>"; };
 		26DE6D121CD90337000DBBB7 /* hockeypuck.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hockeypuck.vert; sourceTree = "<group>"; };
@@ -338,7 +366,6 @@
 		BB77306B1CD9518E00C2B91D /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = model/Player.hpp; sourceTree = "<group>"; };
 		BBE03FC61CE9AB8B00393C2D /* field_gloss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field_gloss.png; sourceTree = "<group>"; };
 		BBE03FCA1CE9FEBC00393C2D /* bande.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = bande.mtl; sourceTree = "<group>"; };
-		BBE03FCB1CE9FEBC00393C2D /* bande.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = bande.obj; sourceTree = "<group>"; };
 		BBE03FCE1CE9FF3200393C2D /* bande.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = bande.frag; sourceTree = "<group>"; };
 		BBE03FCF1CE9FF3200393C2D /* bande.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = bande.vert; sourceTree = "<group>"; };
 		BBE03FDC1CEA0B5600393C2D /* Cushion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cushion.cpp; path = ../../project/model/Cushion.cpp; sourceTree = "<group>"; };
@@ -407,11 +434,23 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				263C16351CF0E6DC00C93568 /* ibl.frag */,
+				263C16361CF0E6DC00C93568 /* ibl.vert */,
+				26DB1CC41CEE416200E331F0 /* skybox.frag */,
+				26DB1CC51CEE416200E331F0 /* skybox.vert */,
+				26DB1CB41CEE406300E331F0 /* skybox.mtl */,
+				26DB1CB51CEE406300E331F0 /* skybox.obj */,
+				26DB1CB61CEE406300E331F0 /* skyboxSide1.png */,
+				26DB1CB71CEE406300E331F0 /* skyboxSide2.png */,
+				26DB1CB81CEE406300E331F0 /* skyboxSide3.png */,
+				26DB1CB91CEE406300E331F0 /* skyboxSide4.png */,
+				26DB1CBA1CEE406300E331F0 /* skyboxSide5.png */,
+				26DB1CBB1CEE406300E331F0 /* skyboxSide6.png */,
 				BBE03FE31CEA466700393C2D /* cushion.png */,
 				BBE03FCE1CE9FF3200393C2D /* bande.frag */,
 				BBE03FCF1CE9FF3200393C2D /* bande.vert */,
+				2616F33C1CEEFCD30041EDD0 /* bande.obj */,
 				BBE03FCA1CE9FEBC00393C2D /* bande.mtl */,
-				BBE03FCB1CE9FEBC00393C2D /* bande.obj */,
 				BBE03FC61CE9AB8B00393C2D /* field_gloss.png */,
 				BB3400201CE8F49B003D424E /* normalMapField.jpeg */,
 				BB3400211CE8F49B003D424E /* normalMapHockeypuck.jpg */,
@@ -712,6 +751,7 @@
 				BB7730681CD94B0300C2B91D /* Stick.hpp */,
 				BB77306B1CD9518E00C2B91D /* Player.hpp */,
 				BBE03FDD1CEA0B5600393C2D /* Cushion.hpp */,
+				26DB1CC91CEE420800E331F0 /* Skybox.hpp */,
 			);
 			name = model;
 			path = ../../project;
@@ -726,6 +766,7 @@
 				BB7730641CD92A6000C2B91D /* Field.cpp */,
 				BB7730611CD928E300C2B91D /* Puck.cpp */,
 				BB77305E1CD9255A00C2B91D /* ObjectModel.cpp */,
+				26DB1CC81CEE420800E331F0 /* Skybox.cpp */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -788,43 +829,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DB1CC21CEE406300E331F0 /* skyboxSide5.png in Resources */,
 				BBE03FE41CEA466700393C2D /* cushion.png in Resources */,
 				BBE03FDF1CEA100200393C2D /* bande.frag in Resources */,
 				BBE03FE01CEA100200393C2D /* bande.vert in Resources */,
 				BBE03FE11CEA100200393C2D /* bande.mtl in Resources */,
-				BBE03FE21CEA100200393C2D /* bande.obj in Resources */,
 				BBE03FC71CE9AB8B00393C2D /* field_gloss.png in Resources */,
 				BB3400221CE8F49B003D424E /* normalMapField.jpeg in Resources */,
 				BB3400231CE8F49B003D424E /* normalMapHockeypuck.jpg in Resources */,
+				2616F33D1CEEFCD30041EDD0 /* bande.obj in Resources */,
 				BB7730571CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf in Resources */,
+				26DB1CBE1CEE406300E331F0 /* skyboxSide1.png in Resources */,
 				BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */,
+				26DB1CBD1CEE406300E331F0 /* skybox.obj in Resources */,
 				BB7730511CD887DA00C2B91D /* field.frag in Resources */,
+				263C16371CF0E6DC00C93568 /* ibl.frag in Resources */,
 				BB7730521CD887DA00C2B91D /* field.mtl in Resources */,
 				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
+				26DB1CC61CEE416200E331F0 /* skybox.frag in Resources */,
 				BB7730541CD887DA00C2B91D /* field.vert in Resources */,
 				26C2AF6C1CDB8226006A74BA /* field.png in Resources */,
 				BB77302D1CD8861C00C2B91D /* config.json in Resources */,
 				BB77302E1CD8861C00C2B91D /* cube.frag in Resources */,
+				26DB1CBF1CEE406300E331F0 /* skyboxSide2.png in Resources */,
 				BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */,
 				BB7730301CD8861C00C2B91D /* cube.obj in Resources */,
 				26DE6D101CD90233000DBBB7 /* hockeypuck.png in Resources */,
 				BB7730311CD8861C00C2B91D /* cube.vert in Resources */,
+				26DB1CC11CEE406300E331F0 /* skyboxSide4.png in Resources */,
 				BB7730371CD8861C00C2B91D /* hockeypuck.mtl in Resources */,
 				BB7730381CD8861C00C2B91D /* hockeypuck.obj in Resources */,
 				BB77303C1CD8861C00C2B91D /* quad.obj in Resources */,
 				BB77303D1CD8861C00C2B91D /* sphere.frag in Resources */,
 				26DE6D141CD90337000DBBB7 /* hockeypuck.vert in Resources */,
+				26DB1CBC1CEE406300E331F0 /* skybox.mtl in Resources */,
 				BB77303E1CD8861C00C2B91D /* sphere.mtl in Resources */,
 				BB77303F1CD8861C00C2B91D /* sphere.obj in Resources */,
 				BB7730401CD8861C00C2B91D /* sphere.vert in Resources */,
 				BB7730411CD8861C00C2B91D /* stick.frag in Resources */,
 				BB7730421CD8861C00C2B91D /* stick.mtl in Resources */,
+				26DB1CC01CEE406300E331F0 /* skyboxSide3.png in Resources */,
 				BB7730431CD8861C00C2B91D /* stick.obj in Resources */,
 				BB7730441CD8861C00C2B91D /* stick.vert in Resources */,
+				263C16381CF0E6DC00C93568 /* ibl.vert in Resources */,
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,
+				26DB1CC71CEE416200E331F0 /* skybox.vert in Resources */,
 				B4CB8CD01B72E43300FE041B /* Project-Info.plist in Resources */,
+				26DB1CC31CEE406300E331F0 /* skyboxSide6.png in Resources */,
 				26DE6D131CD90337000DBBB7 /* hockeypuck.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,6 +912,7 @@
 				B4794A351BA6743D00B5E9DC /* Configuration.cpp in Sources */,
 				B4794A471BA6743D00B5E9DC /* ShaderDataGenerator.cpp in Sources */,
 				B47AD6BD1B827DB300AFC632 /* ftfntfmt.c in Sources */,
+				26DB1CCA1CEE420800E331F0 /* Skybox.cpp in Sources */,
 				B47AD6F51B82801400AFC632 /* ftdebug.c in Sources */,
 				B47AD6F11B827FDE00AFC632 /* ftbitmap.c in Sources */,
 				B47AD6F91B82803B00AFC632 /* ftgasp.c in Sources */,
