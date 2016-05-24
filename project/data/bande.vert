@@ -55,6 +55,7 @@ void main()
     texCoordVarying = TexCoord;
     
     gl_Position = ProjectionMatrix * ViewMatrix * pos;
+
 //    pos = ModelMatrix * Position;
 //    normal = normalize(NormalMatrix * Normal);
 //    mediump vec4 cameraPos = ProjectionMatrix * Position;

@@ -4,22 +4,20 @@ uniform mediump mat4 ModelMatrix;
 uniform mediump mat4 ProjectionMatrix;
 uniform mediump mat3 NormalMatrix;
 
-attribute vec4 TexCoord;
 attribute vec4 Position;
 attribute vec3 Normal;
 
-varying mediump vec3 normal;
-varying mediump vec3 position;
+varying highp vec3 normal;
+varying highp vec3 position;
 varying mediump vec4 cameraPos;
-varying lowp vec4 texCoordVarying;
 
 void main()
 {
     normal = NormalMatrix * Normal;
     position = vec3(ModelMatrix * Position);
     cameraPos = ProjectionMatrix * Position;
-    texCoordVarying = TexCoord;
-    gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(position, 1.0);
+    //gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(position, 1.0);
+    gl_Position = ProjectionMatrix * ViewMatrix * vec4(position, 1.0);
     
 }
 

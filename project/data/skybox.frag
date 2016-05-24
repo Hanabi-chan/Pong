@@ -1,19 +1,15 @@
 
 uniform mediump vec3 cameraPos;
 uniform samplerCube skybox;
-uniform sampler2D DiffuseMap;
 
-varying mediump vec3 normal;
-varying mediump vec3 position;
-varying lowp vec4 texCoordVarying;
+varying highp vec3 normal;
+varying highp vec3 position;
 
 void main()
 {
     mediump vec3 I = normalize(position - cameraPos);
     mediump vec3 R = reflect(I, normalize(normal));
-    //mediump vec4 color = texture(skybox, R);
     mediump vec4 cubeMap = textureCube(skybox, R);
-    mediump vec4 diffuse = texture2D(DiffuseMap, texCoordVarying.st);
     
     gl_FragColor = cubeMap;
 }
