@@ -25,7 +25,7 @@ Puck::Puck(Field *field, Player *one, Player *two, GLfloat dimensionX, GLfloat d
 }
 
 void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME) {
-//    this->makeMovement();
+    this->makeMovement();
     vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
                         * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y))
                         * vmml::create_scaling(scale);

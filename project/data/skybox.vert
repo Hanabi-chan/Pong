@@ -9,7 +9,7 @@ attribute vec3 Normal;
 
 varying highp vec3 normal;
 varying highp vec3 position;
-varying mediump vec4 cameraPos;
+varying highp vec4 cameraPos;
 
 void main()
 {
