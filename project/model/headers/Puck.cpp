@@ -25,7 +25,7 @@ Puck::Puck(Field *field, Player *one, Player *two, GLfloat dimensionX, GLfloat d
 }
 
 void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME) {
-//    this->makeMovement();
+    this->makeMovement();
     vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
                         * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y))
                         * vmml::create_scaling(scale);
@@ -51,6 +51,17 @@ void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = Object
         shaderHockeypuck->setUniform("Ia", vmml::Vector3f(1.f));
         shaderHockeypuck->setUniform("Id", vmml::Vector3f(1.f));
         shaderHockeypuck->setUniform("Is", vmml::Vector3f(1.f));
+        
+        std::vector<std::string> cubeMapFileNames;
+        cubeMapFileNames.push_back("skyboxSide5.png");
+        cubeMapFileNames.push_back("skyboxSide2.png");
+        cubeMapFileNames.push_back("skyboxSide4.png");
+        cubeMapFileNames.push_back("skyboxSide1.png");
+        cubeMapFileNames.push_back("skyboxSide3.png"); //not visible
+        cubeMapFileNames.push_back("skyboxSide6.png");
+        
+        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(MODEL_NAME, cubeMapFileNames);
+        shaderHockeypuck->setUniform("skybox", cubeMap);
     }
     else
     {

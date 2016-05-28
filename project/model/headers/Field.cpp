@@ -8,8 +8,8 @@
 
 #include "Field.hpp"
 
-Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0))) {
-    this->scale(scale);
+Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_translation(vmml::Vector3f(0,-1,0)) * vmml::create_scaling(vmml::Vector3f(scale))* vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0)) ){ //* vmml::create_rotation(-0.7f, vmml::Vector3f(0,1,0))) {
+    this->scale = vmml::Vector3f(scale);
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;
     this->cushion = cushion;
@@ -38,6 +38,18 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
         fieldShader->setUniform("Ia", vmml::Vector3f(1.f));
         fieldShader->setUniform("Id", vmml::Vector3f(1.f));
         fieldShader->setUniform("Is", vmml::Vector3f(1.f));
+        
+        std::vector<std::string> cubeMapFileNames;
+        cubeMapFileNames.push_back("skyboxSide5.png");
+        cubeMapFileNames.push_back("skyboxSide2.png");
+        cubeMapFileNames.push_back("skyboxSide4.png");
+        cubeMapFileNames.push_back("skyboxSide1.png");
+        cubeMapFileNames.push_back("skyboxSide3.png"); //not visible
+        cubeMapFileNames.push_back("skyboxSide6.png");
+        
+        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(MODEL_NAME, cubeMapFileNames);
+        fieldShader->setUniform("skybox", cubeMap);
+        
     }
     else
     {
