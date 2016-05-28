@@ -12,8 +12,9 @@
 #include <stdio.h>
 #include "ObjectModel.h"
 #include "Field.hpp"
+#include "IReflection.h"
 
-class Stick : public ObjectModel {
+class Stick : public ObjectModel, public IReflection{
     
 public:
     
@@ -35,6 +36,8 @@ public:
     bool left;
     
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
+    
+    virtual void drawModelReflection(Renderer &bRenderer);
     
     const vmml::Vector3f xAxis;
     

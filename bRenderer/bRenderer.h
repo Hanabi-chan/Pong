@@ -21,5 +21,6 @@
 #include "Stick.hpp"
 #include "Player.hpp"
 #include "Skybox.hpp"
+#include "IReflection.h"
 
 #endif /* defined(B_BRENDERER_H) */

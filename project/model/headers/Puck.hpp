@@ -13,14 +13,17 @@
 #include "ObjectModel.h"
 #include "Field.hpp"
 #include "Player.hpp"
+#include "IReflection.h"
 
-class Puck : public ObjectModel {
+class Puck : public ObjectModel, public IReflection {
     
 public:
     
     Puck(Field *field, Player *one, Player *two, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale);
     
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
+    
+    virtual void drawModelReflection(Renderer &bRenderer);
     
 private:
     

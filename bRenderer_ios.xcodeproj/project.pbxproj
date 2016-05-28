@@ -364,6 +364,7 @@
 		BB7730681CD94B0300C2B91D /* Stick.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Stick.hpp; path = model/Stick.hpp; sourceTree = "<group>"; };
 		BB77306A1CD9518E00C2B91D /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../project/model/Player.cpp; sourceTree = "<group>"; };
 		BB77306B1CD9518E00C2B91D /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = model/Player.hpp; sourceTree = "<group>"; };
+		BBB1A19E1CF9D92800BC22EF /* IReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IReflection.h; path = model/IReflection.h; sourceTree = "<group>"; };
 		BBE03FC61CE9AB8B00393C2D /* field_gloss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field_gloss.png; sourceTree = "<group>"; };
 		BBE03FCA1CE9FEBC00393C2D /* bande.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = bande.mtl; sourceTree = "<group>"; };
 		BBE03FCE1CE9FF3200393C2D /* bande.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = bande.frag; sourceTree = "<group>"; };
@@ -752,6 +753,7 @@
 				BB77306B1CD9518E00C2B91D /* Player.hpp */,
 				BBE03FDD1CEA0B5600393C2D /* Cushion.hpp */,
 				26DB1CC91CEE420800E331F0 /* Skybox.hpp */,
+				BBB1A19E1CF9D92800BC22EF /* IReflection.h */,
 			);
 			name = model;
 			path = ../../project;

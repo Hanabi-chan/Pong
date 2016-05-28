@@ -67,16 +67,16 @@ void Stick::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
                         * vmml::create_translation(this->translation.toVector())
                         * vmml::create_scaling(scale)
                         * vmml::create_rotation(rotation, xAxis);
-    ShaderPtr stickShader = bRenderer.getObjects()->getShader(MODEL_NAME);
-    stickShader->setUniform("NormalMatrix", vmml::Matrix3f(stickModelMatrix));
-    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, stickModelMatrix, std::vector<std::string>({ }));
-    
-    // draw reflection
-//    vmml::Matrix4f reflMatrix = stickModelMatrix
-//                                    * vmml::create_rotation(3.0f, vmml::Vector3f(0,1,0))
-//                                    * vmml::create_translation(vmml::Vector3f(1, 1, 1400));
-//    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, reflMatrix, std::vector<std::string>({ }));
-    
+    ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, stickModelMatrix, std::vector<std::string>({ }));
+}
+
+void Stick::drawModelReflection(Renderer &bRenderer){
+    this->makeMovement(bRenderer);
+    vmml::Matrix4f stickModelMatrix = this->field->fieldMatrix
+    * vmml::create_translation(this->translation.toVector()) * vmml::create_translation(vmml::Vector3f(0.0f, -1.0f, 0.0f))
+    * vmml::create_scaling(scale) * vmml::create_scaling(vmml::Vector3f(1.0f, -1.0f, 1.0f))
+    * vmml::create_rotation(rotation, xAxis);
+    ObjectModel::drawModel(bRenderer, MODEL_NAME, ObjectModel::CAMERA_NAME, stickModelMatrix, std::vector<std::string>({ }));
 }
 
 void Stick::makeMovement(Renderer &bRenderer){
@@ -90,10 +90,3 @@ void Stick::makeMovement(Renderer &bRenderer){
             }
         }
 }
-
-
-/*
- * TODO:
- * -1 * trans_x for left player
- * movement
- */

@@ -29,44 +29,14 @@ void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = Object
     vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
                         * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y))
                         * vmml::create_scaling(scale);
-    ShaderPtr shaderHockeypuck = bRenderer.getObjects()->getShader(MODEL_NAME);
-    
-    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, modelMatrixHockeypuck, std::vector<std::string>({ }));
-    
-    vmml::Matrix4f viewMatrixHockeypuck = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
-    if (shaderHockeypuck.get())
-    {
-        shaderHockeypuck->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
-        shaderHockeypuck->setUniform("ViewMatrix", viewMatrixHockeypuck);
-        shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
-    
-        vmml::Matrix3f normalMatrixHockeypuck;
-        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(modelMatrixHockeypuck)),normalMatrixHockeypuck);
-        shaderHockeypuck->setUniform("NormalMatrix", normalMatrixHockeypuck);
+    ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, modelMatrixHockeypuck, std::vector<std::string>({ }));
+}
 
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
-        shaderHockeypuck->setUniform("EyePos", eyePos);
-    
-        shaderHockeypuck->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-        shaderHockeypuck->setUniform("Ia", vmml::Vector3f(1.f));
-        shaderHockeypuck->setUniform("Id", vmml::Vector3f(1.f));
-        shaderHockeypuck->setUniform("Is", vmml::Vector3f(1.f));
-        
-        std::vector<std::string> cubeMapFileNames;
-        cubeMapFileNames.push_back("skyboxSide5.png");
-        cubeMapFileNames.push_back("skyboxSide2.png");
-        cubeMapFileNames.push_back("skyboxSide4.png");
-        cubeMapFileNames.push_back("skyboxSide1.png");
-        cubeMapFileNames.push_back("skyboxSide3.png"); //not visible
-        cubeMapFileNames.push_back("skyboxSide6.png");
-        
-        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(MODEL_NAME, cubeMapFileNames);
-        shaderHockeypuck->setUniform("skybox", cubeMap);
-    }
-    else
-    {
-        bRenderer::log("No shader available.");
-    }
+void Puck::drawModelReflection(Renderer &bRenderer) {
+    vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
+        * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y)) * vmml::create_translation(vmml::Vector3f(0.0f, -1.0f, 0.0f))
+        * vmml::create_scaling(scale) * vmml::create_scaling(vmml::Vector3f(1.0f, -1.0f, 1.0f));
+    ObjectModel::drawModel(bRenderer, Puck::MODEL_NAME, ObjectModel::CAMERA_NAME, modelMatrixHockeypuck, std::vector<std::string>({ }));
 }
 
 /*

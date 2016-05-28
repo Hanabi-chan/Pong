@@ -13,6 +13,7 @@ int scoreId = std::numeric_limits<int>::min();
 int lastScoreLeft, lastScoreRight;
 
 static std::list<ObjectModel*> models;
+static std::list<IReflection*> reflections;
 
 Cushion cushion;
 Field field(&cushion, 10, 5, 1);
@@ -96,8 +97,13 @@ void RenderProject::initFunction()
     FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
     bRenderer().getObjects()->createTextSprite("score", vmml::Vector3f(1.f, 1.f, 1.f), std::to_string(0) + " : " + std::to_string(0), font);
     
+    // fill reflections
+//    reflections.push_back(&puck);
+    reflections.push_back(&stick1);
+    reflections.push_back(&stick2);
+    field.setReflections(reflections);
     // fill object model list
-//    models.push_back(&field);
+    models.push_back(&field);
     models.push_back(&puck);
     models.push_back(&stick1);
     models.push_back(&stick2);
@@ -129,38 +135,6 @@ void RenderProject::loopFunction(const double &deltaTime, const double &elapsedT
     
     /// Update render queue ///
     updateRenderQueue("camera", deltaTime);
-    
-    // reflection
-    // enable stencil testing
-    glEnable(GL_STENCIL_TEST);
-    
-    glStencilFunc(GL_ALWAYS, 1, 0xFF);
-    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-    glStencilMask(0xFF);
-    glDepthMask(GL_FALSE);
-    glClear(GL_STENCIL_BUFFER_BIT);
-    glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
-    
-    // set the plane to draw to
-    field.drawModel(bRenderer(), "camera");
-    
-    glStencilFunc(GL_EQUAL, 1, 0xFF);
-    glStencilMask(0x00);
-    glDepthMask(GL_TRUE);
-    
-    // read out current blend mode and restore it afterwards
-    glEnable(GL_BLEND);
-    glBlendFunc (GL_ONE, GL_ONE);
-    
-    // draw the reflections
-    vmml::Matrix4f stickModelMatrix = field.fieldMatrix
-    * vmml::create_translation(stick1.translation.toVector()) * vmml::create_translation(vmml::Vector3f(0.0f, -1.0f, 0.0f))
-    * vmml::create_scaling(stick1.scale) * vmml::create_scaling(vmml::Vector3f(1.0f, -1.0f, 1.0f))
-    * vmml::create_rotation(stick1.rotation, stick1.xAxis);
-        stick1.ObjectModel::drawModel(bRenderer(), stick1.MODEL_NAME, "camera", stickModelMatrix, std::vector<std::string>({ }));
-    glDisable(GL_BLEND);
-    
-    glDisable(GL_STENCIL_TEST);
     
     bRenderer().getModelRenderer()->drawQueue(/*GL_LINES*/);
     bRenderer().getModelRenderer()->clearQueue();

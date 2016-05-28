@@ -10,8 +10,10 @@
 #define Field_hpp
 
 #include <stdio.h>
+#include <list>
 #include "ObjectModel.h"
 #include "Cushion.hpp"
+#include "IReflection.h"
 
 class Field : public ObjectModel {
     
@@ -25,6 +27,11 @@ public:
     
     void drawModel(Renderer &bRenderer, const std::string &cameraName);
     
+    void setReflections(std::list<IReflection*> reflections);
+    
+private:
+    
+    std::list<IReflection*> reflections;
     
 };
 
