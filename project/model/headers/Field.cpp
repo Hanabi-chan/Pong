@@ -8,7 +8,7 @@
 
 #include "Field.hpp"
 
-Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_translation(vmml::Vector3f(0,-1,0)) * vmml::create_scaling(vmml::Vector3f(scale))* vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0)) ){ //* vmml::create_rotation(-0.7f, vmml::Vector3f(0,1,0))) {
+Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_translation(vmml::Vector3f(-0.25,-1,0)) * vmml::create_scaling(vmml::Vector3f(scale))* vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0)) ){ //* vmml::create_rotation(-0.7f, vmml::Vector3f(0,1,0))) {
     this->scale = vmml::Vector3f(scale);
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;
@@ -36,8 +36,7 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
     
     // set the plane to draw to (here the field)
     ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
-//    bRenderer.getModelRenderer()->drawModel(MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
-    
+
     // update stencil buffer
     glStencilFunc(GL_EQUAL, 1, 0xFF);
     glStencilMask(0x00);
@@ -64,8 +63,7 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
     // restore blend state
     (blendEnabled ? glEnable(GL_BLEND) : glDisable(GL_BLEND));
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
-//    ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
+
     // draw cushion
     this->cushion->drawModel(this->fieldMatrix, bRenderer, cameraName);
 }

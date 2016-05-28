@@ -25,8 +25,8 @@ namespace {
     fieldHeight = fieldHeightEnd - fieldHeightStart;
     
     /* known values */
-    GLfloat yTransMin = -2.5f, // <-- field.dimension.y / 2
-    yTransMax = -yTransMin,
+    GLfloat yTransMin = -2.5f ,//-1.85f, // <-- field.dimension.y / 2
+    yTransMax = 2.5f,
     yTrans = fabsf(yTransMin) + yTransMax; // field.dimension.y
     
     

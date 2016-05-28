@@ -18,7 +18,8 @@ void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, c
     std::cout << "Draw object model " << modelName << "\n";
     bRenderer.getModelRenderer()->drawModel(modelName, cameraName, modelMatrix, lightNames);
     
-    vmml::Matrix4f viewMatrix = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
+    CameraPtr camera = bRenderer.getObjects()->getCamera("camera");
+    vmml::Matrix4f viewMatrix = camera->getViewMatrix();
     ShaderPtr shader = bRenderer.getObjects()->getShader(modelName);
     if (shader.get())
     {
@@ -30,13 +31,13 @@ void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, c
         vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(modelMatrix)),normalMatrix);
         shader->setUniform("NormalMatrix", normalMatrix);
         
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
+        vmml::Vector4f eyePos = vmml::Vector4f(camera->getPosition(), 1.0f);
         shader->setUniform("EyePos", eyePos);
         
-        shader->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-        shader->setUniform("Ia", vmml::Vector3f(1.f));
-        shader->setUniform("Id", vmml::Vector3f(1.f));
-        shader->setUniform("Is", vmml::Vector3f(1.f));
+//        shader->setUniform("LightPos", vmml::Vector4f(-4.f, 1.f, .5f, 1.f));
+        shader->setUniform("Ia", vmml::Vector3f(1.0f));
+        shader->setUniform("Id", vmml::Vector3f(1.0f));
+        shader->setUniform("Is", vmml::Vector3f(1.0f));
         
         std::vector<std::string> cubeMapFileNames;
         cubeMapFileNames.push_back("skyboxSide5.png");

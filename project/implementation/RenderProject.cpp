@@ -17,7 +17,7 @@ static std::list<IReflection*> reflections;
 
 Cushion cushion;
 Field field(&cushion, 10, 5, 1);
-Stick stick1(&field, 200, 1000, 0.001), stick2(stick1, true);
+Stick stick1(&field, 5, 25, 0.04), stick2(stick1, true);
 Player player1(&stick1), player2(&stick2);
 Puck puck(&field, &player1, &player2, 2.25, 2.25, 0.15);
 Skybox skybox(1, 1, 0);
@@ -91,7 +91,7 @@ void RenderProject::initFunction()
     bRenderer().getObjects()->loadObjModel("skybox.obj", true, true, true, 4, true, false, skyboxProperties);
     
     // create camera
-    bRenderer().getObjects()->createCamera(ObjectModel::CAMERA_NAME, vmml::Vector3f(0.0f, 0.0f, 10.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
+    bRenderer().getObjects()->createCamera(ObjectModel::CAMERA_NAME, vmml::Vector3f(0.0f, 0.0f, 8.0f), vmml::Vector3f(0.f, 0.0f, 0.f));
     
     //font
     FontPtr font = bRenderer().getObjects()->loadFont("DJB Up on the Scoreboard.ttf", 50);
@@ -102,12 +102,14 @@ void RenderProject::initFunction()
     reflections.push_back(&stick1);
     reflections.push_back(&stick2);
     field.setReflections(reflections);
+    
     // fill object model list
-    models.push_back(&field);
+    models.push_back(&skybox);
     models.push_back(&puck);
+    
     models.push_back(&stick1);
     models.push_back(&stick2);
-    models.push_back(&skybox);
+    models.push_back(&field);
     
     // Update render queue
     updateRenderQueue("camera", 0.0f);
@@ -210,9 +212,6 @@ void RenderProject::updateCamera(const std::string &camera, const double &deltaT
 {
     //// Adjust aspect ratio ////
     bRenderer().getObjects()->getCamera(camera)->setAspectRatio(bRenderer().getView()->getAspectRatio());
-//    bRenderer().getObjects()->getCamera(camera)->moveCameraSideward(1.0);
-//    bRenderer().getObjects()->getCamera(camera)->rotateCamera(0, 13.2f, 0);
-    
 }
 
 /* For iOS only: Handle device rotation */
