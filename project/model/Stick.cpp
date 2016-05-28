@@ -21,13 +21,14 @@ namespace {
      * 500px where it ends, seen from the upper border.
      */
     GLfloat fieldHeightStart = 320,
-    fieldHeightEnd = 500,
+    fieldHeightEnd = 450,
     fieldHeight = fieldHeightEnd - fieldHeightStart;
     
     /* known values */
     GLfloat yTransMin = -2.5f, // <-- field.dimension.y / 2
     yTransMax = -yTransMin,
     yTrans = fabsf(yTransMin) + yTransMax; // field.dimension.y
+    
     
     GLfloat computeStickPosition(GLfloat yPosition){
         std::cout << "Position: " << yPosition << "\n";
