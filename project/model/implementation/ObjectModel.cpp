@@ -15,10 +15,7 @@ ObjectModel::ObjectModel(const std::string &model_name) : MODEL_NAME(model_name)
 
 void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, const std::string &cameraName, const vmml::Matrix4f &modelMatrix, const std::vector<std::string> &lightNames){
    
-    std::cout << "Draw object model " << modelName << "\n";
-    bRenderer.getModelRenderer()->drawModel(modelName, cameraName, modelMatrix, lightNames);
-    
-    CameraPtr camera = bRenderer.getObjects()->getCamera("camera");
+    CameraPtr camera = bRenderer.getObjects()->getCamera(cameraName);
     vmml::Matrix4f viewMatrix = camera->getViewMatrix();
     ShaderPtr shader = bRenderer.getObjects()->getShader(modelName);
     if (shader.get())
@@ -54,6 +51,10 @@ void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, c
     {
         bRenderer::log("No shader available.");
     }
+    
+    std::cout << "Draw object model " << modelName << "\n";
+    bRenderer.getModelRenderer()->drawModel(modelName, cameraName, modelMatrix, lightNames);
+    
 }
 
 //void ObjectModel::drawModel(Renderer &bRenderer, const std::string &cameraName){

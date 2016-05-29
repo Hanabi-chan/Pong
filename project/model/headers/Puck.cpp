@@ -31,9 +31,10 @@ void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = Object
                         * vmml::create_scaling(scale);
     CameraPtr camera = bRenderer.getObjects()->getCamera(cameraName);
     GLboolean shrinking = this->last.x > this->current.x;
-    camera->moveCameraSideward((shrinking ? 1 : -1) * this->velocity/7);
-    camera->rotateCamera(0, (shrinking ? -0.0007 : 0.0007), 0);
+    camera->moveCameraSideward((shrinking ? 1 : -1) * this->velocity/5);
+    camera->rotateCamera(0, (shrinking ? -1 : 1) * this->velocity/12, 0);
     if (this->current.x == 0) {
+        camera->resetCamera();
         camera->setPosition(vmml::Vector3f(0.0f, 0.0f, 8.0f));
     }
     ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, modelMatrixHockeypuck, std::vector<std::string>({ }));
