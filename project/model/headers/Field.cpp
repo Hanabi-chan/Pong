@@ -54,7 +54,7 @@ void Field::drawModel(Renderer &bRenderer, const std::string &cameraName = Objec
     for(std::list<IReflection*>::iterator it = this->reflections.begin(); it != this->reflections.end(); ++it){
         (*it)->drawModelReflection(bRenderer);
     }
-    
+
     ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, this->fieldMatrix, std::vector<std::string>({ }));
     
     // disable stencil testing

@@ -25,14 +25,14 @@ Puck::Puck(Field *field, Player *one, Player *two, GLfloat dimensionX, GLfloat d
 }
 
 void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME) {
-//    this->makeMovement();
+    this->makeMovement();
     vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
                         * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y))
                         * vmml::create_scaling(scale);
     CameraPtr camera = bRenderer.getObjects()->getCamera(cameraName);
     GLboolean shrinking = this->last.x > this->current.x;
-//    camera->moveCameraSideward((shrinking ? 1 : -1) * this->velocity/10);
-//    camera->rotateCamera(0, (shrinking ? -0.0005 : 0.0005), 0);
+    camera->moveCameraSideward((shrinking ? 1 : -1) * this->velocity/7);
+    camera->rotateCamera(0, (shrinking ? -0.0007 : 0.0007), 0);
     if (this->current.x == 0) {
         camera->setPosition(vmml::Vector3f(0.0f, 0.0f, 8.0f));
     }
