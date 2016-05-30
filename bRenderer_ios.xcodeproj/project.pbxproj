@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		263C16371CF0E6DC00C93568 /* ibl.frag in Resources */ = {isa = PBXBuildFile; fileRef = 263C16351CF0E6DC00C93568 /* ibl.frag */; };
-		263C16381CF0E6DC00C93568 /* ibl.vert in Resources */ = {isa = PBXBuildFile; fileRef = 263C16361CF0E6DC00C93568 /* ibl.vert */; };
 		266693D51CFC4F47005B0D92 /* skyboxSide1_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693CF1CFC4F47005B0D92 /* skyboxSide1_diffuse.png */; };
 		266693D61CFC4F47005B0D92 /* skyboxSide2_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D01CFC4F47005B0D92 /* skyboxSide2_diffuse.png */; };
 		266693D71CFC4F47005B0D92 /* skyboxSide3_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D11CFC4F47005B0D92 /* skyboxSide3_diffuse.png */; };
 		266693D81CFC4F47005B0D92 /* skyboxSide4_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D21CFC4F47005B0D92 /* skyboxSide4_diffuse.png */; };
 		266693D91CFC4F47005B0D92 /* skyboxSide5_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D31CFC4F47005B0D92 /* skyboxSide5_diffuse.png */; };
 		266693DA1CFC4F47005B0D92 /* skyboxSide6_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D41CFC4F47005B0D92 /* skyboxSide6_diffuse.png */; };
-		266C91A81CF752960085717A /* spotlight.frag in Resources */ = {isa = PBXBuildFile; fileRef = 266C91A61CF752960085717A /* spotlight.frag */; };
-		266C91A91CF752960085717A /* spotlight.vert in Resources */ = {isa = PBXBuildFile; fileRef = 266C91A71CF752960085717A /* spotlight.vert */; };
 		26C2AF6C1CDB8226006A74BA /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2AF6B1CDB8225006A74BA /* field.png */; };
 		26DB1CBC1CEE406300E331F0 /* skybox.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB41CEE406300E331F0 /* skybox.mtl */; };
 		26DB1CBD1CEE406300E331F0 /* skybox.obj in Resources */ = {isa = PBXBuildFile; fileRef = 26DB1CB51CEE406300E331F0 /* skybox.obj */; };
@@ -170,16 +166,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		263C16351CF0E6DC00C93568 /* ibl.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.frag; sourceTree = "<group>"; };
-		263C16361CF0E6DC00C93568 /* ibl.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.vert; sourceTree = "<group>"; };
 		266693CF1CFC4F47005B0D92 /* skyboxSide1_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide1_diffuse.png; sourceTree = "<group>"; };
 		266693D01CFC4F47005B0D92 /* skyboxSide2_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide2_diffuse.png; sourceTree = "<group>"; };
 		266693D11CFC4F47005B0D92 /* skyboxSide3_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide3_diffuse.png; sourceTree = "<group>"; };
 		266693D21CFC4F47005B0D92 /* skyboxSide4_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide4_diffuse.png; sourceTree = "<group>"; };
 		266693D31CFC4F47005B0D92 /* skyboxSide5_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide5_diffuse.png; sourceTree = "<group>"; };
 		266693D41CFC4F47005B0D92 /* skyboxSide6_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide6_diffuse.png; sourceTree = "<group>"; };
-		266C91A61CF752960085717A /* spotlight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spotlight.frag; sourceTree = "<group>"; };
-		266C91A71CF752960085717A /* spotlight.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spotlight.vert; sourceTree = "<group>"; };
 		26C2AF6B1CDB8225006A74BA /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
 		26DB1CB41CEE406300E331F0 /* skybox.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skybox.mtl; sourceTree = "<group>"; };
 		26DB1CB51CEE406300E331F0 /* skybox.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skybox.obj; sourceTree = "<group>"; };
@@ -463,10 +455,6 @@
 				266693D21CFC4F47005B0D92 /* skyboxSide4_diffuse.png */,
 				266693D31CFC4F47005B0D92 /* skyboxSide5_diffuse.png */,
 				266693D41CFC4F47005B0D92 /* skyboxSide6_diffuse.png */,
-				266C91A61CF752960085717A /* spotlight.frag */,
-				266C91A71CF752960085717A /* spotlight.vert */,
-				263C16351CF0E6DC00C93568 /* ibl.frag */,
-				263C16361CF0E6DC00C93568 /* ibl.vert */,
 				26DB1CC41CEE416200E331F0 /* skybox.frag */,
 				26DB1CC51CEE416200E331F0 /* skybox.vert */,
 				26DB1CB41CEE406300E331F0 /* skybox.mtl */,
@@ -878,9 +866,7 @@
 				26DB1CBE1CEE406300E331F0 /* skyboxSide1.png in Resources */,
 				BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */,
 				26DB1CBD1CEE406300E331F0 /* skybox.obj in Resources */,
-				266C91A81CF752960085717A /* spotlight.frag in Resources */,
 				BB7730511CD887DA00C2B91D /* field.frag in Resources */,
-				263C16371CF0E6DC00C93568 /* ibl.frag in Resources */,
 				BB7730521CD887DA00C2B91D /* field.mtl in Resources */,
 				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
 				26DB1CC61CEE416200E331F0 /* skybox.frag in Resources */,
@@ -911,11 +897,9 @@
 				BB77303F1CD8861C00C2B91D /* sphere.obj in Resources */,
 				BB7730401CD8861C00C2B91D /* sphere.vert in Resources */,
 				BB7730411CD8861C00C2B91D /* stick.frag in Resources */,
-				266C91A91CF752960085717A /* spotlight.vert in Resources */,
 				BBD117131CFA4B7A008D9385 /* stick.png in Resources */,
 				26DB1CC01CEE406300E331F0 /* skyboxSide3.png in Resources */,
 				BB7730441CD8861C00C2B91D /* stick.vert in Resources */,
-				263C16381CF0E6DC00C93568 /* ibl.vert in Resources */,
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				266693D71CFC4F47005B0D92 /* skyboxSide3_diffuse.png in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,

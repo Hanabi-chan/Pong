@@ -159,30 +159,6 @@ void RenderProject::terminateFunction()
 /* Update render queue */
 void RenderProject::updateRenderQueue(const std::string &camera, const double &deltaTime)
 {
-    /*spotlight*/
-    
-    vmml::Matrix4f modelMatrix = vmml::create_scaling(vmml::Vector3f(0.6f));
-    vmml::Matrix4f viewMatrix = bRenderer().getObjects()->getCamera("camera")->getViewMatrix();
-    
-    ShaderPtr spotlightShader = bRenderer().getObjects()->getShader("spotlight");
-    if (spotlightShader.get())
-    {
-        spotlightShader->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
-        spotlightShader->setUniform("ViewMatrix", viewMatrix);
-        spotlightShader->setUniform("ModelMatrix", modelMatrix);
-     
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
-        spotlightShader->setUniform("EyePos", eyePos);
-        
-        spotlightShader->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-    }
-    else
-    {
-        bRenderer::log("No shader available.");
-    }
-
-    //////////////////////////////////////
-    
     // wait 5 seconds before game restarts
     if(waitForRestart){
         sleep(5);

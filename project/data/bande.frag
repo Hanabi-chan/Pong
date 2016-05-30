@@ -77,7 +77,5 @@ void main()
     lowp float colorAlpha = 1.0;
     lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
 //    colorTransp.a = transparency;
-    gl_FragColor = colorTransp * (3.0 * iblColor);
-//    gl_FragColor = vec4(n * 0.5 + vec3(0.5),1.0);
-//    gl_FragColor = color;
+    gl_FragColor = colorTransp * (2.0 * iblColor);
 }
