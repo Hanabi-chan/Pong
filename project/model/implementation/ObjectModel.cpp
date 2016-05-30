@@ -45,7 +45,18 @@ void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, c
         cubeMapFileNames.push_back("skyboxSide6.png");
         
         CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(modelName, cubeMapFileNames);
-        shader->setUniform("skybox", cubeMap);
+        shader->setUniform("skyboxSpecular", cubeMap);
+        
+        std::vector<std::string> cubeMapDiffuseFileNames;
+        cubeMapDiffuseFileNames.push_back("skyboxSide5.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSide2.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSide4.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSide1.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSide3.png"); //not visible
+        cubeMapDiffuseFileNames.push_back("skyboxSide6.png");
+        
+        CubeMapPtr cubeMapDiffuse = bRenderer.getObjects()->loadCubeMap(modelName, cubeMapDiffuseFileNames);
+        shader->setUniform("skyboxDiffuse", cubeMapDiffuse);
     }
     else
     {

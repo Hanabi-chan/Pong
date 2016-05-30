@@ -167,46 +167,10 @@ dependencies: \
   /Users/Sarah/Desktop/Project_CGLab/Pong/bRenderer/headers/IRenderProject.h \
   /Users/Sarah/Desktop/Project_CGLab/Pong/bRenderer/headers/../bRenderer.h \
   /Users/Sarah/Desktop/Project_CGLab/Pong/bRenderer/headers/FileHandler.h \
-  externalLibraries/box2d/Box2D/Box2D/Box2D.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2Settings.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2Draw.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2Math.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2Timer.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/Shapes/b2CircleShape.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/Shapes/b2Shape.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2BlockAllocator.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/b2Collision.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/Shapes/b2ChainShape.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/b2BroadPhase.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/b2DynamicTree.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2GrowableStack.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/b2Distance.h \
-  externalLibraries/box2d/Box2D/Box2D/Collision/b2TimeOfImpact.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/b2Body.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/b2Fixture.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/b2WorldCallbacks.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/b2TimeStep.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/b2World.h \
-  externalLibraries/box2d/Box2D/Box2D/Common/b2StackAllocator.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/b2ContactManager.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Contacts/b2Contact.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2Joint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h \
-  externalLibraries/box2d/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/Field.hpp \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/ObjectModel.h \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Cushion.hpp \
+  /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/IReflection.h \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/headers/Puck.hpp \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Player.hpp \
   /Users/Sarah/Desktop/Project_CGLab/Pong/project/model/Stick.hpp \

@@ -8,7 +8,7 @@
 
 #include "Field.hpp"
 
-Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_translation(vmml::Vector3f(-0.25,-1,0)) * vmml::create_scaling(vmml::Vector3f(scale))* vmml::create_rotation(-0.5f, vmml::Vector3f(1,0,0)) ){ //* vmml::create_rotation(-0.7f, vmml::Vector3f(0,1,0))) {
+Field::Field(Cushion *cushion, GLfloat dimensionX, GLfloat dimensionY, GLfloat scale) : ObjectModel("field"), fieldMatrix(vmml::create_translation(vmml::Vector3f(-0.25,-2.3)) * vmml::create_scaling(vmml::Vector3f(scale))* vmml::create_rotation(-0.2f, vmml::Vector3f(1,0,0)) ){ //* vmml::create_rotation(-0.7f, vmml::Vector3f(0,1,0))) {
     this->scale = vmml::Vector3f(scale);
     this->dimension.x = dimensionX * scale;
     this->dimension.y = dimensionY * scale;

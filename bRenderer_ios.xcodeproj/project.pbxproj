@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		263C16371CF0E6DC00C93568 /* ibl.frag in Resources */ = {isa = PBXBuildFile; fileRef = 263C16351CF0E6DC00C93568 /* ibl.frag */; };
 		263C16381CF0E6DC00C93568 /* ibl.vert in Resources */ = {isa = PBXBuildFile; fileRef = 263C16361CF0E6DC00C93568 /* ibl.vert */; };
+		266693D51CFC4F47005B0D92 /* skyboxSide1_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693CF1CFC4F47005B0D92 /* skyboxSide1_diffuse.png */; };
+		266693D61CFC4F47005B0D92 /* skyboxSide2_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D01CFC4F47005B0D92 /* skyboxSide2_diffuse.png */; };
+		266693D71CFC4F47005B0D92 /* skyboxSide3_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D11CFC4F47005B0D92 /* skyboxSide3_diffuse.png */; };
+		266693D81CFC4F47005B0D92 /* skyboxSide4_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D21CFC4F47005B0D92 /* skyboxSide4_diffuse.png */; };
+		266693D91CFC4F47005B0D92 /* skyboxSide5_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D31CFC4F47005B0D92 /* skyboxSide5_diffuse.png */; };
+		266693DA1CFC4F47005B0D92 /* skyboxSide6_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 266693D41CFC4F47005B0D92 /* skyboxSide6_diffuse.png */; };
 		266C91A81CF752960085717A /* spotlight.frag in Resources */ = {isa = PBXBuildFile; fileRef = 266C91A61CF752960085717A /* spotlight.frag */; };
 		266C91A91CF752960085717A /* spotlight.vert in Resources */ = {isa = PBXBuildFile; fileRef = 266C91A71CF752960085717A /* spotlight.vert */; };
 		26C2AF6C1CDB8226006A74BA /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C2AF6B1CDB8225006A74BA /* field.png */; };
@@ -166,6 +172,12 @@
 /* Begin PBXFileReference section */
 		263C16351CF0E6DC00C93568 /* ibl.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.frag; sourceTree = "<group>"; };
 		263C16361CF0E6DC00C93568 /* ibl.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ibl.vert; sourceTree = "<group>"; };
+		266693CF1CFC4F47005B0D92 /* skyboxSide1_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide1_diffuse.png; sourceTree = "<group>"; };
+		266693D01CFC4F47005B0D92 /* skyboxSide2_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide2_diffuse.png; sourceTree = "<group>"; };
+		266693D11CFC4F47005B0D92 /* skyboxSide3_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide3_diffuse.png; sourceTree = "<group>"; };
+		266693D21CFC4F47005B0D92 /* skyboxSide4_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide4_diffuse.png; sourceTree = "<group>"; };
+		266693D31CFC4F47005B0D92 /* skyboxSide5_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide5_diffuse.png; sourceTree = "<group>"; };
+		266693D41CFC4F47005B0D92 /* skyboxSide6_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyboxSide6_diffuse.png; sourceTree = "<group>"; };
 		266C91A61CF752960085717A /* spotlight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spotlight.frag; sourceTree = "<group>"; };
 		266C91A71CF752960085717A /* spotlight.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spotlight.vert; sourceTree = "<group>"; };
 		26C2AF6B1CDB8225006A74BA /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
@@ -445,6 +457,12 @@
 		B47949841BA6742B00B5E9DC /* data */ = {
 			isa = PBXGroup;
 			children = (
+				266693CF1CFC4F47005B0D92 /* skyboxSide1_diffuse.png */,
+				266693D01CFC4F47005B0D92 /* skyboxSide2_diffuse.png */,
+				266693D11CFC4F47005B0D92 /* skyboxSide3_diffuse.png */,
+				266693D21CFC4F47005B0D92 /* skyboxSide4_diffuse.png */,
+				266693D31CFC4F47005B0D92 /* skyboxSide5_diffuse.png */,
+				266693D41CFC4F47005B0D92 /* skyboxSide6_diffuse.png */,
 				266C91A61CF752960085717A /* spotlight.frag */,
 				266C91A71CF752960085717A /* spotlight.vert */,
 				263C16351CF0E6DC00C93568 /* ibl.frag */,
@@ -851,9 +869,11 @@
 				BBE03FE01CEA100200393C2D /* bande.vert in Resources */,
 				BBD117091CFA4827008D9385 /* normalMapStick.png in Resources */,
 				BBD117121CFA4B7A008D9385 /* stick.obj in Resources */,
+				266693D61CFC4F47005B0D92 /* skyboxSide2_diffuse.png in Resources */,
 				BBE03FC71CE9AB8B00393C2D /* field_gloss.png in Resources */,
 				BB3400221CE8F49B003D424E /* normalMapField.jpeg in Resources */,
 				BB3400231CE8F49B003D424E /* normalMapHockeypuck.jpg in Resources */,
+				266693D81CFC4F47005B0D92 /* skyboxSide4_diffuse.png in Resources */,
 				BB7730571CD888BC00C2B91D /* DJB Up on the Scoreboard.ttf in Resources */,
 				26DB1CBE1CEE406300E331F0 /* skyboxSide1.png in Resources */,
 				BB7730581CD888BC00C2B91D /* orange juice 2.0.ttf in Resources */,
@@ -865,8 +885,10 @@
 				BB7730531CD887DA00C2B91D /* field.obj in Resources */,
 				26DB1CC61CEE416200E331F0 /* skybox.frag in Resources */,
 				BB7730541CD887DA00C2B91D /* field.vert in Resources */,
+				266693D91CFC4F47005B0D92 /* skyboxSide5_diffuse.png in Resources */,
 				26C2AF6C1CDB8226006A74BA /* field.png in Resources */,
 				BB77302D1CD8861C00C2B91D /* config.json in Resources */,
+				266693D51CFC4F47005B0D92 /* skyboxSide1_diffuse.png in Resources */,
 				BB77302E1CD8861C00C2B91D /* cube.frag in Resources */,
 				26DB1CBF1CEE406300E331F0 /* skyboxSide2.png in Resources */,
 				BB77302F1CD8861C00C2B91D /* cube.mtl in Resources */,
@@ -890,14 +912,15 @@
 				BB7730401CD8861C00C2B91D /* sphere.vert in Resources */,
 				BB7730411CD8861C00C2B91D /* stick.frag in Resources */,
 				266C91A91CF752960085717A /* spotlight.vert in Resources */,
-				BB7730421CD8861C00C2B91D /* stick.mtl in Resources */,
 				BBD117131CFA4B7A008D9385 /* stick.png in Resources */,
 				26DB1CC01CEE406300E331F0 /* skyboxSide3.png in Resources */,
 				BB7730441CD8861C00C2B91D /* stick.vert in Resources */,
 				263C16381CF0E6DC00C93568 /* ibl.vert in Resources */,
 				B4794A311BA6743D00B5E9DC /* LICENSE.txt in Resources */,
+				266693D71CFC4F47005B0D92 /* skyboxSide3_diffuse.png in Resources */,
 				B4794A2A1BA6743D00B5E9DC /* LICENSE.txt in Resources */,
 				B4794A301BA6743D00B5E9DC /* LICENSE.txt in Resources */,
+				266693DA1CFC4F47005B0D92 /* skyboxSide6_diffuse.png in Resources */,
 				26DB1CC71CEE416200E331F0 /* skybox.vert in Resources */,
 				B4CB8CD01B72E43300FE041B /* Project-Info.plist in Resources */,
 				26DB1CC31CEE406300E331F0 /* skyboxSide6.png in Resources */,

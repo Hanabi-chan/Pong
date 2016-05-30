@@ -26,7 +26,7 @@ uniform sampler2D DiffuseMap;
 uniform sampler2D NormalMap;
 uniform sampler2D SphereMap;
 
-uniform samplerCube skybox;
+uniform samplerCube skyboxDiffuse;
 
 varying lowp vec4 ambientVarying;
 varying lowp vec4 diffuseVarying;
@@ -49,7 +49,7 @@ void main()
     
     mediump vec3 R = normalize(reflect(normalize(-cameraVector), normal));
     
-    mediump vec3 difLighting = textureCube(skybox, N).rgb;
+    mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
     
     mediump vec4 iblColor;
     iblColor.xyz = difLighting * 0.6;
@@ -77,7 +77,7 @@ void main()
     lowp float colorAlpha = 1.0;
     lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
 //    colorTransp.a = transparency;
-    gl_FragColor = colorTransp * (7.0 * iblColor);
+    gl_FragColor = colorTransp * (3.0 * iblColor);
 //    gl_FragColor = vec4(n * 0.5 + vec3(0.5),1.0);
 //    gl_FragColor = color;
 }
