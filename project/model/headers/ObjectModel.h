@@ -24,17 +24,19 @@ public:
     };
     Dimension dimension;
     
-    void drawModel(Renderer &bRenderer, const std::string &modelName, const std::string &cameraName, const vmml::Matrix4f & modelMatrix, const std::vector<std::string> &lightNames);
-
-    virtual void drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME);
+    vmml::Vector3f scale;
+    
+    vmml::Vector3f translation;
+    
+    virtual void drawModel(Renderer &bRenderer, const std::string &cameraName = ObjectModel::CAMERA_NAME) = 0;
+    
+    static void drawModel(Renderer &bRenderer, const std::string &modelName, const std::string &cameraName, const vmml::Matrix4f & modelMatrix, const std::vector<std::string> &lightNames);
 
 protected:
     
     ObjectModel(const std::string &model_name);
     
-    vmml::Vector3f scale;
-    
-    vmml::Vector3f translation;
+   
     
 };
 

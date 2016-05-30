@@ -25,7 +25,7 @@ void main (void)
     mediump I = Ia * Ka + fatt * Ip * Kd * dot(N,L);
     
     
-    ///////////////////////////
+     ///////////////////////////
     
     mediump vec4 final_color =
     (gl_FrontLightModelProduct.sceneColor * gl_FrontMaterial.ambient) +

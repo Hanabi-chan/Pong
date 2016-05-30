@@ -20,7 +20,7 @@ public:
     
     Cushion();
     
-    vmml::Matrix4f drawModel(vmml::Matrix4f fieldMatrix, Renderer &bRenderer, const std::string &cameraName);
+    void drawModel(vmml::Matrix4f fieldMatrix, Renderer &bRenderer, const std::string &cameraName);
 
 };
 #endif /* Cushion_hpp */

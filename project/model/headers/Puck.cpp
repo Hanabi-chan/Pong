@@ -29,44 +29,22 @@ void Puck::drawModel(Renderer &bRenderer, const std::string &cameraName = Object
     vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
                         * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y))
                         * vmml::create_scaling(scale);
-    ShaderPtr shaderHockeypuck = bRenderer.getObjects()->getShader(MODEL_NAME);
-    
-    this->ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, modelMatrixHockeypuck, std::vector<std::string>({ }));
-    
-    vmml::Matrix4f viewMatrixHockeypuck = bRenderer.getObjects()->getCamera("camera")->getViewMatrix();
-    if (shaderHockeypuck.get())
-    {
-        shaderHockeypuck->setUniform("ProjectionMatrix", vmml::Matrix4f::IDENTITY);
-        shaderHockeypuck->setUniform("ViewMatrix", viewMatrixHockeypuck);
-        shaderHockeypuck->setUniform("ModelMatrix", modelMatrixHockeypuck);
-    
-        vmml::Matrix3f normalMatrixHockeypuck;
-        vmml::compute_inverse(vmml::transpose(vmml::Matrix3f(modelMatrixHockeypuck)),normalMatrixHockeypuck);
-        shaderHockeypuck->setUniform("NormalMatrix", normalMatrixHockeypuck);
+    CameraPtr camera = bRenderer.getObjects()->getCamera(cameraName);
+    GLboolean shrinking = this->last.x > this->current.x;
+    camera->moveCameraSideward((shrinking ? 1 : -1) * this->velocity/5);
+    camera->rotateCamera(0, (shrinking ? -1 : 1) * this->velocity/12, 0);
+    if (this->current.x == 0) {
+        camera->resetCamera();
+        camera->setPosition(vmml::Vector3f(0.0f, 0.0f, 8.0f));
+    }
+    ObjectModel::drawModel(bRenderer, MODEL_NAME, cameraName, modelMatrixHockeypuck, std::vector<std::string>({ }));
+}
 
-        vmml::Vector4f eyePos = vmml::Vector4f(0.0f, 0.0f, 10.0f, 1.0f);
-        shaderHockeypuck->setUniform("EyePos", eyePos);
-    
-        shaderHockeypuck->setUniform("LightPos", vmml::Vector4f(0.f, 1.f, .5f, 1.f));
-        shaderHockeypuck->setUniform("Ia", vmml::Vector3f(1.f));
-        shaderHockeypuck->setUniform("Id", vmml::Vector3f(1.f));
-        shaderHockeypuck->setUniform("Is", vmml::Vector3f(1.f));
-        
-        std::vector<std::string> cubeMapFileNames;
-        cubeMapFileNames.push_back("skyboxSide5.png");
-        cubeMapFileNames.push_back("skyboxSide2.png");
-        cubeMapFileNames.push_back("skyboxSide4.png");
-        cubeMapFileNames.push_back("skyboxSide1.png");
-        cubeMapFileNames.push_back("skyboxSide3.png"); //not visible
-        cubeMapFileNames.push_back("skyboxSide6.png");
-        
-        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(MODEL_NAME, cubeMapFileNames);
-        shaderHockeypuck->setUniform("skybox", cubeMap);
-    }
-    else
-    {
-        bRenderer::log("No shader available.");
-    }
+void Puck::drawModelReflection(Renderer &bRenderer) {
+    vmml::Matrix4f modelMatrixHockeypuck = this->field->fieldMatrix
+        * vmml::create_translation(vmml::Vector3f(this->current.x, trans_z, this->current.y)) * vmml::create_translation(vmml::Vector3f(0.0f, -1.0f, 0.0f))
+        * vmml::create_scaling(scale) * vmml::create_scaling(vmml::Vector3f(1.0f, -1.0f, 1.0f));
+    ObjectModel::drawModel(bRenderer, Puck::MODEL_NAME, ObjectModel::CAMERA_NAME, modelMatrixHockeypuck, std::vector<std::string>({ }));
 }
 
 /*
@@ -77,7 +55,7 @@ bool Puck::checkPlayerCollision(Player *player, Point &next, GLfloat xBound, boo
     float stickDimY = player->stick->dimension.y/2;
     float diff = next.x + (xBound > 0 ? 1 : -1) * this->radius - xBound;
     if(next.y <= stickTransY + stickDimY
-        && next.y >= stickTransY - stickDimY
+        && next.y >= stickTransY - stickDimY - 0.5
         && !next.playerCollision ) {
         // collision with stick
         next.addVelocity(-diff, this->current);
@@ -152,12 +130,12 @@ void Puck::makeMovement(){
     next.isImpact = collision;
     this->last = Point(this->current);
     this->current = next;
-    
+ 
 }
 
 GLfloat computeDependentCoord(GLfloat last, GLfloat current){
     GLfloat coord = current + (current - last);
-    coord += (rand() % 200 + (-100)) / 10000.0f; // add a little "English" TODO: won't work
+    coord += (rand() % 200 + (-100)) / 10000.0f; // add a little "English"
     return coord;
 }
 

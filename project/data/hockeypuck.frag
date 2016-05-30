@@ -69,6 +69,6 @@ void main()
     //read color from DiffuseMap
     lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
     
-    gl_FragColor = (vec4(clamp(Cd, 0.0, 1.0), 1.0) + vec4(Ca, 1.0)) * (color + (iblColor)) + vec4(clamp(Cs, 0.0, 1.0), 1.0);
-    //gl_FragColor = color * ( iblColor);
+//    gl_FragColor = (vec4(clamp(Cd, 0.0, 1.0), 1.0) + vec4(Ca, 1.0)) * (color + (iblColor)) + vec4(clamp(Cs, 0.0, 1.0), 1.0);
+    gl_FragColor = color * ( iblColor);
 }

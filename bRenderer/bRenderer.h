@@ -13,7 +13,7 @@
 #include "vmmlib/util.hpp"
 
 /* Box2D includes */
-#include "Box2D/Box2D.h"
+//#include "Box2D/Box2D.h"
 
 /* model */
 #include "Field.hpp"
@@ -21,5 +21,6 @@
 #include "Stick.hpp"
 #include "Player.hpp"
 #include "Skybox.hpp"
+#include "IReflection.h"
 
 #endif /* defined(B_BRENDERER_H) */
