@@ -39,6 +39,7 @@ varying mediump vec3 normalVarying;    // normal in world space
 varying mediump vec4 pos;
 varying mediump vec3 normal;
 varying mediump vec3 cameraVector;
+varying mediump vec3 tangentVarying;
 
 void main()
 {
@@ -48,34 +49,47 @@ void main()
     mediump vec3 N = normalize(normal);
     
     mediump vec3 R = normalize(reflect(normalize(-cameraVector), normal));
+    mediump vec3 n = normalize( texture2D(NormalMap, texCoordVarying.st).rgb * 2.0 - 1.0);
+
     
     mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
     
     mediump vec4 iblColor;
-    iblColor.xyz = difLighting * 0.6;
+    iblColor.xyz = difLighting * 1.0;
     iblColor.a = 1.0;
     
-    /////////////////////////////////
+    //////////////////////////////
     
-    mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb); // * 2.0 - 1.0);
-    mediump vec3 l = normalize(LightPos - pos).xyz;
+    mediump vec3 t = normalize(vec3(NormalMatrix * tangentVarying));
+    mediump vec3 n1 = normalize(vec3(NormalMatrix * normal));
+    mediump vec3 b = normalize(vec3(NormalMatrix * cross(t, n1)));
     
-    mediump vec3 Ca = Ka * Ia;
-    mediump vec3 Cd = Kd * max(0.0,dot(n,l)) * Id;
+    mediump vec3 tOrthogonalized = t-dot(n1,t)*n1;
+    mediump vec3 bOrthogonalized = b-dot(n1,b)*n1 - dot(tOrthogonalized,b)*tOrthogonalized;
+    mediump mat3 tbn = mat3(tOrthogonalized, bOrthogonalized, n1);
+
     
-    mediump vec3 Cs = vec3(0.0);
-    if (dot(n,l) > 0.0)
-    {
-        mediump vec3 v = normalize(EyePos - pos).xyz;
-        mediump vec3 r = normalize(l + v);
-        
-        Cs = Ks * pow(dot(n,r),Ns) * Is;
-    }
-    
-    //read color from DiffuseMap
+    //mediump vec3 n = normal;
+//    mediump vec3 l = normalize(LightPos - pos).xyz;
+//    
+//    mediump vec3 Ca = Ka * Ia;
+//    mediump vec3 Cd = Kd * max(0.0,dot(n,l)) * Id;
+//    
+//    mediump vec3 Cs = vec3(0.0);
+//    if (dot(n,l) > 0.0)
+//    {
+//        mediump vec3 v = normalize(EyePos - pos).xyz;
+//        mediump vec3 r = normalize(l + v);
+//        
+//        Cs = Ks * pow(dot(n,r),Ns) * Is;
+//    }
+//    
+//    //read color from DiffuseMap
     lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
-    lowp float colorAlpha = 1.0;
-    lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
+//    lowp float colorAlpha = 1.0;
+//    lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
 //    colorTransp.a = transparency;
-    gl_FragColor = colorTransp * (2.0 * iblColor);
+    //gl_FragColor = colorTransp * ( iblColor);
+    gl_FragColor = color * iblColor;
+    //gl_FragColor = vec4(vec3(0.5) + n * 0.5, 1.0);
 }

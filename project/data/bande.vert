@@ -39,12 +39,15 @@ varying mediump vec3 normalVarying;    // normal in world space
 varying mediump vec4 pos;
 varying mediump vec3 normal;
 varying mediump vec3 cameraVector;
+varying mediump vec3 tangentVarying;
 
 void main()
 {
     
     // normal in world space
     normal = normalize(NormalMatrix * Normal);
+    
+    tangentVarying = Tangent;
     
     mediump vec4 cameraPos = ProjectionMatrix * Position;
     

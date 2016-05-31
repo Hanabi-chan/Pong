@@ -33,8 +33,8 @@ void Skybox::drawModel(Renderer &bRenderer, const std::string &cameraName = Obje
         skyboxShader->setUniform("NormalMatrix", normalMatrixSkybox);
         
         std::vector<std::string> cubeMapFileNames;
-        cubeMapFileNames.push_back("skyboxSide5.png");
         cubeMapFileNames.push_back("skyboxSide2.png");
+        cubeMapFileNames.push_back("skyboxSide5.png");
         cubeMapFileNames.push_back("skyboxSide4.png");
         cubeMapFileNames.push_back("skyboxSide1.png");
         cubeMapFileNames.push_back("skyboxSide3.png"); //not visible

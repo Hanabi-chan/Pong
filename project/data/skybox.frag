@@ -8,8 +8,7 @@ varying highp vec3 position;
 void main()
 {
     highp vec3 I = normalize(position - cameraPos);
-    highp vec3 R = reflect(I, normalize(normal));
-    highp vec4 cubeMap = textureCube(skybox, R);
+    highp vec4 cubeMap = textureCube(skybox, I);
     
     gl_FragColor = cubeMap;
 }
