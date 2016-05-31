@@ -9,6 +9,7 @@ uniform mediump float transparency;
 uniform mediump vec3 ambientColor;
 
 attribute vec4 Position;
+attribute vec3 Tangent;
 attribute vec3 Normal;
 attribute vec4 TexCoord;
 
@@ -17,11 +18,14 @@ varying lowp vec4 texCoordVarying;
 varying mediump vec4 pos;
 varying mediump vec3 normal;
 varying mediump vec3 cameraVector;
+varying mediump vec3 tangentVarying;
 
 void main()
 {
     // normal in world space
     normal = normalize(NormalMatrix * Normal);
+    
+    tangentVarying = Tangent;
     
     mediump vec4 cameraPos = ProjectionMatrix * Position;
     

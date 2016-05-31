@@ -36,24 +36,24 @@ void ObjectModel::drawModel(Renderer &bRenderer, const std::string &modelName, c
         shader->setUniform("Id", vmml::Vector3f(1.0f));
         shader->setUniform("Is", vmml::Vector3f(1.0f));
         
-        std::vector<std::string> cubeMapFileNames;
-        cubeMapFileNames.push_back("skyboxSide2.png");
-        cubeMapFileNames.push_back("skyboxSide5.png");
-        cubeMapFileNames.push_back("skyboxSide1.png");
-        cubeMapFileNames.push_back("skyboxSide4.png");
-        cubeMapFileNames.push_back("skyboxSide3.png"); //not visible
-        cubeMapFileNames.push_back("skyboxSide6.png");
+        std::vector<std::string> cubeMapSpecularFileNames;
+        cubeMapSpecularFileNames.push_back("skyboxSideLeft.png");
+        cubeMapSpecularFileNames.push_back("skyboxSideRight.png");
+        cubeMapSpecularFileNames.push_back("skyboxSideBottom.png");
+        cubeMapSpecularFileNames.push_back("skyboxSideTop.png");
+        cubeMapSpecularFileNames.push_back("skyboxSideFront.png"); //not visible
+        cubeMapSpecularFileNames.push_back("skyboxSideBack.png");
         
-        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(modelName, cubeMapFileNames);
+        CubeMapPtr cubeMap = bRenderer.getObjects()->loadCubeMap(modelName, cubeMapSpecularFileNames);
         shader->setUniform("skyboxSpecular", cubeMap);
         
         std::vector<std::string> cubeMapDiffuseFileNames;
-        cubeMapDiffuseFileNames.push_back("skyboxSide2_diffuse.png");
-        cubeMapDiffuseFileNames.push_back("skyboxSide5_diffuse.png");
-        cubeMapDiffuseFileNames.push_back("skyboxSide1_diffuse.png");
-        cubeMapDiffuseFileNames.push_back("skyboxSide4_diffuse.png");
-        cubeMapDiffuseFileNames.push_back("skyboxSide3_diffuse.png"); //not visible
-        cubeMapDiffuseFileNames.push_back("skyboxSide6_diffuse.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSideLeft_diffuse.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSideRight_diffuse.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSideBottom_diffuse.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSideTop_diffuse.png");
+        cubeMapDiffuseFileNames.push_back("skyboxSideFront_diffuse.png"); //not visible
+        cubeMapDiffuseFileNames.push_back("skyboxSideBack_diffuse.png");
         
         CubeMapPtr cubeMapDiffuse = bRenderer.getObjects()->loadCubeMap(modelName, cubeMapDiffuseFileNames);
         shader->setUniform("skyboxDiffuse", cubeMapDiffuse);

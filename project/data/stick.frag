@@ -35,6 +35,7 @@ uniform sampler2D NormalMap;
 uniform sampler2D SphereMap;
 
 uniform samplerCube skyboxDiffuse;
+uniform samplerCube skyboxSpecular;
 
 varying lowp vec4 ambientVarying;
 varying lowp vec4 diffuseVarying;
@@ -54,37 +55,39 @@ void main()
     /*IBL*/
     
     mediump vec3 N = normalize(normal);
-    
-    mediump vec3 R = normalize(reflect(normalize(-cameraVector), normal));
-    
+        
     mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
     
+    lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
+    
     mediump vec4 iblColor;
-    iblColor.xyz = difLighting * 0.6;
+    iblColor.xyz = vec3(color) * difLighting * 0.6;
     iblColor.a = 1.0;
+    
+    gl_FragColor = iblColor;
+
     
     /////////////////////////////////
     
-    mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb); // * 2.0 - 1.0);
-    mediump vec3 l = normalize(LightPos - pos).xyz;
-    
-    mediump vec3 Ca = Ka * Ia;
-    mediump vec3 Cd = Kd * max(0.0,dot(n,l)) * Id;
-    
-    mediump vec3 Cs = vec3(0.0);
-    if (dot(n,l) > 0.0)
-    {
-        mediump vec3 v = normalize(EyePos - pos).xyz;
-        mediump vec3 r = normalize(l + v);
-        
-        Cs = Ks * pow(dot(n,r),Ns) * Is;
-    }
-    
-    //read color from DiffuseMap
-    lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
-    lowp float colorAlpha = 1.0;
-    lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
-        gl_FragColor = colorTransp * (2.0 * iblColor);
+//    mediump vec3 n = normalize(texture2D(NormalMap, texCoordVarying.st).rgb); // * 2.0 - 1.0);
+//    mediump vec3 l = normalize(LightPos - pos).xyz;
+//    
+//    mediump vec3 Ca = Ka * Ia;
+//    mediump vec3 Cd = Kd * max(0.0,dot(n,l)) * Id;
+//    
+//    mediump vec3 Cs = vec3(0.0);
+//    if (dot(n,l) > 0.0)
+//    {
+//        mediump vec3 v = normalize(EyePos - pos).xyz;
+//        mediump vec3 r = normalize(l + v);
+//        
+//        Cs = Ks * pow(dot(n,r),Ns) * Is;
+//    }
+//    
+//    //read color from DiffuseMap
+//    lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
+//    lowp float colorAlpha = 1.0;
+//    lowp vec4 colorTransp = (vec4(clamp(Cd, 0.0, 1.0), colorAlpha) + vec4(Ca, colorAlpha)) * color + vec4(clamp(Cs, 0.0, 1.0), colorAlpha);
 //            gl_FragColor = vec4(n * 0.5 + vec3(0.5),1.0);
 //    gl_FragColor = color;
 }
