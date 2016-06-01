@@ -45,9 +45,9 @@ void main()
 {
     /*TBN calculation*/
     
-    mediump vec3 t = normalize(vec3(NormalMatrix * tangentVarying));
-    mediump vec3 n1 = normalize(vec3(NormalMatrix * normal));
-    mediump vec3 b = normalize(vec3(NormalMatrix * cross(t, n1)));
+    mediump vec3 t = normalize(vec3(ModelMatrix * vec4(tangentVarying,0.0)));
+    mediump vec3 n1 = normalize(vec3(ModelMatrix * vec4(normal,0.0)));
+    mediump vec3 b = normalize(vec3(ModelMatrix * vec4(cross(t, n1),0.0)));
     
     mediump vec3 tOrthogonalized = t-dot(n1,t)*n1;
     mediump vec3 bOrthogonalized = b-dot(n1,b)*n1 - dot(tOrthogonalized,b)*tOrthogonalized;
@@ -62,15 +62,16 @@ void main()
     
     mediump vec3 R = normalize(reflect(normalize(-cameraVector), normal));
     
-    mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
-    //mediump vec3 difLighting = textureCube(skyboxDiffuse, n).rgb;
+    //mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
+    mediump vec3 difLighting = textureCube(skyboxDiffuse, n).rgb;
     lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
 
     mediump vec4 iblColor;
-    iblColor.xyz = vec3(color) * difLighting * 1.0;
+    iblColor.xyz = difLighting * 1.0;
     iblColor.a = 1.0;
     
-    gl_FragColor = iblColor;
+    //gl_FragColor = vec4(vec3(0.5) + n2 * 0.5, 1.0);
+    gl_FragColor = color * iblColor;
 
     
     //mediump vec3 n = normal;

@@ -48,15 +48,29 @@ varying mediump vec3 normalVarying;    // normal in world space
 varying mediump vec4 pos;
 varying mediump vec3 normal;
 varying mediump vec3 cameraVector;
+varying mediump vec3 tangentVarying;
 
 void main()
 {
+    
+    /*TBN calculation*/
+    
+    mediump vec3 t = normalize(vec3(NormalMatrix * tangentVarying));
+    mediump vec3 n1 = normalize(vec3(NormalMatrix * normal));
+    mediump vec3 b = normalize(vec3(NormalMatrix * cross(t, n1)));
+    
+    mediump vec3 tOrthogonalized = t-dot(n1,t)*n1;
+    mediump vec3 bOrthogonalized = b-dot(n1,b)*n1 - dot(tOrthogonalized,b)*tOrthogonalized;
+    mediump mat3 tbn = mat3(tOrthogonalized, bOrthogonalized, n1);
+    
+    //read normal out of NormalMap
+    mediump vec3 n = normalize(tbn *  texture2D(NormalMap, texCoordVarying.st).rgb * 2.0 - 1.0);
     
     /*IBL*/
     
     mediump vec3 N = normalize(normal);
         
-    mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
+    mediump vec3 difLighting = textureCube(skyboxDiffuse, n).rgb;
     
     lowp vec4 color = texture2D(DiffuseMap, vec2(texCoordVarying));
     
@@ -64,7 +78,7 @@ void main()
     iblColor.xyz = vec3(color) * difLighting * 0.6;
     iblColor.a = 1.0;
     
-    gl_FragColor = iblColor;
+    gl_FragColor = 7.0 * iblColor;
 
     
     /////////////////////////////////

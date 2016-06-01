@@ -63,8 +63,8 @@ void main()
     
     mediump vec3 R = normalize(reflect(normalize(-cameraVector), normal));
     
-    //mediump vec3 difLighting = textureCube(skyboxDiffuse, n).rgb;
-    mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
+    mediump vec3 difLighting = textureCube(skyboxDiffuse, n).rgb;
+    //mediump vec3 difLighting = textureCube(skyboxDiffuse, N).rgb;
     mediump vec3 speLighting = textureCube(skyboxSpecular, R).rgb;
     
     mediump vec4 iblColor;
@@ -74,6 +74,8 @@ void main()
     
     iblColor.xyz = vec3(color) * difLighting * 0.4 + speLighting * 0.7;
     iblColor.a = 1.0;
+    //gl_FragColor = iblColor;
+    //gl_FragColor = vec4(vec3(0.5) + n * 0.5, 1.0);
     gl_FragColor = iblColor;
 }
 
